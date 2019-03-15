@@ -1,0 +1,735 @@
+---
+title: "Random Forest Analyses"
+author: "J C D  Terry & S Gripenberg"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+Code used to conduct random analyses for Gripenberg et al. 'Patterns of host use by insect seed predators in a species-rich tropical forest'.
+
+# Packages and Data
+
+```{r, message=FALSE, warning=FALSE}
+
+require(tidyverse)
+require(bipartite)
+require(corrplot)
+require(randomForest)
+require(randomForestSRC)
+require(ggRandomForests)
+
+require(knitr)
+require(broom)
+require(RColorBrewer)
+require(caret)
+require(cowplot)
+require(pdp)
+require(gridExtra)
+
+
+### Additional Packages required
+# install.packages("party") # don't load as overwrites other packages
+# install.packages('e1071') #  needed for party package
+
+select<- dplyr::select # to ensure dplyr version of select is default
+
+```
+
+```{r}
+FW<-read_csv('../Data/FW.csv')
+Trait<- read_csv('../Data/TidyTrait.csv')
+
+```
+
+### Basic Data Wrangling:
+```{r}
+
+Trait %>%
+  filter(Woody_or_nonwoody == 'Woody') -> WoodyTraits
+
+WoodyTraits %>%
+  filter(TotUnits_collected>200) -> WellSampledWoody
+
+```
+
+# Justification for selecting just those with over 200 sampled:
+```{r message=FALSE}
+WoodyTraits %>%
+  ggplot(aes(x= TotUnits_collected,fill=factor(SeedPred_pres)))+
+  geom_histogram(position = "stack", col='black')+
+  scale_x_log10(breaks=c(1,10, 100, 1000, 10000)) +
+  annotation_logticks(sides = 'b', short = unit(0.1, "cm"), mid = unit(0.1, "cm")) +
+  geom_vline(aes(xintercept = 200), col= 'grey', linetype =2)+
+  labs(x='Seed Sample Size', y='Number of species')+
+  scale_fill_manual(values = c('white', 'black'),
+                    name='Predator\nPresence\nObserved',
+                    labels=c('No', 'Yes'))+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"))
+
+ggsave('../Figures/FigureS1.png', width = 5, height=5, dpi = 500)
+ggsave('../Figures/FigureS1.pdf', width = 5, height=5)
+
+
+WoodyTraits %>%
+  glm(factor(SeedPred_pres) ~TotUnits_collected,
+      data = .,
+      family = binomial(link='logit')) %>%
+  summary
+
+
+
+WoodyTraits %>%
+  filter(TotUnits_collected>200) %>%
+  glm(factor(SeedPred_pres) ~TotUnits_collected,
+      data = .,
+      family = binomial(link='logit')) %>%
+  summary
+
+```
+
+
+```{r}
+
+
+WoodyTraits %>%
+  glm(factor(SeedPred_pres) ~TotUnits_collected,
+      data = .,
+      family = binomial(link='logit')) -> fit11
+
+predict(fit11, data.frame(TotUnits_collected = 10000), type= 'response')
+
+boot::inv.logit( -0.7396426 + 0.0013662*10000) # to double check
+
+WoodyTraits %>%
+  mutate(log10Collected = log10(TotUnits_collected))%>%
+  glm(factor(SeedPred_pres) ~log10Collected,
+      data = .,
+      family = binomial(link='logit')) -> fit22
+
+predict(fit22, data.frame(log10Collected = 4), type= 'response')
+
+
+```
+
+# Prediction of Seed Predation from Traits
+
+## Data Assessment
+
+### How many positive's are being discarded by cutting at 200?
+
+Discarding those with less than 200 samples throws away 70% of the observations of seed predators. However it does double the fraction of found seed predators. 
+
+```{r}
+
+WoodyTraits$SeedPred_pres %>% sum
+WoodyTraits$SeedPred_pres %>% mean
+
+WellSampledWoody$SeedPred_pres %>% sum
+WellSampledWoody$SeedPred_pres %>% mean
+
+```
+
+### Correlation between traits
+```{r}
+Trait %>%
+    select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
+         seed_dry, Endocarp_investment, specificpeakforce, POLY_concentration, 
+         cvseed,CoFruit, RGR_10, TotUnits_collected)%>%
+  cor(method='spearman', use='pair')%>%
+  corrplot(type = 'lower', method = 'ellipse')
+
+```
+
+### Fraction Missing Data
+```{r}
+Trait %>%
+  select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
+         seed_dry, Endocarp_investment, specificpeakforce, POLY_concentration, 
+         cvseed,CoFruit, RGR_10, TotUnits_collected)%>%
+  purrr::map_dbl(~ mean(is.na(.))) %>%
+  round(2) %>%
+  kable
+
+
+WellSampledWoody  %>% 
+  select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
+         seed_dry, Endocarp_investment, specificpeakforce, POLY_concentration, 
+         cvseed,CoFruit, RGR_10, TotUnits_collected)%>%
+  purrr::map_dbl(~ mean(is.na(.))) %>%
+  round(2) %>%
+  kable
+```
+
+### Raw data plots of traits against seed predator presence
+
+```{r}
+WellSampledWoody$FruitSeason<- factor(WellSampledWoody$FruitSeason)
+WellSampledWoody$SeedPred_pres <- factor(WellSampledWoody$SeedPred_pres, levels = c(1,0), labels = c('Predated','Not-Predated'))
+WellSampledWoody <- as.data.frame(WellSampledWoody)
+WellSampledWoody$Tree_or_Liana<- factor(WellSampledWoody$Tree_or_Liana)
+
+D <- WellSampledWoody
+```
+
+```{r}
+png('../Figures/SpinePlotsa.png',height= 12, width = 8, res= 600, units='in')
+par(mfrow=c(4,2))
+
+plot(SeedPred_pres~ log10(TotUnits_collected),   data=D, xlab='Units Collected (Log 10)', ylab='')
+plot(SeedPred_pres~ HEIGHT_AVG,   data=D, xlab='Tree Height', ylab='')
+plot(SeedPred_pres~ log10(seed_dry),   data=D, xlab='Seed mass (Log10)', ylab='')
+plot(SeedPred_pres~ log10(fruitrecord),   data=D, xlab='Local seed\ncrop size', ylab='')
+plot(SeedPred_pres~ cvseed,   data=D, xlab='Interannual\ncrop size variation', ylab='')
+plot(SeedPred_pres~ CoFruit,   data=D, xlab='Overlap in\nfruit production', ylab='')
+plot(SeedPred_pres~ log10(BCIReproductive),   data=D, xlab='Local tree\nabundance (Log 10)', ylab='')
+dev.off()
+png('../Figures/SpinePlotsb.png',height= 12, width = 8, res= 600, units='in')
+par(mfrow=c(4,2))
+plot(SeedPred_pres~ POLY_concentration,   data=D, xlab='Polyphenol\nconcentration', ylab='')
+plot(SeedPred_pres~ RGR_10,   data=D, xlab='Relative Growth Rate', ylab='')
+plot(SeedPred_pres~ SpInFamilyOnBCI,   data=D, xlab='BCI family-level\ndiversity', ylab='')
+plot(SeedPred_pres~ SpInGenusOnBCI,   data=D, xlab='BCI genus-level\ndiversity', ylab='')
+plot(SeedPred_pres~ Endocarp_investment,   data=D, xlab='Endocarp investment', ylab='')
+plot(SeedPred_pres~ FruitSeason,   data=D, xlab='Fruiting season', ylab='')
+plot(SeedPred_pres~ Tree_or_Liana,   data=D, xlab='Lifeform', ylab='')
+dev.off()
+
+
+pdf('../Figures/SpinePlotsa.pdf',height= 12, width = 8)
+par(mfrow=c(4,2))
+
+plot(SeedPred_pres~ log10(TotUnits_collected),   data=D, xlab='Units Collected (Log 10)', ylab='')
+plot(SeedPred_pres~ HEIGHT_AVG,   data=D, xlab='Tree Height', ylab='')
+plot(SeedPred_pres~ log10(seed_dry),   data=D, xlab='Seed mass (Log10)', ylab='')
+plot(SeedPred_pres~ log10(fruitrecord),   data=D, xlab='Local seed\ncrop size', ylab='')
+plot(SeedPred_pres~ cvseed,   data=D, xlab='Interannual\ncrop size variation', ylab='')
+plot(SeedPred_pres~ CoFruit,   data=D, xlab='Overlap in\nfruit production', ylab='')
+plot(SeedPred_pres~ log10(BCIReproductive),   data=D, xlab='Local tree\nabundance (Log 10)', ylab='')
+dev.off()
+pdf('../Figures/SpinePlotsb.pdf',height= 12, width = 8)
+par(mfrow=c(4,2))
+plot(SeedPred_pres~ POLY_concentration,   data=D, xlab='Polyphenol\nconcentration', ylab='')
+plot(SeedPred_pres~ RGR_10,   data=D, xlab='Relative Growth Rate', ylab='')
+plot(SeedPred_pres~ SpInFamilyOnBCI,   data=D, xlab='BCI family-level\ndiversity', ylab='')
+plot(SeedPred_pres~ SpInGenusOnBCI,   data=D, xlab='BCI genus-level\ndiversity', ylab='')
+plot(SeedPred_pres~ Endocarp_investment,   data=D, xlab='Endocarp investment', ylab='')
+plot(SeedPred_pres~ FruitSeason,   data=D, xlab='Fruiting season', ylab='')
+plot(SeedPred_pres~ Tree_or_Liana,   data=D, xlab='Lifeform', ylab='')
+dev.off()
+```
+
+# Fitting Random Forests to well sampled Species
+
+## Seed Predator Presence
+
+```{r}
+
+set.seed(1)
+CTRL <- party::cforest_control(ntree=5000)
+
+party::cforest(SeedPred_pres ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
+                 BCIReproductive + Tree_or_Liana +
+                 seed_dry + Endocarp_investment + POLY_concentration + 
+                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+               data=as.data.frame(WellSampledWoody), controls = CTRL) -> RF_Wood_WS_CF
+
+
+oobPredicted=predict(RF_Wood_WS_CF,OOB=TRUE)
+accuracy<-table( as.data.frame(WellSampledWoody)$SeedPred_pres,oobPredicted)
+
+## Confusion Matrix
+accuracy
+(accuracy / sum(accuracy))*100
+
+caret::cforestStats(RF_Wood_WS_CF)
+
+X1<-party::varimp(RF_Wood_WS_CF)
+
+data.frame(X1) %>%
+  rownames_to_column()%>%
+  arrange(X1) %>%
+  ggplot(aes(x=reorder(rowname, X1), y=X1)) +
+  geom_bar(stat='identity') + coord_flip() ->VarImpPredPres 
+
+VarImpPredPres
+
+```
+
+## Predator Diversity
+
+Seed predator species load
+
+```{r}
+set.seed(1)
+
+party::cforest(SeedPred_n ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
+                 BCIReproductive + Tree_or_Liana +
+                 seed_dry + Endocarp_investment + POLY_concentration + 
+                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+               data=as.data.frame(WellSampledWoody), controls = CTRL) -> RF_Wood_WS_CF_2
+
+RF_Wood_WS_CF_2
+
+caret::cforestStats(RF_Wood_WS_CF_2)
+X2<-party::varimp(RF_Wood_WS_CF_2)
+
+data.frame(X2) %>%
+  rownames_to_column()%>%
+  arrange(X2) %>%
+  ggplot(aes(x=reorder(rowname, X2), y=X2)) +
+  geom_bar(stat='identity') + coord_flip()
+
+```
+
+## Seed Predation Rate ( Dissection)
+
+seed predator abundance / total count
+
+```{r}
+set.seed(1)
+
+WellSampledWoody%>%
+  filter(!is.na(SeedPredationRate)) %>%
+  as.data.frame -> For_4 # two NAs for some reason??
+
+
+party::cforest(SeedPredationRate ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI +
+                 SpInGenusOnBCI+ BCIReproductive + Tree_or_Liana +
+                 seed_dry + Endocarp_investment + POLY_concentration + 
+                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+               data=For_4, controls = CTRL) -> RF_Wood_WS_CF_4
+
+RF_Wood_WS_CF_4
+caret::cforestStats(RF_Wood_WS_CF_4)
+
+X4<-party::varimp(RF_Wood_WS_CF_4)
+
+data.frame(X4) %>%
+  rownames_to_column()%>%
+  arrange(X4) %>%
+  ggplot(aes(x=reorder(rowname, X4), y=X4)) +
+  geom_bar(stat='identity') + coord_flip()
+
+```
+
+## Figure 3
+
+```{r}
+data.frame('Importance' = X1,
+           'Variable'=names(X1),
+           'Response' = 'a.~Incidence:~kappa==0.067') ->a
+data.frame('Importance' = X2,
+           'Variable'=names(X2),
+           'Response' = 'b.~Richness:~R^{2}==0.010')->b
+data.frame('Importance' = X4,
+           'Variable'=names(X4),
+           'Response' = 'c.~Rate:~R^{2}==0.069') ->d
+
+Order<-as.character(arrange(a, Importance)$Variable)
+
+bind_rows(a,b,d)%>%
+  rownames_to_column()%>%
+  mutate(Importance =ifelse(Importance<0, 0, Importance))%>%
+  mutate(Variable = factor(Variable, levels = Order))%>%
+  ggplot(aes(y=Importance ,x=Variable))+
+  geom_bar(stat='identity')+
+  scale_x_discrete(limits = c('seed_dry',
+                              'POLY_concentration',
+                              'Endocarp_investment',
+                              'FruitSeason',
+                              
+                              'BCIReproductive',
+                              'SpInGenusOnBCI',
+                              'SpInFamilyOnBCI',
+                              
+                              'CoFruit',
+                              'fruitrecord',
+                              'cvseed',                       
+                               'Tree_or_Liana',
+                              'RGR_10',    
+                              'HEIGHT_AVG'),   
+                   labels=c( 'Seed mass',
+                             'Polyphenol\nconcentration', 
+                             'Endocarp investment',
+                             'Fruiting season',
+                             
+                             'Local tree\nabundance',
+                             'BCI genus-level\ndiversity',
+                             'BCI family-level\ndiversity',
+                             
+                             'Overlap in\nfruit production', 
+                             'Local seed\ncrop size',
+                             'Interannual\ncrop size variation',
+                            'Lifeform',
+                             'Relative growth rate',
+                             'Max. height'))+
+  facet_grid(.~Response, scales = 'free', labeller = "label_parsed") +
+  coord_flip()+
+  ylab('Relative Importance of Variable')+
+  xlab('')+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        strip.background =element_rect(fill="white"),
+        axis.text.x=element_blank())
+
+ggsave('../Figures/Figure3.png', width=12, height=10, dpi=500)
+ggsave('../Figures/Figure3.pdf', width=12, height=10)
+
+```
+
+## Partial Dependence Plots
+
+Because these take a long time to run, they have been pre-calculated for this knitr.
+```{r eval=FALSE}
+PartialPlotA1 <- partial(object = RF_Wood_WS_CF  ,train=as.data.frame(WellSampledWoody),progress='text',pred.var = 'HEIGHT_AVG')
+PartialPlotA2 <- partial(object = RF_Wood_WS_CF  ,train=as.data.frame(WellSampledWoody),progress='text',pred.var = 'seed_dry')
+PartialPlotA3 <- partial(object = RF_Wood_WS_CF  ,train=as.data.frame(WellSampledWoody),progress='text',pred.var = 'CoFruit')
+PartialPlotB1 <- partial(object = RF_Wood_WS_CF_2,train=as.data.frame(WellSampledWoody),progress='text',pred.var = 'seed_dry')
+PartialPlotB2 <- partial(object = RF_Wood_WS_CF_2,train=as.data.frame(WellSampledWoody),progress='text',pred.var = 'HEIGHT_AVG')
+PartialPlotB3 <- partial(object = RF_Wood_WS_CF_2,train=as.data.frame(WellSampledWoody),progress='text',pred.var = 'CoFruit')
+PartialPlotD1 <- partial(object = RF_Wood_WS_CF_4,train=For_4,progress='text',pred.var = 'seed_dry')
+PartialPlotD2 <- partial(object = RF_Wood_WS_CF_4,train=For_4,progress='text',pred.var = 'HEIGHT_AVG')
+PartialPlotD3 <- partial(object = RF_Wood_WS_CF_4,train=For_4,progress='text',pred.var = 'BCIReproductive')
+
+save(PartialPlotA1,file = '../PPOutputs/PPA1')
+save(PartialPlotA2,file = '../PPOutputs/PPA2')
+save(PartialPlotA3,file = '../PPOutputs/PPA3')
+save(PartialPlotB1,file = '../PPOutputs/PPB1')
+save(PartialPlotB2,file = '../PPOutputs/PPB2')
+save(PartialPlotB3,file = '../PPOutputs/PPB3')
+save(PartialPlotD1,file = '../PPOutputs/PPD1')
+save(PartialPlotD2,file = '../PPOutputs/PPD2')
+save(PartialPlotD3,file = '../PPOutputs/PPD3')
+
+```
+
+
+```{r message=FALSE, warning=FALSE}
+load('../PPOutputs/PPA1')
+load('../PPOutputs/PPA2')
+load('../PPOutputs/PPA3')
+load('../PPOutputs/PPB1')
+load('../PPOutputs/PPB2')
+load('../PPOutputs/PPB3')
+load('../PPOutputs/PPD1')
+load('../PPOutputs/PPD2')
+load('../PPOutputs/PPD3')
+
+### Log some 
+plottedA1<-ggplot(PartialPlotA1, aes(HEIGHT_AVG,-yhat))+geom_step() + xlab('Max. height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+plottedA2<-ggplot(PartialPlotA2, aes(seed_dry,-yhat))+geom_step()+scale_x_log10() + xlab('Seed mass')+ ylab('')
+plottedA3<-ggplot(PartialPlotA3, aes(CoFruit,-yhat))+geom_step() + xlab('Overlap in fruit production')+ ylab('')
+
+plottedB1<-ggplot(PartialPlotB1, aes(seed_dry,yhat))+geom_step()+scale_x_log10() +
+  xlab('Seed mass')+ ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+plottedB2<-ggplot(PartialPlotB2, aes(HEIGHT_AVG,yhat))+geom_step()+ xlab('Max. height')+ ylab('')
+plottedB3<-ggplot(PartialPlotB3, aes(CoFruit,yhat))+geom_step()+ xlab('Overlap in fruit production')+ ylab('')
+
+plottedD1<-ggplot(PartialPlotD1, aes(seed_dry,yhat))+geom_step()+scale_x_log10() +
+  xlab('Seed mass')+ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+plottedD2<-ggplot(PartialPlotD2, aes(HEIGHT_AVG,yhat))+geom_step()+ xlab('Max. height')+ ylab('')
+plottedD3<-ggplot(PartialPlotD3, aes(BCIReproductive,yhat))+geom_step()+scale_x_log10() + xlab('Local tree abundance')+ ylab('')
+
+
+AllPDP <-plot_grid(plottedA1,
+                   plottedA2,
+                   plottedA3,
+                   plottedB1,
+                   plottedB2,
+                   plottedB3,
+                   plottedD1,
+                   plottedD2,
+                   plottedD3,  ncol=3, 
+                   labels = c('a) Seed Predator Incidence', '', '', 
+                              'b) Seed Predator Richness', '', '', 
+                              'c) Seed Predation Rate', '', ''),
+                   hjust = -0.2, vjust = 1.2,
+                   scale=0.9)
+AllPDP
+ggsave('../Figures/FigureS3.png',AllPDP,width = 12, height=12, dpi=600)
+ggsave('../Figures/FigureS3.pdf',AllPDP,width = 12, height=12)
+
+```
+
+
+# Fitting Random Forests to all Species and including sample size as a co-predictor
+
+## Seed Predator Presence
+
+```{r}
+
+
+WoodyTraits$FruitSeason<- factor(WoodyTraits$FruitSeason)
+WoodyTraits$SeedPred_pres <- as.factor(WoodyTraits$SeedPred_pres )
+WoodyTraits$Tree_or_Liana <- as.factor(WoodyTraits$Tree_or_Liana )
+
+WoodyTraits<- as.data.frame(WoodyTraits)
+
+
+set.seed(1)
+CTRL <- party::cforest_control(ntree=5000)
+
+party::cforest(SeedPred_pres ~ TotUnits_collected + fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
+                 BCIReproductive +  Tree_or_Liana +
+                 seed_dry + Endocarp_investment + POLY_concentration + 
+                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+               data=WoodyTraits, controls = CTRL) -> RF_Wood_all_CF
+
+
+oobPredicted=predict(RF_Wood_all_CF,OOB=TRUE)
+accuracy<-table( WoodyTraits$SeedPred_pres,oobPredicted)
+
+## Confusion Matrix
+accuracy
+(accuracy / sum(accuracy))*100
+
+caret::cforestStats(RF_Wood_all_CF)
+
+X1all<-party::varimp(RF_Wood_all_CF)
+
+data.frame(X1all) %>%
+  rownames_to_column()%>%
+  arrange(X1all) %>%
+  ggplot(aes(x=reorder(rowname, X1all), y=X1all)) +
+  geom_bar(stat='identity') + coord_flip() ->VarImpPredPres 
+
+VarImpPredPres
+
+```
+
+## Predator Diversity
+
+Seed predator species load
+
+```{r}
+set.seed(1)
+
+party::cforest(SeedPred_n ~ TotUnits_collected + fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
+                 BCIReproductive + Tree_or_Liana + 
+                 seed_dry + Endocarp_investment + POLY_concentration + 
+                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+               data=WoodyTraits, controls = CTRL) -> RF_Wood_all_CF_2
+
+RF_Wood_all_CF_2
+
+caret::cforestStats(RF_Wood_all_CF_2)
+X2all<-party::varimp(RF_Wood_all_CF_2)
+
+data.frame(X2all) %>%
+  rownames_to_column()%>%
+  arrange(X2all) %>%
+  ggplot(aes(x=reorder(rowname, X2all), y=X2all)) +
+  geom_bar(stat='identity') + coord_flip()
+
+```
+
+## Seed Predation Rate (Dissection)
+
+seed predator abundance / total count
+
+```{r}
+set.seed(1)
+
+WoodyTraits%>%
+  filter(!is.na(SeedPredationRate)) %>%
+  as.data.frame -> For_4 # 5 NAs for some reason??
+
+
+party::cforest(SeedPredationRate ~ TotUnits_collected + fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI +
+                 SpInGenusOnBCI+ BCIReproductive +  Tree_or_Liana +
+                 seed_dry + Endocarp_investment + POLY_concentration + 
+                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+               data=For_4, controls = CTRL) -> RF_Wood_all_CF_4
+
+RF_Wood_all_CF_4
+caret::cforestStats(RF_Wood_all_CF_4)
+
+X4all<-party::varimp(RF_Wood_all_CF_4)
+
+
+plot( For_4$SeedPredationRate~For_4$SpInFamilyOnBCI)
+
+
+plot(WellSampledWoody$SpInFamilyOnBCI,
+     WellSampledWoody$SeedPredationRate)
+
+
+ggplot(WellSampledWoody, aes(SpInFamilyOnBCI,SeedPredationRate ))+geom_point()+ geom_smooth()
+ggplot(For_4, aes(SpInFamilyOnBCI,SeedPredationRate ))+geom_point()+ geom_smooth()
+
+
+
+data.frame(X4all) %>%
+  rownames_to_column()%>%
+  arrange(X4all) %>%
+  ggplot(aes(x=reorder(rowname, X4all), y=X4all)) +
+  geom_bar(stat='identity') + coord_flip()
+
+```
+
+## Variable importannce including poorly sampled data
+
+```{r}
+data.frame('Importance' = X1all,
+           'Variable'=names(X1all),
+           'Response' = 'a.~Incidence') ->a_all
+data.frame('Importance' = X2all,
+           'Variable'=names(X2all),
+           'Response' = 'b.~Richness')->b_all
+data.frame('Importance' = X4all,
+           'Variable'=names(X4all),
+           'Response' = 'c.~Rate') ->d_all
+
+Order<-as.character(arrange(a_all, Importance)$Variable)
+
+bind_rows(a_all,b_all,d_all)%>%
+  rownames_to_column()%>%
+  mutate(Importance =ifelse(Importance<0, 0, Importance))%>%
+  mutate(Variable = factor(Variable, levels = Order))%>%
+  ggplot(aes(y=Importance ,x=Variable))+
+  geom_bar(stat='identity')+
+  scale_x_discrete(limits = c('TotUnits_collected',
+                              'seed_dry',
+                              'POLY_concentration',
+                              'Endocarp_investment',
+                              'FruitSeason',
+                              
+                              'BCIReproductive',
+                              'SpInGenusOnBCI',
+                              'SpInFamilyOnBCI',
+                              
+                              'CoFruit',
+                              'fruitrecord',
+                              'cvseed',
+                             'Tree_or_Liana',
+                              'RGR_10',
+                              'HEIGHT_AVG'),
+                   labels=c( 'Units Collected',
+                             'Seed mass',
+                             'Polyphenol\nconcentration',
+                             'Endocarp investment',
+                             'Fruiting season',
+                             
+                             'Local tree\nabundance',
+                             'BCI genus-level\ndiversity',
+                             'BCI family-level\ndiversity',
+                             
+                             'Overlap in\nfruit production',
+                             'Local seed\ncrop size',
+                             'Interannual\ncrop size variation',
+                              'Lifeform',
+                             'Relative growth rate',
+                             'Max. height'))+
+  facet_grid(.~Response, scales = 'free', labeller = "label_parsed") +
+  coord_flip()+
+  ylab('Relative Importance of Variable')+
+  xlab('')+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        strip.background =element_rect(fill="white"),
+        axis.text.x=element_blank())
+
+ggsave('../Figures/Figure3all.png', width=12, height=10, dpi=500)
+ggsave('../Figures/Figure3all.pdf', width=12, height=10)
+
+```
+
+## Partial Dependence Plots
+
+Because these take a long time to run, they have been pre-calculated for this knitr.
+```{r eval=FALSE}
+PartialPlotA1_all <- partial(object = RF_Wood_all_CF  ,train=WoodyTraits,progress='text',pred.var = 'TotUnits_collected')
+PartialPlotA2_all <- partial(object = RF_Wood_all_CF  ,train=WoodyTraits,progress='text',pred.var = 'CoFruit')
+PartialPlotA3_all <- partial(object = RF_Wood_all_CF  ,train=WoodyTraits,progress='text',pred.var = 'HEIGHT_AVG')
+PartialPlotB1_all <- partial(object = RF_Wood_all_CF_2,train=WoodyTraits,progress='text',pred.var = 'TotUnits_collected')
+PartialPlotB2_all <- partial(object = RF_Wood_all_CF_2,train=WoodyTraits,progress='text',pred.var = 'CoFruit')
+PartialPlotB3_all <- partial(object = RF_Wood_all_CF_2,train=WoodyTraits,progress='text',pred.var = 'HEIGHT_AVG')
+PartialPlotD1_all <- partial(object = RF_Wood_all_CF_4,train=For_4,progress='text',pred.var = 'SpInFamilyOnBCI')
+PartialPlotD2_all <- partial(object = RF_Wood_all_CF_4,train=For_4,progress='text',pred.var = 'HEIGHT_AVG')
+PartialPlotD3_all <- partial(object = RF_Wood_all_CF_4,train=For_4,progress='text',pred.var = 'seed_dry')
+
+save(PartialPlotA1_all,file = '../PPOutputs/PPA1all')
+save(PartialPlotA2_all,file = '../PPOutputs/PPA2all')
+save(PartialPlotA3_all,file = '../PPOutputs/PPA3all')
+save(PartialPlotB1_all,file = '../PPOutputs/PPB1all')
+save(PartialPlotB2_all,file = '../PPOutputs/PPB2all')
+save(PartialPlotB3_all,file = '../PPOutputs/PPB3all')
+save(PartialPlotD1_all,file = '../PPOutputs/PPD1all')
+save(PartialPlotD2_all,file = '../PPOutputs/PPD2all')
+save(PartialPlotD3_all,file = '../PPOutputs/PPD3all')
+
+```
+
+scale_x_log10() +
+```{r message=FALSE, warning=FALSE}
+load('../PPOutputs/PPA1all')
+load('../PPOutputs/PPA2all')
+load('../PPOutputs/PPA3all')
+load('../PPOutputs/PPB1all')
+load('../PPOutputs/PPB2all')
+load('../PPOutputs/PPB3all')
+load('../PPOutputs/PPD1all')
+load('../PPOutputs/PPD2all')
+load('../PPOutputs/PPD3all')
+
+### Log some 
+plotted_A1all<-ggplot(PartialPlotA1_all, aes(TotUnits_collected,-yhat))+geom_step()  +
+  xlab('Units Collected') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+plotted_A2all<-ggplot(PartialPlotA2_all, aes(CoFruit,-yhat))+geom_step()+
+  xlab('Overlap in\nfruit production')+ ylab('')
+plotted_A3all<-ggplot(PartialPlotA3_all, aes(HEIGHT_AVG,-yhat))+geom_step() +
+  xlab( 'Max. height')+ ylab('')
+
+plotted_B1all<-ggplot(PartialPlotB1_all, aes(TotUnits_collected,yhat))+geom_step()+
+  xlab('Units Collected')+ ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+plotted_B2all<-ggplot(PartialPlotB2_all, aes(CoFruit,yhat))+geom_step()+ 
+  xlab('Overlap in\nfruit production')+ ylab('')
+plotted_B3all<-ggplot(PartialPlotB3_all, aes(HEIGHT_AVG,yhat))+geom_step()+ 
+  xlab( 'Max. height')+ ylab('')
+
+plotted_D1all<-ggplot(PartialPlotD1_all, aes(SpInFamilyOnBCI,yhat))+geom_step()+
+  xlab( 'BCI family-level\ndiversity')+ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+plotted_D2all<-ggplot(PartialPlotD2_all, aes(HEIGHT_AVG,yhat))+geom_step()+
+  xlab('Max. height')+ ylab('')
+plotted_D3all<-ggplot(PartialPlotD3_all, aes(seed_dry,yhat))+geom_step()+scale_x_log10() +
+  xlab( 'Seed mass')+ ylab('')
+
+
+AllPDP_all <-plot_grid(plotted_A1all,
+                       plotted_A2all,
+                       plotted_A3all,
+                       plotted_B1all,
+                       plotted_B2all,
+                       plotted_B3all,
+                       plotted_D1all,
+                       plotted_D2all,
+                       plotted_D3all,  ncol=3, 
+                       labels = c('a) Seed Predator Incidence', '', '', 
+                                  'b) Seed Predator Richness', '', '', 
+                                  'c) Seed Predation Rate', '', ''),
+                       hjust = -0.2, vjust = 1.2,
+                       scale=0.9)
+AllPDP_all
+ggsave('../Figures/FigureS3_all.png',AllPDP_all,width = 12, height=12, dpi=600)
+ggsave('../Figures/FigureS3_all.pdf',AllPDP_all,width = 12, height=12)
+
+```
+
+
+# Session Info
+
+```{r}
+sessionInfo()
+
+
+```

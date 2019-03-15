@@ -1,0 +1,472 @@
+InsectSpCode,FullSpeciesNameValid,Codigo,BIN,Alias,TOTAL,Order,Family,Genus,In50haPlotTraps,IncludeInFoodWeb,ReasonNotIncluded,SeedEquiv_rearing,InsectsPerPredatedSeed,Seedeqv_traps_c1,AbsKilled_collected,PropKilled_collected,KilledAcross200Traps_c1,KilledPerTrap_c1,KilledPerM2
+1,Aeatus costulatus,AMPP,BOLD:ABV0286,colcur67; Sp65SGPitcru; Sp5SGAmppan (larva),188,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,456.75,1,2168.25,188,0.411603722,892.4597701,4.462298851,8.924597701
+1,Aeatus costulatus,PITC,BOLD:ABV0286,colcur70,84,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,2390,1,7714,84,0.035146444,271.1196653,1.355598326,2.711196653
+1,Aeatus costulatus,TABR,BOLD:ABV0286,colcur147,21,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,4202.6,1,3332.7,21,0.004996907,16.65319088,0.083265954,0.166531909
+2,Aeatus sp. cur108SG,CYDA,NA,colcur108,1,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,761.75,1,802.3333333,1,0.001312767,1.053276447,0.005266382,0.010532764
+3,Aeatus sp. cur144SG,TABG,NA,colcur144,34,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,6420,1,3313.2,34,0.00529595,17.54654206,0.08773271,0.175465421
+4,Aeatus sp. cur242SG,PITC,BOLD:ABV0287,colcur242,3,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,456.75,1,2168.25,3,0.006568144,14.24137931,0.071206897,0.142413793
+5,Aeatus sp. cur262SG,CAL1,BOLD:ACJ5665,Sp17SGCallat (larva),7,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,8921,1,2124,7,0.000784665,1.666629302,0.008333147,0.016666293
+6,Aeatus sp. cur263SG,AMPP,BOLD:ACS6695,Sp5SGAmppan (larva),2,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,456.75,1,2168.25,2,0.004378763,9.494252874,0.047471264,0.094942529
+7,Aeatus vestitus,CORB,NA,colcur165,94,Coleoptera,Curculionidae,Aeatus,Yes,Yes,,1684,1,3502,94,0.055819477,195.47981,0.97739905,1.9547981
+8,Agao hym105SG Agao sp. hym105SG,FIIN,NA,hym105,11,Hymenoptera,Agaonidae,Agao hym105SG,Yes,No,Hymenoptera,120200.4,NA,10051.2,NA,NA,NA,NA,
+9,Agao hym89SG Agao sp. hym89SG,FICI,NA,hym89,1,Hymenoptera,Agaonidae,Agao hym89SG,Yes,No,Hymenoptera,497962.08,NA,1361.56,NA,NA,NA,NA,
+10,Amblycerus bru39SG sp. bru39SG,GUAU,BOLD:ACJ3956,colbru39,39,Coleoptera,Chrysomelidae,Amblycerus bru39SG,Yes,No,Small-seeded host,17414.42177,NA,20789.46599,NA,NA,NA,NA,
+11,Amblycerus bru59SG sp. bru59SG,CORB,BOLD:ACJ4830,colbru59,4,Coleoptera,Chrysomelidae,Amblycerus bru59SG,Yes,Yes,,1684,1,3502,4,0.002375297,8.318289786,0.041591449,0.083182898
+12,Amblycerus championi,CORB,NA,colbru61,1,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,1684,1,3502,1,0.000593824,2.079572447,0.010397862,0.020795724
+13,Amblycerus cistelinus,GUAU,BOLD:ACG0463,colbru10,72,Coleoptera,Chrysomelidae,Amblycerus,Yes,No,Small-seeded host,17414.42177,NA,20789.46599,NA,NA,NA,NA,
+14,Amblycerus perfectus,COMF,BOLD:ABV3602,colbru18,26,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,719,1,7,26,0.036161335,0.253129346,0.001265647,0.002531293
+15,Amblycerus pterocarpae,PTER,NA,colbru4,2,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,454.48,1,161.76,2,0.004400634,0.711846506,0.003559233,0.007118465
+16,Amblycerus simulator,LUE1,BOLD:ABV3596,colbru15,32,Coleoptera,Chrysomelidae,Amblycerus,Yes,No,Small-seeded host,31936.1,NA,218512.9925,NA,NA,NA,NA,
+18,Amblycerus sp. bru17SG,COMF,BOLD:ABV3597,colbru57,3,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,719,1,7,3,0.004172462,0.029207232,0.000146036,0.000292072
+18,Amblycerus sp. bru17SG,COML,BOLD:ABV3597,colbru17,3,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,348,1,446,3,0.00862069,3.844827586,0.019224138,0.038448276
+19,Amblycerus sp. bru21SG,PLAE,BOLD:ACJ4774,colbru21,10,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,1209,1,1050,10,0.008271299,8.684863524,0.043424318,0.086848635
+20,Amblycerus sp. bru22SG,CORB,BOLD:ACJ4831,colbru22,92,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,1684,1,3502,92,0.054631829,191.3206651,0.956603325,1.913206651
+21,Amblycerus sp. bru27SG near piurae,MENG,NA,colbru27,4,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,116,1,917,4,0.034482759,31.62068966,0.158103448,0.316206897
+22,Amblycerus sp. bru28SG,DRYS,NA,colbru28,10,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,289,1,825,10,0.034602076,28.5467128,0.142733564,0.285467128
+23,Amblycerus sp. bru30SG,GUAU,BOLD:ABW8381,colbru30,15,Coleoptera,Chrysomelidae,Amblycerus,Yes,No,Small-seeded host,17414.42177,NA,20789.46599,NA,NA,NA,NA,
+24,Amblycerus tachigaliae,TACV,BOLD:ABV3605,colbru7,16,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,221,1,82,16,0.07239819,5.936651584,0.029683258,0.059366516
+25,Amblycerus vegai,CORA,BOLD:ACG1138,colbru23,27,Coleoptera,Chrysomelidae,Amblycerus,Yes,Yes,,2630,1,2098,27,0.01026616,21.53840304,0.107692015,0.21538403
+26,Amblycerus whiteheadi,APEM,BOLD:ABV3598,colbru11; Sp11SGApemem (larva),71,Coleoptera,Chrysomelidae,Amblycerus,Yes,No,Small-seeded host,36707.76,NA,75147.8,NA,NA,NA,NA,
+26,Amblycerus whiteheadi,APET,BOLD:ABV3598,colbru26,21,Coleoptera,Chrysomelidae,Amblycerus,Yes,No,Small-seeded host,119009.3967,NA,4962.906667,NA,NA,NA,NA,
+27,Anacampsis phytomiella,ANAE,BOLD:AAP2073,lep100,13,Lepidoptera,Gelechiidae,,Yes,Yes,,396,1,1985,13,0.032828283,65.16414141,0.325820707,0.651641414
+28,Anchonus sp. cur32SG,CAL2,NA,colcur32,1,Coleoptera,Curculionidae,Anchonus,Yes,Yes,,996,1,259,1,0.001004016,0.260040161,0.001300201,0.002600402
+29,Anchonus sp. cur53SG,POUA,BOLD:ACS6334,colcur53,1,Coleoptera,Curculionidae,Anchonus,Yes,Yes,,516,1,1019,1,0.001937984,1.974806202,0.009874031,0.019748062
+30,Anchonus sp. cur62SG,COMF,BOLD:ABV0290,colcur62,1,Coleoptera,Curculionidae,Anchonus,Yes,Yes,,719,1,7,1,0.001390821,0.009735744,4.86787E-05,9.73574E-05
+31,Anthonominae unknown genus sp. 247SG,HIR1,BOLD:ACL6562,Sp122SGHirrec (larva),6,Coleoptera,Curculionidae,Anthonominae unknown genus,Yes,Yes,,1078,1,10148,6,0.005565863,56.48237477,0.282411874,0.564823748
+32,Anthonominae unknown genus sp. 248SG,HETL,BOLD:ACL7471,Sp46SGHetlau (larva),51,Coleoptera,Curculionidae,Anthonominae unknown genus,Yes,Yes,,353,1,108,51,0.144475921,15.60339943,0.078016997,0.156033994
+33,Anthonomus sp. cur133SG,HIR1,BOLD:ABV0303,Sp122SGHirrec (larva),2,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,1078,1,10148,2,0.001855288,18.82745826,0.094137291,0.188274583
+33,Anthonomus sp. cur133SG,MASH,BOLD:ABV0303,colcur133,2,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,1094,1,4015,2,0.001828154,7.340036563,0.036700183,0.073400366
+34,Anthonomus sp. cur136SG,TETD,BOLD:ACF9998,colcur136,14,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,599,1,2275,14,0.023372287,53.17195326,0.265859766,0.531719533
+35,Anthonomus sp. cur14SG,VIR1,BOLD:ABV0278,colcur14,1,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,679,1,1586,1,0.001472754,2.335787923,0.01167894,0.023357879
+36,Anthonomus sp. cur150SG,GUAD,NA,colcur150,1,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,778,1,2611,1,0.001285347,3.356041131,0.016780206,0.033560411
+37,Anthonomus sp. cur158SG,MYRG,BOLD:ACF9809,colcur158,4,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,707,1,9,4,0.005657709,0.050919378,0.000254597,0.000509194
+38,Anthonomus sp. cur211SG nr. monostigma,PERA,BOLD:ACS4123,colcur211,4,Coleoptera,Curculionidae,Anthonomus,No,No,Does not occur in 50ha plot,NA,1,NA,4,NA,NA,NA,
+39,Anthonomus sp. cur245SG,MYRG,BOLD:ACS3899,colcur245,3,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,707,1,9,3,0.004243281,0.038189533,0.000190948,0.000381895
+40,Anthonomus sp. cur45SG,CASG,BOLD:ABW5965,colcur125,2,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,721,1,49,2,0.002773925,0.13592233,0.000679612,0.001359223
+40,Anthonomus sp. cur45SG,LAEP,BOLD:ABW5965,colcur201,1,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,296.4,1,7098.4,1,0.003373819,23.94871795,0.11974359,0.239487179
+40,Anthonomus sp. cur45SG,ZUEG,BOLD:ABW5965,colcur45,47,Coleoptera,Curculionidae,Anthonomus,Yes,Yes,,6094.571429,1,383.1428571,47,0.007711781,2.954713797,0.014773569,0.029547138
+41,Apion sp. cur180SG,MACS,BOLD:ACJ3612,colcur180,2,Coleoptera,Brentidae,Apion,Yes,Yes,,614,1,12,2,0.003257329,0.039087948,0.00019544,0.000390879
+42,Apion sp. cur183SG,MACA,BOLD:ACJ3666,colcur183,69,Coleoptera,Brentidae,Apion,Yes,Yes,,279,1,52,69,0.247311828,12.86021505,0.064301075,0.128602151
+43,Apion sp. cur255SG,VATE,NA,colcur255,27,Coleoptera,,,No,No,Does not occur in 50ha plot,,1,,27,NA,NA,NA,
+44,Apogeshna stenialis,PROT,BOLD:AAM8762,lep2,4,Lepidoptera,,,Yes,Yes,,3614.571429,1,2026.142857,4,0.001106632,2.242194293,0.011210971,0.022421943
+45,Apogeshna stenialisDHJ02,MASH,BOLD:AAA0336,lep321,1,Lepidoptera,,,Yes,Yes,,1094,1,4015,1,0.000914077,3.670018282,0.018350091,0.036700183
+46,Atractomerus caligatus,EUGO,BOLD:ABU8995,colcur35,24,Coleoptera,Curculionidae,Atractomerus,Yes,Yes,,217.56,1.41,1256.6,17.0212766,0.07823716,98.31281564,0.491564078,0.983128156
+47,Atryparius sp. 1SG,INPU,BOLD:ABV0425,colcer10,2,Coleoptera,Cerambycidae,Atryparius,Yes,Yes,,3192,2.5,17,0.8,0.000250627,0.004260652,2.13033E-05,4.26065E-05
+47,Atryparius sp. 1SG,PLAE,BOLD:ABV0425,colcer2,14,Coleoptera,Cerambycidae,Atryparius,Yes,Yes,,1209,1,1050,14,0.011579818,12.15880893,0.060794045,0.121588089
+47,Atryparius sp. 1SG,POUU,BOLD:ABV0425,colcer6,1,Coleoptera,Cerambycidae,Atryparius,Yes,Yes,,941,1,784,1,0.001062699,0.833156217,0.004165781,0.008331562
+47,Atryparius sp. 1SG,TRAA,BOLD:ABV0425,colcer12,1,Coleoptera,Cerambycidae,Atryparius,Yes,Yes,,1064,1,500,1,0.00093985,0.469924812,0.002349624,0.004699248
+48,Baris sp. cur100SG,DESI,NA,colcur100,6,Coleoptera,Curculionidae,Baris,Yes,Yes,,514,1,2,6,0.011673152,0.023346304,0.000116732,0.000233463
+49,Baris sp. cur121SG,TET1,BOLD:ACG1145,colcur121,12,Coleoptera,Curculionidae,Baris,Yes,Yes,,433,1,36,12,0.027713626,0.997690531,0.004988453,0.009976905
+50,Baris sp. cur46SG,DAVN,BOLD:ABV3556,colcur46,2,Coleoptera,Curculionidae,Baris,Yes,Yes,,983,1,744,2,0.002034588,1.513733469,0.007568667,0.015137335
+51,Baris sp. cur7SG,DOL1,BOLD:ABV3553,colcur7,31,Coleoptera,Curculionidae,Baris,Yes,Yes,,1759.490909,1,3814.745455,31,0.017618733,67.21098045,0.336054902,0.672109804
+51,Baris sp. cur7SG,DOL2,BOLD:ABV3553,colcur39; Sp31SGDolmul (larva),197,Coleoptera,Curculionidae,Baris,Yes,Yes,,1053.6,1,928,197,0.18697798,173.5155657,0.867577828,1.735155657
+51,Baris sp. cur7SG,DOLO,BOLD:ABV3553,colcur82,44,Coleoptera,Curculionidae,Baris,Yes,Yes,,1412.96,1,1312.84,44,0.031140301,40.88223304,0.204411165,0.40882233
+52,Borisauletes sp. cur1SG,DOL2,BOLD:ABV3591,colcur41,11,Coleoptera,Curculionidae,Borisauletes,Yes,Yes,,1053.6,1,928,11,0.010440395,9.688686409,0.048443432,0.096886864
+52,Borisauletes sp. cur1SG,DOLO,BOLD:ABV3591,colcur1,3,Coleoptera,Curculionidae,Borisauletes,Yes,Yes,,1412.96,1,1312.84,3,0.002123202,2.78742498,0.013937125,0.02787425
+53,Bothryopteron darlingtoni,HIR1,BOLD:ACG1146,colcur84,78,Coleoptera,Brentidae,Bothryopteron,Yes,Yes,,1078,1,10148,78,0.072356215,734.270872,3.67135436,7.34270872
+53,Bothryopteron darlingtoni,MASN,BOLD:ACG1146,colcur185,1,Coleoptera,Brentidae,Bothryopteron,Yes,Yes,,1040,1,13839,1,0.000961538,13.30673077,0.066533654,0.133067308
+54,Bothryopteron sp. 23SG,HIRQ,BOLD:ABU8657,colcur23,6,Coleoptera,Brentidae,Bothryopteron,Yes,Yes,,152,1,132,6,0.039473684,5.210526316,0.026052632,0.052105263
+55,Bothryopteron sp. cur85SG,HIR1,BOLD:ABU8658,colcur244,5,Coleoptera,Brentidae,Bothryopteron,Yes,Yes,,1078,1,10148,5,0.004638219,47.06864564,0.235343228,0.470686456
+55,Bothryopteron sp. cur85SG,MASH,BOLD:ABU8658,colcur85,333,Coleoptera,Brentidae,Bothryopteron,Yes,Yes,,1094,1,4015,333,0.304387569,1222.116088,6.110580439,12.22116088
+56,Bruc bru37SG Bruc sp. bru37SG,SENU,BOLD:ACJ4572,colbru37,149,Coleoptera,,,No,No,Does not occur in 50ha plot,,1,#VALUE!,149,NA,NA,NA,
+57,Bruc bru38SG Bruc sp. bru38SG,BAUG,BOLD:ACJ4487,colbru38,14,Coleoptera,Chrysomelidae,Bruc bru38SG,No,No,Does not occur in 50ha plot,NA,1,NA,14,NA,NA,NA,
+58,Bruc bru41SG Bruc sp. bru41SG,SENR,BOLD:ACJ4488,colbru41,108,Coleoptera,Chrysomelidae,Bruc bru41SG,No,No,Does not occur in 50ha plot,NA,1,NA,108,NA,NA,NA,
+59,Bruc bru42SG Bruc sp. bru42SG,CAGL,BOLD:ACJ4573,colbru42,6,Coleoptera,Chrysomelidae,Bruc bru42SG,No,No,Does not occur in 50ha plot,NA,1,NA,6,NA,NA,NA,
+60,Bruc bru43SG Bruc sp. bru43SG,BAUG,BOLD:ACJ4490,colbru43,4,Coleoptera,Chrysomelidae,Bruc bru43SG,No,No,Does not occur in 50ha plot,NA,1,NA,4,NA,NA,NA,
+60,Bruc bru43SG Bruc sp. bru43SG,BAUR,BOLD:ACJ4490,colbru51,1,Coleoptera,Chrysomelidae,Bruc bru43SG,No,No,Does not occur in 50ha plot,NA,1,NA,1,NA,NA,NA,
+61,Bruc bru44SG Bruc sp. bru44SG,CORB,BOLD:ACJ4642,colbru44,4,Coleoptera,Chrysomelidae,Bruc bru44SG,Yes,Yes,,1684,1,3502,4,0.002375297,8.318289786,0.041591449,0.083182898
+62,Bruc bru45SG Bruc sp. bru45SG,CORB,BOLD:ACJ4645,colbru45,2,Coleoptera,Chrysomelidae,Bruc bru45SG,Yes,Yes,,1684,1,3502,2,0.001187648,4.159144893,0.020795724,0.041591449
+63,Bruc bru47SG Bruc sp. bru47SG,CAND,BOLD:ACJ4644,colbru47,2,Coleoptera,Chrysomelidae,Bruc bru47SG,No,No,Does not occur in 50ha plot,NA,1,NA,2,NA,NA,NA,
+64,Bruc bru49SG Bruc sp. bru49SG,BAUG,BOLD:ACJ4489,colbru49,10,Coleoptera,Chrysomelidae,Bruc bru49SG,No,No,Does not occur in 50ha plot,NA,1,NA,10,NA,NA,NA,
+64,Bruc bru49SG Bruc sp. bru49SG,BAUR,BOLD:ACJ4489,colbru50,2,Coleoptera,Chrysomelidae,Bruc bru49SG,No,No,Does not occur in 50ha plot,NA,1,NA,2,NA,NA,NA,
+65,Bruc bru54SG Bruc sp. bru54SG,ATTB,BOLD:ACJ4643,colbru54,2,Coleoptera,,,Yes,Yes,,437.84,1,35.4,2,0.004567879,0.161702905,0.000808515,0.001617029
+66,Bruc bru55SG Bruc sp. bru55SG,CAND,NA,colbru55,4,Coleoptera,,,No,No,Does not occur in 50ha plot,,1,NA,4,NA,NA,NA,
+67,Bruc bru66SG sp. bru66SG,ATTB,BOLD:ACJ6014,Sp14SGAttbut (larva),2,Coleoptera,Chrysomelidae,Bruc bru66SG,Yes,Yes,,437.84,1,35.4,2,0.004567879,0.161702905,0.000808515,0.001617029
+68,Busckiella lecythidis,GUSS,BOLD:ACF9829,colcur140,8,Coleoptera,Curculionidae,Busckiella,Yes,Yes,,3766.865079,1,2652.539683,8,0.002123782,5.633415855,0.028167079,0.056334159
+69,Carmenta foraseminis,GUSS,BOLD:ABV2190,lep133,83,Lepidoptera,Sesiidae,Carmenta,Yes,Yes,,3766.865079,1,2652.539683,83,0.022034238,58.44668949,0.292233447,0.584466895
+69,Carmenta foraseminis,LAFP,BOLD:ABV2190,lep77,2,Lepidoptera,Sesiidae,Carmenta,Yes,No,Small-seeded host,,NA,430.5,NA,NA,NA,NA,
+70,Carmenta sp. lep111SG,PRIC,BOLD:ABV4214,lep111,33,Lepidoptera,Sesiidae,Carmenta,Yes,Yes,,352,1,1305,33,0.09375,122.34375,0.61171875,1.2234375
+71,Carmenta sp. lep131,STRP,BOLD:ABV2191,lep131,2,Lepidoptera,Sesiidae,,Yes,Yes,,1286.4,1,751.35,2,0.001554726,1.168143657,0.005840718,0.011681437
+72,Carmenta sp. lep1SG,COUC,BOLD:ABV4212,lep130; Sp25SGCoucur (larva),45,Lepidoptera,Sesiidae,Carmenta,Yes,Yes,,2273,1,1201,45,0.019797624,23.77694677,0.118884734,0.237769468
+72,Carmenta sp. lep1SG,FARL,BOLD:ABV4212,lep479; Sp116SGFarlut (larva),46,Lepidoptera,Sesiidae,Carmenta,No,No,Does not occur in 50ha plot,NA,1,NA,46,NA,NA,NA,
+72,Carmenta sp. lep1SG,FARO,BOLD:ABV4212,lep1; Sp36SGFarocc (larva),159,Lepidoptera,Sesiidae,Carmenta,Yes,Yes,,3085,1,19448,159,0.051539708,1002.344246,5.011721232,10.02344246
+73,Carmenta sp. lep539SG,FARO,BOLD:ABV4213,lep539,1,Lepidoptera,Sesiidae,Carmenta,Yes,Yes,,3085,1,19448,1,0.000324149,6.304051864,0.031520259,0.063040519
+74,Caryedes brasiliensis,DIOW,NA,colbru5,679,Coleoptera,Chrysomelidae,Caryedes,Yes,Yes,,194.56,7.4,39.44,91.75675676,0.47161162,18.60036229,0.093001811,0.186003623
+75,Cerambycidae genus unknown sp. colcer1SG,STEA,BOLD:ACJ3675,colcer1,16,Coleoptera,Cerambycidae,Cerambycidae genus unknown,Yes,Yes,,566.3125,2.67,37,5.992509363,0.01058163,0.391520312,0.001957602,0.003915203
+76,Cerambycidae genus unknown sp. colcer3SG,CEIP,BOLD:ABV0428,colcer3,1,Coleoptera,,,Yes,Yes,,15083.5,1,1431.5,1,6.62976E-05,0.094905029,0.000474525,0.00094905
+76,Cerambycidae genus unknown sp. colcer3SG,PSE1,BOLD:ABV0428,colcer4,2,Coleoptera,Cerambycidae,Cerambycidae genus unknown,Yes,Yes,,10911,1,1926,2,0.000183301,0.353038218,0.001765191,0.003530382
+76,Cerambycidae genus unknown sp. colcer3SG,STEA,BOLD:ABV0428,colcer13,2,Coleoptera,Cerambycidae,Cerambycidae genus unknown,Yes,Yes,,566.3125,1,37,2,0.003531619,0.130669904,0.00065335,0.001306699
+77,Cerambycidae genus unknown sp. colcer5SG,MABO,BOLD:ABW7350,colcer5,1,Coleoptera,,,No,No,Does not occur in 50ha plot,,1,NA,1,NA,NA,NA,
+78,Cerambycidae genus unknown sp. colcer7SG,ANDI,BOLD:ACJ3952,colcer7,3,Coleoptera,Cerambycidae,Cerambycidae genus unknown,Yes,Yes,,847.55,1.5,8.05,2,0.002359743,0.018995929,9.49796E-05,0.000189959
+79,Ceratopus bisignatus,FIIN,BOLD:ABV0300,colcur3; Sp37SGFicins (larva),51,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,120200.4,NA,10051.2,NA,NA,NA,NA,
+79,Ceratopus bisignatus,FIYO,BOLD:ABV0300,colcur78,3,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,21288.96,NA,104915.6,NA,NA,NA,NA,
+80,Ceratopus sp. cur137SG,FIPO,BOLD:ACG0631,colcur137,11,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,40027.2,NA,2518.8,NA,NA,NA,NA,
+81,Ceratopus sp. cur237SG,FITR,NA,colcur237,1,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,248477.4,NA,43329.8,NA,NA,NA,NA,
+82,Ceratopus sp. cur238SG,FITR,BOLD:ACG0137,colcur238,1,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,248477.4,NA,43329.8,NA,NA,NA,NA,
+83,Ceratopus sp. cur259SG,FICI,BOLD:ACL6680,Sp117SGFiccit (larva),2,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,497962.08,NA,1361.56,NA,NA,NA,NA,
+84,Ceratopus sp. cur2SG,FIIN,BOLD:ABV0301,colcur2,48,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,120200.4,NA,10051.2,NA,NA,NA,NA,
+84,Ceratopus sp. cur2SG,SPOR,BOLD:ABV0301,colcur6,1,Coleoptera,Curculionidae,Ceratopus,Yes,Yes,,1078,1,588,1,0.000927644,0.545454545,0.002727273,0.005454545
+85,Ceratopus sp. cur38SG,FITR,BOLD:ABV0298,colcur38,21,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,248477.4,NA,43329.8,NA,NA,NA,NA,
+86,Ceratopus sp. cur5SG,FIIN,BOLD:ACG0136,colcur192,1,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,120200.4,NA,10051.2,NA,NA,NA,NA,
+86,Ceratopus sp. cur5SG,FIOB,BOLD:ACG0136,colcur118,2,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,26866.55357,NA,31782.89286,NA,NA,NA,NA,
+86,Ceratopus sp. cur5SG,FITR,BOLD:ACG0136,colcur254,4,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,248477.4,NA,43329.8,NA,NA,NA,NA,
+86,Ceratopus sp. cur5SG,FIPO,BOLD:ACG0136,colcur5,28,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,40027.2,NA,2518.8,NA,NA,NA,NA,
+87,Ceratopus sp. cur81SG,FIPO,BOLD:ACJ3977,NA,5,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,40027.2,NA,2518.8,NA,NA,NA,NA,
+87,Ceratopus sp. cur81SG,FICI,BOLD:ACJ3977,colcur142,4,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,497962.08,NA,1361.56,NA,NA,NA,NA,
+87,Ceratopus sp. cur81SG,FITR,BOLD:ACJ3977,colcur248; colcur81,291,Coleoptera,Curculionidae,Ceratopus,Yes,No,Small-seeded host,248477.4,NA,43329.8,NA,NA,NA,NA,
+88,Cerconota anonella,ANNH,BOLD:ABV2177,"lep7, lep213",23,Lepidoptera,Oecophoridae,Cerconota,Yes,Yes,,2553.7,1,8,23,0.00900654,0.072052316,0.000360262,0.000720523
+88,Cerconota anonella,ANNS,BOLD:ABV2177,"lep7, lep213",23,Lepidoptera,Oecophoridae,Cerconota,Yes,Yes,,14151.11389,1,5786.733333,23,0.001625314,9.405257262,0.047026286,0.094052573
+89,Chelotonyx sp. 1SG,QUA1,BOLD:ABV0294,colcur4,93,Coleoptera,Curculionidae,Chelotonyx,Yes,Yes,,3722.388571,1,13295.56,93,0.024983958,332.1757136,1.660878568,3.321757136
+90,Clydonopteron pomponius,ARR1,BOLD:AAP2098,lep337,2,Lepidoptera,Crambidae,Clydonopteron,Yes,No,Small-seeded host,1617.625,NA,532.875,NA,NA,NA,NA,
+90,Clydonopteron pomponius,CAL1,BOLD:AAP2098,lep79,29,Lepidoptera,Crambidae,Clydonopteron,Yes,Yes,,8921,1,2124,29,0.003250757,6.904607107,0.034523036,0.069046071
+90,Clydonopteron pomponius,CYDA,BOLD:AAP2098,lep197,1,Lepidoptera,Crambidae,Clydonopteron,Yes,Yes,,761.75,1,802.3333333,1,0.001312767,1.053276447,0.005266382,0.010532764
+90,Clydonopteron pomponius,PITC,BOLD:AAP2098,lep96,6,Lepidoptera,Crambidae,Clydonopteron,Yes,Yes,,2390,1,7714,6,0.00251046,19.36569038,0.096828452,0.193656904
+91,Cochylis sp. lep97SG,GUAS,BOLD:AAA2890,lep97,7,Lepidoptera,Tortricidae,,Yes,Yes,,1785,1,1388,7,0.003921569,5.443137255,0.027215686,0.054431373
+92,Coelocephalapion sp. cur13SG,LON1,BOLD:ABV4175,colcur13,1,Coleoptera,Brentidae,Coelocephalapion,No,No,Does not occur in 50ha plot,NA,1,NA,1,NA,NA,NA,
+93,Colobothea sp. 1SG,PSE1,BOLD:ACJ3953,colcer9,1,Coleoptera,Cerambycidae,Colobothea,Yes,Yes,,10911,1,1926,1,9.16506E-05,0.176519109,0.000882596,0.001765191
+94,Conotrachelus posticatus,LICP,BOLD:ACJ3962,colcur178,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,627,1,81,1,0.001594896,0.129186603,0.000645933,0.001291866
+95,Conotrachelus pumilio,COCM,BOLD:ACF9943,colcur126,33,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,2908,1,20,33,0.011348006,0.22696011,0.001134801,0.002269601
+96,Conotrachelus sp. cur104SG,INFA,NA,colcur104,5,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,5110.6,1,19,5,0.000978359,0.018588815,9.29441E-05,0.000185888
+97,Conotrachelus sp. cur10SG,TRI3,BOLD:ACJ5904,colcur10; Sp4SGTritub (larva),78,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,9188.6,1,21799,78,0.00848878,185.0469059,0.92523453,1.850469059
+98,Conotrachelus sp. cur11SG,EUGV,BOLD:ACJ5935,colcur11,5,Coleoptera,Curculionidae,Conotrachelus,No,No,Does not occur in 50ha plot,NA,1,NA,5,NA,NA,NA,
+99,Conotrachelus sp. cur124SG nr. punctiventris,CAL2,BOLD:ACG1073,colcur124,46,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,996,1.333,259,34.50862716,0.034647216,8.973628949,0.044868145,0.089736289
+100,Conotrachelus sp. cur132SG,CASC,BOLD:ACC9965,colcur207,9,Coleoptera,Curculionidae,Conotrachelus,No,No,Does not occur in 50ha plot,NA,1,NA,9,NA,NA,NA,
+100,Conotrachelus sp. cur132SG,CASG,BOLD:ACC9965,colcur132; Sp85SGCasgui (larva),29,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,721,1,49,29,0.040221914,1.970873786,0.009854369,0.019708738
+102,Conotrachelus sp. cur138SG,GUA1,BOLD:ACG1267,colcur187,14,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,2096.55,1,1282.05,14,0.006677637,8.561064606,0.042805323,0.085610646
+102,Conotrachelus sp. cur138SG,GUA2,BOLD:ACG1267,colcur138; Sp41SGGuagui (larva),20,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,1171.9,1,1886.4,20,0.017066303,32.1938732,0.160969366,0.321938732
+103,Conotrachelus sp. cur139SG,TRIH,NA,colcur139,2,Coleoptera,Curculionidae,Conotrachelus,No,No,Does not occur in 50ha plot,NA,1,NA,2,NA,NA,NA,
+104,Conotrachelus sp. cur141SG,COMF,NA,colcur149,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,719,1,7,1,0.001390821,0.009735744,4.86787E-05,9.73574E-05
+104,Conotrachelus sp. cur141SG,QUA1,BOLD:ACC9894,colcur141,24,Coleoptera,,,Yes,Yes,,3722.388571,1,13295.56,24,0.006447473,85.7227648,0.428613824,0.857227648
+105,Conotrachelus sp. cur152SG,LONL,NA,Sp64SGLonlut (larva),57,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,763.4,1,297.2,57,0.074665968,22.1907257,0.110953629,0.221907257
+105,Conotrachelus sp. cur152SG,PICL,BOLD:ACC9959,colcur152; Sp64SGPiclat (larva),167,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,911.3,1,88.5,167,0.183254691,16.21804016,0.081090201,0.162180402
+106,Conotrachelus sp. cur163SG,POUU,NA,colcur163,59,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,941,1,784,59,0.062699256,49.15621679,0.245781084,0.491562168
+107,Conotrachelus sp. cur164SG,CAL2,BOLD:ACG0847,colcur164,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,996,1,259,1,0.001004016,0.260040161,0.001300201,0.002600402
+108,Conotrachelus sp. cur175SG,TRI3,BOLD:ACC9961,colcur175; Sp4SGTritub (larva),21,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,9188.6,1,21799,21,0.002285441,49.82032083,0.249101604,0.498203208
+109,Conotrachelus sp. cur176SG,LICP,BOLD:ACC9932,colcur176; p53SGLicpla (larva),38,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,627,1,81,38,0.060606061,4.909090909,0.024545455,0.049090909
+110,Conotrachelus sp. cur17SG,POU2,NA,colcur17,3,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,335.35,1,27.125,3,0.008945877,0.242656926,0.001213285,0.002426569
+111,Conotrachelus sp. cur181SG,CHRA,NA,colcur181,3,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,794,1,113,3,0.003778338,0.426952141,0.002134761,0.004269521
+112,Conotrachelus sp. cur182SG,GUA1,BOLD:ACJ3628,colcur182,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,2096.55,1,1282.05,1,0.000476974,0.611504615,0.003057523,0.006115046
+113,Conotrachelus sp. cur18SG,POU2,BOLD:ACG2729,colcur18; Sp94SGPousti (larva),56,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,335.35,1,27.125,56,0.166989712,4.529595945,0.02264798,0.045295959
+114,Conotrachelus sp. cur203SG,CEDO,BOLD:ACJ3710,colcur203,5,Coleoptera,Curculionidae,Conotrachelus,Yes,No,Small-seeded host,3338.4,NA,13,NA,NA,NA,NA,
+115,Conotrachelus sp. cur22SG nr. punctiventris,CAL2,NA,colcur22,1,Coleoptera,,,Yes,Yes,,996,1,259,1,0.001004016,0.260040161,0.001300201,0.002600402
+116,Conotrachelus sp. cur249SG,ANAE,NA,colcur249,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,396,1,1985,1,0.002525253,5.012626263,0.025063131,0.050126263
+117,Conotrachelus sp. cur256SG,SPOR,BOLD:ACD0167,Sp8SGSporad (larva),2,Coleoptera,Curculionidae,Conotrachelus,Yes,No,Small-seeded host,1078,NA,588,NA,NA,NA,NA,
+118,Conotrachelus sp. cur29SG,SLOT,NA,colcur29,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,442,1,942,1,0.002262443,2.131221719,0.010656109,0.021312217
+119,Conotrachelus sp. cur30SG,CAL2,NA,colcur30,29,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,996,1.667,259,17.3965207,0.017466386,4.523794036,0.02261897,0.04523794
+120,Conotrachelus sp. cur58SG,TRIC,BOLD:ABV0304,colcur58,33,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,1139,1,1233,33,0.028972783,35.72344162,0.178617208,0.357234416
+121,Conotrachelus sp. cur68SG,ANAE,BOLD:ACG2730,colcur68; Sp10SGAnaexc (larva),15,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,396,1,1985,15,0.037878788,75.18939394,0.37594697,0.751893939
+122,Conotrachelus sp. cur8SG,SPOM,BOLD:ABW8996,colcur8,78,Coleoptera,Curculionidae,Conotrachelus,Yes,No,Small-seeded host,1112,NA,656,NA,NA,NA,NA,
+122,Conotrachelus sp. cur8SG,SPOR,BOLD:ABW8996,colcur9,326,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,1078,1,588,326,0.302411874,177.8181818,0.889090909,1.778181818
+122,Conotrachelus sp. cur8SG,TET2,NA,colcur200,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,4163.72254,1,9612.938413,1,0.00024017,2.30873655,0.011543683,0.023087366
+123,Conotrachelus sp. cur92SG,COCM,BOLD:ACD0125,colcur92; Sp7SGCocman (larva),105,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,2908,1,20,105,0.03610729,0.722145805,0.003610729,0.007221458
+123,Conotrachelus sp. cur92SG,COCP,BOLD:ACD0125,Sp110SGCocpar (larva),8,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,671,1,1094,8,0.011922504,13.04321908,0.065216095,0.130432191
+124,Conotrachelus turbatus,POUU,BOLD:ACJ3631,colcur179,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,941,1,784,1,0.001062699,0.833156217,0.004165781,0.008331562
+125,Conotrachelus verticalis,GUA1,BOLD:ACJ6094,colcur86,1,Coleoptera,Curculionidae,Conotrachelus,Yes,Yes,,2096.55,1,1282.05,1,0.000476974,0.611504615,0.003057523,0.006115046
+126,Cosm lep271SG Cosm sp. lep271SG,ASTG,BOLD:ACF9942,lep271,11,Lepidoptera,Cosmopterigidae,,Yes,Yes,,1160,1,186,11,0.009482759,1.763793103,0.008818966,0.017637931
+127,Cosm lep274SG Cosm sp. lep274SG,INM1,BOLD:AAL8816,lep274,7,Lepidoptera,Cosmopterigidae,,Yes,Yes,,213.18,1,44.92,7,0.032836101,1.474997655,0.007374988,0.014749977
+127,Cosm lep274SG Cosm sp. lep274SG,INPU,BOLD:AAL8816,lep316,1,Lepidoptera,Cosmopterigidae,,Yes,Yes,,3192,1,17,1,0.000313283,0.005325815,2.66291E-05,5.32581E-05
+127,Cosm lep274SG Cosm sp. lep274SG,INRU,BOLD:AAL8816,lep304,2,Lepidoptera,Cosmopterigidae,,No,No,Does not occur in 50ha plot,,1,,2,NA,NA,NA,
+128,Cosm lep299SG Cosm sp. lep299SG,ALCC,BOLD:AAH5906,lep299,37,Lepidoptera,Cosmopterigidae,,No,No,Does not occur in 50ha plot,,1,,37,NA,NA,NA,
+129,Cosm lep313SG Cosm sp. lep313SG,CORA,BOLD:ACU7675,lep313,1,Lepidoptera,Cosmopterigidae,,Yes,Yes,,2630,1,2098,1,0.000380228,0.797718631,0.003988593,0.007977186
+130,Cosm lep34SG Cosm sp. lep34SG,RHEA,BOLD:ABV2184,NA,3,Lepidoptera,Cosmopterigidae,,Yes,Yes,,83,1,39.6,3,0.036144578,1.431325301,0.007156627,0.014313253
+130,Cosm lep34SG Cosm sp. lep34SG,RHEE,BOLD:ABV2184,lep34,254,Lepidoptera,Cosmopterigidae,Cosm lep34SG,Yes,Yes,,2156.08,1,420.72,254,0.117806389,49.56350414,0.247817521,0.495635041
+131,Cosm lep38SG Cosm sp. lep38SG,RIN2,BOLD:ABV2182,lep38,47,Lepidoptera,Cosmopterigidae,,Yes,No,Small-seeded host,1231.09,NA,909,NA,NA,NA,NA,
+132,Cosm lep406SG Cosm sp. lep406SG,CHAW,NA,lep241,7,Lepidoptera,Cosmopterigidae,,No,No,Does not occur in 50ha plot,,1,,7,NA,NA,NA,
+132,Cosm lep406SG Cosm sp. lep406SG,PAUF,BOLD:ACJ4291,lep406,1,Lepidoptera,Cosmopterigidae,,Yes,Yes,,38,1,487.36,1,0.026315789,12.82526316,0.064126316,0.128252632
+133,Cosm lep425SG Cosm sp. lep425SG,GUA2,BOLD:ACJ4377,lep445,2,Lepidoptera,Cosmopterigidae,,Yes,Yes,,1171.9,1,1886.4,2,0.00170663,3.21938732,0.016096937,0.032193873
+133,Cosm lep425SG Cosm sp. lep425SG,INRU,BOLD:ACJ4377,lep425,1,Lepidoptera,Cosmopterigidae,,No,No,Does not occur in 50ha plot,,1,,1,NA,NA,NA,
+134,Cosm lep459SG Cosm sp. lep459SG,APET,NA,lep459,1,Lepidoptera,Cosmopterigidae,,Yes,No,Small-seeded host,119009.3967,NA,4962.906667,NA,NA,NA,NA,
+135,Cosm lep499SG Cosm sp. lep499SG,HIRT,BOLD:ACJ4545,lep499,2,Lepidoptera,Cosmopterigidae,,Yes,Yes,,181,1,2744,2,0.011049724,30.32044199,0.15160221,0.30320442
+136,Cosm lep528SG Cosm sp. lep528SG,PYC1,NA,lep528,1,Lepidoptera,Cosmopterigidae,,No,No,Does not occur in 50ha plot,,1,NA,1,NA,NA,NA,
+137,Cosm lep542SG Cosm sp. lep542SG,HIRT,BOLD:ACJ4462,lep542,1,Lepidoptera,Cosmopterigidae,,Yes,Yes,,181,1,2744,1,0.005524862,15.16022099,0.075801105,0.15160221
+138,Cosm lep5SG Cosm sp. lep5SG,FICI,BOLD:ABV2189,lep5,7,Lepidoptera,Cosmopterigidae,,Yes,No,Small-seeded host,497962.08,NA,1361.56,NA,NA,NA,NA,
+138,Cosm lep5SG Cosm sp. lep5SG,TETJ,BOLD:ABV2189,lep286,8,Lepidoptera,Cosmopterigidae,,Yes,No,No information on seed numbers,NA,1,NA,8,NA,NA,NA,
+139,Cryptaspasma perseana,PRIC,BOLD:AAB0277,lep105,5,Lepidoptera,Tortricidae,,Yes,Yes,,352,1,1305,5,0.014204545,18.53693182,0.092684659,0.185369318
+140,Cryptorhynchus sp. cur26SG,CEIP,BOLD:ABU9975,colcur26,512,Coleoptera,Curculionidae,Cryptorhynchus,Yes,Yes,,15083.5,1,1431.5,512,0.033944376,48.59137468,0.242956873,0.485913747
+140,Cryptorhynchus sp. cur26SG,PSE1,BOLD:ABU9975,colcur77,5,Coleoptera,Curculionidae,Cryptorhynchus,Yes,Yes,,10911,1,1926,5,0.000458253,0.882595546,0.004412978,0.008825955
+141,Cryptorhynchus sp. cur27SG,APET,NA,colcur27,1,Coleoptera,Curculionidae,Cryptorhynchus,Yes,No,Small-seeded host,119009.3967,NA,4962.906667,NA,NA,NA,NA,
+142,Cryptorhynchus sp. cur54SG,CAL1,BOLD:ACJ5914,colcur54,1,Coleoptera,Curculionidae,Cryptorhynchus,Yes,Yes,,8921,1,2124,1,0.000112095,0.2380899,0.00119045,0.002380899
+143,Ctenocolum colburni,LON1,BOLD:ABV3608,colbru2,2,Coleoptera,Chrysomelidae,Ctenocolum,No,No,Does not occur in 50ha plot,NA,1,NA,2,NA,NA,NA,
+144,Curc cur103SG Curc sp. cur103SG,POUU,NA,colcur103,1,Coleoptera,Curculionidae,Curc cur103SG,Yes,Yes,,941,1,784,1,0.001062699,0.833156217,0.004165781,0.008331562
+145,Curc cur129SG Curc sp. cur129SG,COMF,NA,colcur129,1,Coleoptera,Curculionidae,Curc cur129SG,Yes,Yes,,719,1,7,1,0.001390821,0.009735744,4.86787E-05,9.73574E-05
+146,Curc cur131SG Curc sp. cur131SG,TERA,NA,colcur131,2,Coleoptera,Curculionidae,Curc cur131SG,Yes,Yes,,2006,1,11196,2,0.000997009,11.16251246,0.055812562,0.111625125
+147,Curc cur172SG Curc sp. cur172SG,OENM,NA,colcur172,6,Coleoptera,Curculionidae,Curc cur172SG,Yes,Yes,,2362,1,5721,6,0.00254022,14.53259949,0.072662997,0.145325995
+148,Curc cur173SG Curc sp. cur173SG,CUPS,BOLD:ACC9906,Sp26SGCupsee (larva),52,Coleoptera,Curculionidae,Curc cur173SG,Yes,Yes,,1103.6,1,104.44,52,0.047118521,4.921058354,0.024605292,0.049210584
+149,Curc cur174SG Curc sp. cur174SG,PROT,BOLD:ACC9931,Sp96SGProten (larva),2,Coleoptera,Curculionidae,Curc cur174SG,Yes,Yes,,3614.571429,1,2026.142857,2,0.000553316,1.121097146,0.005605486,0.011210971
+150,Curc cur175SG Curc sp. cur175SG,NECL,BOLD:ACC9991,Sp59SGNeclin (larva),2,Coleoptera,Curculionidae,Curc cur175SG,Yes,Yes,,413,1,289,2,0.004842615,1.399515738,0.006997579,0.013995157
+151,Curc cur176SG Curc sp. cur176SG,OCOP,BOLD:ACC9992,Sp61SGOcopyr (larva),6,Coleoptera,Curculionidae,Curc cur176SG,Yes,Yes,,958,1,235,6,0.006263048,1.471816284,0.007359081,0.014718163
+152,Curc cur177SG Curc sp. cur177SG,CYDA,BOLD:ACJ5713,Sp27SGCydaeq (larva),22,Coleoptera,Curculionidae,Curc cur177SG,Yes,Yes,,761.75,1,802.3333333,22,0.028880866,23.17208183,0.115860409,0.231720818
+153,Curc cur178SG Curc sp. cur178SG,EUGO,BOLD:ACJ5755,Sp34SGEugoer (larva),2,Coleoptera,Curculionidae,Curc cur178SG,Yes,Yes,,217.56,1,1256.6,2,0.009192866,11.55175584,0.057758779,0.115517558
+154,Curc cur179SG Curc sp. cur179SG,NECC,BOLD:ACJ5779,"Sp58SGNeccis, Sp59SGNeclin (larva)",4,Coleoptera,Curculionidae,Curc cur179SG,Yes,Yes,,291,1,77,4,0.013745704,1.058419244,0.005292096,0.010584192
+154,Curc cur179SG Curc sp. cur179SG,NECL,BOLD:ACJ5779,"Sp58SGNeccis, Sp59SGNeclin (larva)",4,Coleoptera,Curculionidae,Curc cur179SG,Yes,Yes,,413,1,289,4,0.00968523,2.799031477,0.013995157,0.027990315
+155,Curc cur180SG Curc sp. cur180SG,AMPP,BOLD:ACJ5780,Sp5SGAmppan (larva),2,Coleoptera,Curculionidae,Curc cur180SG,Yes,Yes,,456.75,1,2168.25,2,0.004378763,9.494252874,0.047471264,0.094942529
+156,Curc cur181SG Curc sp. cur181SG,ARRF,BOLD:ACJ5812,Sp12SGArrflo (larva),2,Coleoptera,Curculionidae,Curc cur181SG,Yes,Yes,,4621.56,1,3,2,0.000432754,0.001298263,6.49131E-06,1.29826E-05
+157,Curc cur182SG Curc sp. cur182SG,ARRF,BOLD:ACJ5813,Sp12SGArrflo (larva),2,Coleoptera,Curculionidae,Curc cur182SG,Yes,Yes,,4621.56,1,3,2,0.000432754,0.001298263,6.49131E-06,1.29826E-05
+158,Curc cur183SG Curc sp. cur183SG,CAL2,BOLD:ACJ5814,"Sp39SGFicton, Sp2SGCallon (larva)",5,Coleoptera,Curculionidae,Curc cur183SG,Yes,Yes,,996,1,259,5,0.00502008,1.300200803,0.006501004,0.013002008
+158,Curc cur183SG Curc sp. cur183SG,FITO,BOLD:ACJ5814,"Sp39SGFicton, Sp2SGCallon (larva)",24,Coleoptera,Curculionidae,Curc cur183SG,Yes,No,Small-seeded host,8316,NA,699.28,NA,NA,NA,NA,
+159,Curc cur184SG Curc sp. cur184SG,CAL1,BOLD:ACJ5817,Sp17SGCallat (larva),1,Coleoptera,Curculionidae,Curc cur184SG,Yes,Yes,,8921,1,2124,1,0.000112095,0.2380899,0.00119045,0.002380899
+160,Curc cur185SG Curc sp. cur185SG,JACC,BOLD:ACJ5840,Sp51SGJaccop (larva),30,Coleoptera,Curculionidae,Curc cur185SG,Yes,Yes,,75071.625,1,372580.125,30,0.000399618,148.8898602,0.744449301,1.488898602
+161,Curc cur186SG Curc sp. cur186SG,LACA,BOLD:ACJ5919,"Sp69SGRheedu, Sp52SGLacagg (larva)",66,Coleoptera,Curculionidae,Curc cur186SG,Yes,Yes,,1206.68,1,84.32,66,0.054695528,4.61192694,0.023059635,0.046119269
+162,Curc cur187SG Curc sp. cur187SG,COMF,BOLD:ACJ5920,Sp22SGComfru (larva),8,Coleoptera,Curculionidae,Curc cur187SG,Yes,Yes,,719,1,7,8,0.011126565,0.077885953,0.00038943,0.00077886
+163,Curc cur188SG Curc sp. cur188SG,CYDA,BOLD:ACJ5921,Sp27SGCydaeq (larva),3,Coleoptera,Curculionidae,Curc cur188SG,Yes,Yes,,761.75,1,802.3333333,3,0.0039383,3.15982934,0.015799147,0.031598293
+164,Curc cur189SG Curc sp. cur189SG,SPOM,BOLD:ACJ5951,Sp73SGSpomom (larva),2,Coleoptera,Curculionidae,Curc cur189SG,Yes,Yes,,1112,1,656,2,0.001798561,1.179856115,0.005899281,0.011798561
+165,Curc cur190SG Curc sp. cur190SG,POUU,BOLD:ACJ5957,"Sp139SGPouret, Sp66SGPouuni (larva)",6,Coleoptera,Curculionidae,Curc cur190SG,Yes,Yes,,941,1,784,6,0.006376196,4.998937301,0.024994687,0.049989373
+166,Curc cur191SG Curc sp. cur191SG,ORMM,BOLD:ACJ6005,Sp62SGOrmmac (larva),2,Coleoptera,Curculionidae,Curc cur191SG,No,No,Does not occur in 50ha plot,NA,1,NA,2,NA,NA,NA,
+167,Curc cur192SG Curc sp. cur192SG,OENM,BOLD:ACJ6049,Sp3SGOenmap (larva),2,Coleoptera,Curculionidae,Curc cur192SG,Yes,Yes,,2362,1,5721,2,0.00084674,4.844199831,0.024220999,0.048441998
+168,Curc cur193SG Curc sp. cur193SG,COCM,BOLD:ACL5605,Sp7SGCocman (larva),2,Coleoptera,Curculionidae,Curc cur193SG,Yes,Yes,,2908,1,20,2,0.000687758,0.013755158,6.87758E-05,0.000137552
+169,Curc cur194SG Curc sp. cur194SG,HETL,BOLD:ACL5639,Sp46SGHetlau (larva),2,Coleoptera,Curculionidae,Curc cur194SG,Yes,Yes,,353,1,108,2,0.005665722,0.611898017,0.00305949,0.00611898
+170,Curc cur196SG Curc sp. cur196SG,VIR2,BOLD:ACL6563,Sp84SGVirsur (larva),2,Coleoptera,Curculionidae,Curc cur196SG,Yes,Yes,,1061,1,1657,2,0.001885014,3.123468426,0.015617342,0.031234684
+171,Curc cur198SG Curc sp. cur198SG,COCM,BOLD:ACL6681,Sp7SGCocman (larva),3,Coleoptera,Curculionidae,Curc cur198SG,Yes,Yes,,2908,1,20,3,0.001031637,0.020632737,0.000103164,0.000206327
+172,Curc cur199SG Curc sp. cur199SG,TETM,BOLD:ACL6683,Sp144SGTetmac (larva),2,Coleoptera,Curculionidae,Curc cur199SG,Yes,Yes,,551.8,1,562.44,2,0.003624502,2.038564697,0.010192823,0.020385647
+173,Curc cur201SG Curc sp. cur201SG,COCP,BOLD:ACL6812,Sp110SGCocpar (larva),2,Coleoptera,Curculionidae,Curc cur201SG,Yes,Yes,,671,1,1094,2,0.002980626,3.260804769,0.016304024,0.032608048
+174,Curc cur202SG Curc sp. cur202SG,GUEF,BOLD:ACL6813,Sp120SGGuefol (larva),2,Coleoptera,Curculionidae,Curc cur202SG,Yes,Yes,,2006,1,78,2,0.000997009,0.0777667,0.000388833,0.000777667
+175,Curc cur203SG Curc sp. cur203SG,COCP,BOLD:ACL6814,Sp110SGCocpar (larva),44,Coleoptera,Curculionidae,Curc cur203SG,Yes,Yes,,671,1,1094,44,0.06557377,71.73770492,0.358688525,0.717377049
+176,Curc cur204SG Curc sp. cur204SG,NECC,BOLD:ACL6815,Sp58SGNeccis (larva),7,Coleoptera,Curculionidae,Curc cur204SG,Yes,Yes,,291,1,77,7,0.024054983,1.852233677,0.009261168,0.018522337
+177,Curc cur205SG Curc sp. cur205SG,SOCE,BOLD:ACL6816,Sp72SGSocexo (larva),4,Coleoptera,Curculionidae,Curc cur205SG,Yes,Yes,,924.6,2,976.6,2,0.002163098,2.112481073,0.010562405,0.021124811
+178,Curc cur206SG Curc sp. cur206SG,POUU,BOLD:ACL6820,Sp139SGPouret (larva),2,Coleoptera,Curculionidae,Curc cur206SG,Yes,Yes,,941,1,784,2,0.002125399,1.666312434,0.008331562,0.016663124
+179,Curc cur208SG Curc sp. cur208SG,CELI,BOLD:ACL6950,Sp107SGCeligu (larva),14,Coleoptera,Curculionidae,Curc cur208SG,Yes,Yes,,283,1,847,14,0.049469965,41.90106007,0.2095053,0.419010601
+180,Curc cur209SG Curc sp. cur209SG,TERO,BOLD:ACL7472,Sp77SGTerobl (larva),2,Coleoptera,Curculionidae,Curc cur209SG,Yes,Yes,,838,1,1165,2,0.002386635,2.780429594,0.013902148,0.027804296
+181,Curc cur20SG Curc sp. cur20SG,STRP,NA,colcur20,1,Coleoptera,Curculionidae,Curc cur20SG,Yes,Yes,,1286.4,1,751.35,1,0.000777363,0.584071828,0.002920359,0.005840718
+182,Curc cur210SG Curc sp. cur210SG,EUGO,BOLD:ACL7823,Sp34SGEugoer (larva),2,Coleoptera,Curculionidae,Curc cur210SG,Yes,Yes,,217.56,1,1256.6,2,0.009192866,11.55175584,0.057758779,0.115517558
+183,Curc cur211SG Curc sp. cur211SG,PETA,NA,Sp137SGPetasp (larva),2,Coleoptera,Curculionidae,Curc cur211SG,Yes,Yes,,336,1,384,2,0.005952381,2.285714286,0.011428571,0.022857143
+184,Curc cur213SG Curc sp. cur213SG,CAPF,NA,"Sp110SGCocpar, Sp18SGCapfro (larva)",2,Coleoptera,Curculionidae,Curc cur213SG,Yes,Yes,,2076.019048,1,1095.67672,2,0.000963382,1.055555556,0.005277778,0.010555556
+184,Curc cur213SG Curc sp. cur213SG,COCP,NA,"Sp110SGCocpar, Sp18SGCapfro (larva)",8,Coleoptera,Curculionidae,Curc cur213SG,Yes,Yes,,671,1,1094,8,0.011922504,13.04321908,0.065216095,0.130432191
+185,Cydia pyraspis,INM2,BOLD:ACJ4819,lep490,1,Lepidoptera,Tortricidae,,No,No,Does not occur in 50ha plot,,1,NA,1,NA,NA,NA,
+186,Cydia rhodaspisDHJ02,INUM,BOLD:AAA4047,lep246,1,Lepidoptera,Tortricidae,,Yes,Yes,,286,1,14.66666667,1,0.003496503,0.051282051,0.00025641,0.000512821
+187,Cyrionyx sp. cur69SG,DESP,NA,colcur69,1,Coleoptera,Curculionidae,,Yes,Yes,,791.5,1,1371.583333,1,0.001263424,1.732891135,0.008664456,0.017328911
+188,Cyrionyx sp. cur91SG,DESP,BOLD:ACC9960,colcur91; Sp30SGDespan (larva),93,Coleoptera,Curculionidae,Cyrionyx,Yes,Yes,,791.5,1,1371.583333,93,0.117498421,161.1588756,0.805794378,1.611588756
+188,Cyrionyx sp. cur91SG,HYBP,NA,Sp48SGHybpru (larva),11,Coleoptera,Curculionidae,Cyrionyx,Yes,Yes,,2470.75,1,12896.1,11,0.004452089,57.41459071,0.287072954,0.574145907
+189,Depr lep186SG Elac sp. lep186SG,CONP,BOLD:ABV2153,lep354,5,Lepidoptera,Depressariidae,,Yes,Yes,,559,1,6,5,0.008944544,0.053667263,0.000268336,0.000536673
+189,Depr lep186SG Elac sp. lep186SG,CONT,BOLD:ABV2153,lep186,1,Lepidoptera,Depressariidae,,Yes,Yes,,434,1,53,1,0.002304147,0.122119816,0.000610599,0.001221198
+190,Depr lep8SG Elac sp. lep8SG,PROT,BOLD:ABV2188,lep8,2,Lepidoptera,Depressariidae,,Yes,Yes,,3614.571429,1,2026.142857,2,0.000553316,1.121097146,0.005605486,0.011210971
+191,Desmia bajulalis,APEM,BOLD:AAA0408,lep26,11,Lepidoptera,Crambidae,,Yes,No,Small-seeded host,36707.76,NA,75147.8,NA,NA,NA,NA,
+191,Desmia bajulalis,APET,BOLD:AAA0408,lep174,4,Lepidoptera,Crambidae,,Yes,No,Small-seeded host,119009.3967,NA,4962.906667,NA,NA,NA,NA,
+192,Dichrorampha sp. lep494SG,CASC,BOLD:ACJ4292,lep494,4,Lepidoptera,Tortricidae,,No,No,Does not occur in 50ha plot,,1,NA,4,NA,NA,NA,
+193,Eriosocia guttifera,RHEE,BOLD:ABV2165,lep202,3,Lepidoptera,Tortricidae,,Yes,Yes,,2156.08,1,420.72,3,0.001391414,0.585395718,0.002926979,0.005853957
+193,Eriosocia guttifera,SYMG,BOLD:ABV2165,lep325,97,Lepidoptera,Tortricidae,,Yes,Yes,,169.8,1,69,97,0.571260306,39.41696113,0.197084806,0.394169611
+194,Eubulus fulvosquamis,PRIC,BOLD:ABV0277,colcur28,632,Coleoptera,Curculionidae,Eubulus,Yes,Yes,,352,3.458,1305,182.7646038,0.519217624,677.5789999,3.387895,6.775789999
+195,Eubulus sp. cur151SG,POUB,BOLD:ACF9999,colcur151,4,Coleoptera,Curculionidae,Eubulus,Yes,Yes,,749,1,59,4,0.005340454,0.315086782,0.001575434,0.003150868
+196,Eubulus sp. cur24SG,VIR1,BOLD:ABV4089,colcur24,4,Coleoptera,Curculionidae,Eubulus,Yes,Yes,,679,1,1586,4,0.005891016,9.343151694,0.046715758,0.093431517
+196,Eubulus sp. cur24SG,VIR2,BOLD:ABV4089,colcur93,5,Coleoptera,Curculionidae,Eubulus,Yes,Yes,,1061,1,1657,5,0.004712535,7.808671065,0.039043355,0.078086711
+197,Eubulus sp. cur90SG cf. dumicolus,POUU,BOLD:ACG1557,colcur90,5,Coleoptera,Curculionidae,Eubulus,Yes,Yes,,941,1,784,5,0.005313496,4.165781084,0.020828905,0.041657811
+198,Eulechriops sp. cur53SG,HEIC,BOLD:ABV0292,colcur43,3,Coleoptera,Curculionidae,Eulechriops,Yes,Yes,,879,1,1279,3,0.003412969,4.365187713,0.021825939,0.043651877
+198,Eulechriops sp. cur53SG,OURL,BOLD:ABV0292,colcur52,66,Coleoptera,Curculionidae,Eulechriops,Yes,Yes,,270,1,174,66,0.244444444,42.53333333,0.212666667,0.425333333
+199,Eurn hym137SG Eurn sp. hym137SG,PYLI,NA,hym137,5,Hymenoptera,Eurytomidae,Eurn hym137SG,Yes,No,Hymenoptera,3150,NA,12.8,NA,NA,NA,NA,
+200,Eurn hym142SG Eurn sp. hym142SG,PAUT,NA,hym142,28,Hymenoptera,Eurytomidae,Eurn hym142SG,Yes,No,Hymenoptera,379.5119048,NA,447.2916667,NA,NA,NA,NA,
+201,Eurn hym166SG Eurn sp. hym166SG,CORB,NA,hym166,2,Hymenoptera,Eurytomidae,Eurn hym166SG,Yes,No,Hymenoptera,1684,NA,3502,NA,NA,NA,NA,
+202,Eurn hym199SG Eurn sp. hym199SG,FARO,NA,hym199,1,Hymenoptera,Eurytomidae,Eurn hym199SG,Yes,No,Hymenoptera,3085,NA,19448,NA,NA,NA,NA,
+203,Eurn hym22SG Eurn sp. hym22SG,ALIE,NA,hym22,18,Hymenoptera,Eurytomidae,Eurn hym22SG,Yes,No,Hymenoptera,6783.866667,NA,7,NA,NA,NA,NA,
+204,Eurn hym23SG Eurn sp. hym23SG,ALIE,NA,hym23,19,Hymenoptera,Eurytomidae,Eurn hym23SG,Yes,No,Hymenoptera,6783.866667,NA,7,NA,NA,NA,NA,
+205,Eurn hym253SG Eurn sp. hym253SG,PYC1,NA,hym253,32,Hymenoptera,Eurytomidae,Eurn hym253SG,No,No,Hymenoptera,#VALUE!,NA,NA,NA,NA,NA,NA,
+206,Eurn hym275SG Eurn sp. hym275SG,FARO,NA,hym275,2,Hymenoptera,Eurytomidae,Eurn hym275SG,Yes,No,Hymenoptera,3085,NA,19448,NA,NA,NA,NA,
+207,Eurn hym276SG Eurn sp. hym276SG,CORB,NA,hym276,1,Hymenoptera,Eurytomidae,Eurn hym276SG,Yes,No,Hymenoptera,1684,NA,3502,NA,NA,NA,NA,
+208,Eurn hym48SG Eurn sp. hym48SG,HYEL,NA,hym48,1,Hymenoptera,Eurytomidae,Eurn hym48SG,Yes,No,Hymenoptera,7480,NA,5152,NA,NA,NA,NA,
+209,Eurn hym49SG Eurn sp. hym49SG,HYEL,NA,hym49,7,Hymenoptera,Eurytomidae,Eurn hym49SG,Yes,No,Hymenoptera,7480,NA,5152,NA,NA,NA,NA,
+210,Eurn hym97SG Eurn sp. hym97SG,HIRT,NA,hym97,5,Hymenoptera,Eurytomidae,Eurn hym97SG,Yes,No,Hymenoptera,181,NA,2744,NA,NA,NA,NA,
+211,Eury hym128SG Eury sp. hym128SG,TABG,,hym128,3,Hymenoptera,Eurytomidae,Eurn hym128SG,Yes,No,Hymenoptera,6420,NA,3313.2,NA,NA,NA,NA,
+212,Eury hym167SG Eury sp. hym167SG,CORL,NA,hym167,1,Hymenoptera,Eurytomidae,Eury hym167SG,Yes,No,Hymenoptera,335,NA,1248,NA,NA,NA,NA,
+213,Eury hym207SG Eury sp. hym207SG,SOCE,NA,hym207,1,Hymenoptera,Eurytomidae,Eury hym207SG,Yes,No,Hymenoptera,924.6,NA,976.6,NA,NA,NA,NA,
+214,Eury hym234SG Eury sp. hym234SG,MACA,NA,hym234,25,Hymenoptera,Eurytomidae,Eury hym234SG,Yes,No,Hymenoptera,279,NA,52,NA,NA,NA,NA,
+215,Eury hym252SG Eury sp. hym252SG,STIL,NA,hym252,1,Hymenoptera,Eurytomidae,Eury hym252SG,Yes,No,Hymenoptera,262,NA,484,NA,NA,NA,NA,
+216,Eury hym268SG Eury sp. hym268SG,COUC,NA,hym268,1,Hymenoptera,Eurytomidae,,Yes,No,Hymenoptera,2273,NA,1201,NA,NA,NA,NA,
+217,Eury hym29SG Eury sp. hym29SG,COUC,NA,hym29,2,Hymenoptera,Eurytomidae,,Yes,No,Hymenoptera,2273,NA,1201,NA,NA,NA,NA,
+218,Eury hym30SG Eury sp. hym30SG,COUC,NA,hym30,4,Hymenoptera,Eurytomidae,,Yes,No,Hymenoptera,2273,NA,1201,NA,NA,NA,NA,
+219,Eury hym37SG Eury sp. hym37SG,FARO,NA,hym37,1,Hymenoptera,Eurytomidae,Eury hym37SG,Yes,No,Hymenoptera,3085,NA,19448,NA,NA,NA,NA,
+220,Eury hym70SG Eury sp. hym70SG,FIPO,,hym70,1,Hymenoptera,Eurytomidae,,Yes,No,Hymenoptera,40027.2,NA,2518.8,NA,NA,NA,NA,
+221,Eury hym91SG Eury sp. hym91SG,HYEL,NA,hym91,2,Hymenoptera,Eurytomidae,Eury hym91SG,Yes,No,Hymenoptera,7480,NA,5152,NA,NA,NA,NA,
+222,Eury hym92SG Eury sp. hym92SG,HYEL,NA,hym92,3,Hymenoptera,Eurytomidae,Eury hym92SG,Yes,No,Hymenoptera,7480,NA,5152,NA,NA,NA,NA,
+223,Eury hym93SG Eury sp. hym93SG,HYEL,NA,hym93,3,Hymenoptera,Eurytomidae,Eury hym93SG,Yes,No,Hymenoptera,7480,NA,5152,NA,NA,NA,NA,
+224,Eurytoma sp. 1SG,CORL,NA,hym180,1,Hymenoptera,Eurytomidae,Eurytoma,Yes,No,Hymenoptera,335,NA,1248,NA,NA,NA,NA,
+225,Eurytoma sp. 2SG,CORL,NA,hym176,1,Hymenoptera,Eurytomidae,Eurytoma,Yes,No,Hymenoptera,335,NA,1248,NA,NA,NA,NA,
+226,Eurytoma? sp. hym95SG,HIRT,NA,hym95,10,Hymenoptera,Eurytomidae,Eurytoma?,Yes,No,Hymenoptera,181,NA,2744,NA,NA,NA,NA,
+227,Eutoxus  sp. cur21SG,SOCE,BOLD:ACS9632,colcur21,35,Coleoptera,Curculionidae,Eutoxus,Yes,Yes,,924.6,1,976.6,35,0.037854207,36.96841878,0.184842094,0.369684188
+228,Fundella argentina,SENU,BOLD:AAA0902,lep418,11,Lepidoptera,Pyralidae,Fundella,No,No,Does not occur in 50ha plot,NA,1,NA,11,NA,NA,NA,
+229,Gele lep282SG Gele sp. lep282SG,FICI,NA,lep282,1,Lepidoptera,Pyralidae,Gele lep282SG,Yes,No,Small-seeded host,497962.08,NA,1361.56,NA,NA,NA,NA,
+230,Gele sp. lep106SG,CAL2,BOLD:ABV2170,lep106,8,Lepidoptera,Gelechiidae,,Yes,Yes,,996,1,259,8,0.008032129,2.080321285,0.010401606,0.020803213
+230,Gele sp. lep106SG,FARO,NA,lep256,1,Lepidoptera,Gelechiidae,,Yes,Yes,,3085,1,19448,1,0.000324149,6.304051864,0.031520259,0.063040519
+231,Gele sp. lep185SG,MIC2,BOLD:ABV2157,lep185,1,Lepidoptera,Gelechiidae,,Yes,No,Small-seeded host,,1,83529.8,1,NA,NA,NA,
+232,Gele sp. lep19SG,QUA1,BOLD:AAA0886,lep19,7,Lepidoptera,Gelechiidae,,Yes,Yes,,3722.388571,1,13295.56,7,0.001880513,25.00247307,0.125012365,0.250024731
+233,Gele sp. lep264SG,CHRA,BOLD:ACG1531,lep264,4,Lepidoptera,Gelechiidae,,Yes,Yes,,794,1,113,4,0.005037783,0.569269521,0.002846348,0.005692695
+234,Gele sp. lep275SG,HEIA,BOLD:ABV2166,lep275,1,Lepidoptera,Gelechiidae,,Yes,Yes,,429,1,152,1,0.002331002,0.354312354,0.001771562,0.003543124
+235,Gele sp. lep281SG,INRU,BOLD:ACJ4591,lep281,1,Lepidoptera,Gelechiidae,,No,No,Does not occur in 50ha plot,,1,,1,NA,NA,NA,
+235,Gele sp. lep281SG,INTH,BOLD:ACJ4591,lep318,1,Lepidoptera,Gelechiidae,,Yes,Yes,,672.75,1,810.75,1,0.001486436,1.205128205,0.006025641,0.012051282
+236,Gele sp. lep295SG,INCO,NA,lep295,1,Lepidoptera,Gelechiidae,,Yes,Yes,,471.66,1,213.37,1,0.002120171,0.452380952,0.002261905,0.00452381
+236,Gele sp. lep295SG,INSA,NA,lep517,1,Lepidoptera,Gelechiidae,,Yes,Yes,,3965,1,312.96,1,0.000252207,0.078930643,0.000394653,0.000789306
+237,Gele sp. lep302SG,ANAE,BOLD:ACJ4457,lep302,1,Lepidoptera,Gelechiidae,,Yes,Yes,,396,1,1985,1,0.002525253,5.012626263,0.025063131,0.050126263
+238,Gele sp. lep308SG,CASG,NA,lep308,1,Lepidoptera,Gelechiidae,,Yes,Yes,,721,1,49,1,0.001386963,0.067961165,0.000339806,0.000679612
+239,Gele sp. lep326SG,MASH,BOLD:ACG2471,lep326,2,Lepidoptera,Gelechiidae,,Yes,Yes,,1094,1,4015,2,0.001828154,7.340036563,0.036700183,0.073400366
+240,Gele sp. lep39SG,MOUM,BOLD:ACG1530,lep319,4,Lepidoptera,Gelechiidae,,Yes,Yes,,817,1,3018,4,0.004895961,14.77600979,0.073880049,0.147760098
+241,Gele sp. lep3SG,BAC1,BOLD:ABV2181,lep361,1,Lepidoptera,Gelechiidae,,No,No,Does not occur in 50ha plot,,1,,1,NA,NA,NA,
+241,Gele sp. lep3SG,TET2,BOLD:ABV2181,lep3,51,Lepidoptera,Gelechiidae,,Yes,Yes,,4163.72254,1,9612.938413,51,0.012248655,117.7455641,0.58872782,1.177455641
+242,Gele sp. lep41SG,EUGN,BOLD:ABV2154,lep196,2,Lepidoptera,Gelechiidae,,Yes,Yes,,278,1,100.86,2,0.007194245,0.725611511,0.003628058,0.007256115
+242,Gele sp. lep41SG,EUGO,BOLD:ABV2154,lep41,1,Lepidoptera,Gelechiidae,,Yes,Yes,,217.56,1,1256.6,1,0.004596433,5.775877919,0.02887939,0.057758779
+243,Gele sp. lep427SG,SOUS,BOLD:ACJ4667,lep427,1,Lepidoptera,Gelechiidae,,Yes,Yes,,1479.4,1,8275.2,1,0.00067595,5.593619035,0.027968095,0.05593619
+244,Gele sp. lep514SG,COUP,BOLD:ACJ4456,lep514,2,Lepidoptera,Gelechiidae,,No,No,Does not occur in 50ha plot,,1,,2,NA,NA,NA,
+245,Gele sp. lep60SG,LAFP,BOLD:ABV2178,lep60,20,Lepidoptera,Gelechiidae,,Yes,No,Small-seeded host,,NA,430.5,NA,NA,NA,NA,
+246,Genus Unknown ant1SG sp. ant1SG,PRIC,BOLD:ABV3606,colant1,9,Coleoptera,Anthribidae,Genus Unknown ant1SG,Yes,No,unknown number of individuals per seed,352,NA,1305,NA,NA,NA,NA,
+247,Genus Unknown ant2SG sp. ant2SG,VIR1,BOLD:ABW8380,colant2,1,Coleoptera,Anthribidae,Genus Unknown ant2SG,Yes,No,unknown number of individuals per seed,679,NA,1586,NA,NA,NA,NA,
+248,Genus Unknown ant3SG sp. ant3SG,INCO,BOLD:ACG0844,colant3,1,Coleoptera,Anthribidae,Genus Unknown ant3SG,Yes,No,unknown number of individuals per seed,471.66,NA,213.37,NA,NA,NA,NA,
+249,Geobyrza nodifera,CAL2,NA,colcur31,1,Coleoptera,Curculionidae,,Yes,Yes,,996,1,259,1,0.001004016,0.260040161,0.001300201,0.002600402
+250,Geraeus sp. cur51SG,OENM,BOLD:ABV4317,colcur51; Sp3SGOenmap (larva),112,Coleoptera,Curculionidae,Geraeus,Yes,Yes,,2362,1,5721,112,0.047417443,271.2751905,1.356375953,2.712751905
+251,Geraeus sp. cur64SG,SIMA,BOLD:ABV0289,colcur64,1,Coleoptera,Curculionidae,Geraeus,Yes,Yes,,1359,1,1514,1,0.000735835,1.114054452,0.005570272,0.011140545
+252,Grapholita sp. lep55SG,HASF,BOLD:ACJ4358,lep55,1,Lepidoptera,Tortricidae,,Yes,Yes,,333.22,1,1417.666667,1,0.00300102,4.254446512,0.021272233,0.042544465
+253,Grapholita yurubina,MABO,BOLD:ABV2185,lep33; Sp54SGMabocc,109,Lepidoptera,Tortricidae,Grapholita,No,No,Does not occur in 50ha plot,NA,1,NA,109,NA,NA,NA,
+253,Grapholita yurubina,RHEE,BOLD:ABV2185,Sp69SGRheedu (larva),5,Lepidoptera,Tortricidae,Grapholita,Yes,Yes,,2156.08,1,420.72,5,0.002319023,0.97565953,0.004878298,0.009756595
+254,Heilipus draco,NECC,BOLD:ABV0306,colcur76,4,Coleoptera,Curculionidae,Heilipus,Yes,Yes,,291,1,77,4,0.013745704,1.058419244,0.005292096,0.010584192
+254,Heilipus draco,PHOM,BOLD:ABV0306,colcur162,2,Coleoptera,Curculionidae,,Yes,Yes,,651,1,107,2,0.003072197,0.328725038,0.001643625,0.00328725
+255,Heilipus sp. cur15SG nr. lauri,OCOS,BOLD:ABV0055,colcur15,1,Coleoptera,Curculionidae,Heilipus,Yes,Yes,,60,1,287,1,0.016666667,4.783333333,0.023916667,0.047833333
+256,Heilipus sp. cur243SG,BEIP,BOLD:ABV0296,colcur243,2,Coleoptera,Curculionidae,Heilipus,Yes,Yes,,1986,1,2507,2,0.001007049,2.524672709,0.012623364,0.025246727
+257,Heilipus sp. cur50SG,BEIP,BOLD:ACG0412,colcur50; Sp16SGBeipen (larva),8,Coleoptera,Curculionidae,Heilipus,Yes,Yes,,1986,1,2507,8,0.004028197,10.09869084,0.050493454,0.100986908
+258,Heli lep102SG Heli sp. lep102SG,GUAS,BOLD:ABV2172,lep102,3,Lepidoptera,Heliodinidae,,Yes,Yes,,1785,1,1388,3,0.001680672,2.332773109,0.011663866,0.023327731
+259,Heli lep253SG Heli sp. lep253SG,OURL,BOLD:ACJ1788,lep253,30,Lepidoptera,Heliodinidae,,Yes,Yes,,270,1,174,30,0.111111111,19.33333333,0.096666667,0.193333333
+260,Heli lep438SG Heli sp. lep438SG,NEEA,BOLD:ACJ4711,lep438,2,Lepidoptera,Heliodinidae,,Yes,Yes,,219,1,56,2,0.00913242,0.511415525,0.002557078,0.005114155
+261,Heli lep52SG Heli sp. lep52SG,GUAS,BOLD:ABV2180,lep52,50,Lepidoptera,Heliodinidae,Heli lep52SG,Yes,Yes,,1785,1,1388,50,0.028011204,38.87955182,0.194397759,0.388795518
+262,Histura panamana,BEIP,BOLD:ABV2176,lep63,23,Lepidoptera,Tortricidae,,Yes,Yes,,1986,1,2507,23,0.011581067,29.03373615,0.145168681,0.290337362
+263,Hypocosmia bimaculalis,TABG,BOLD:AAA1759,lep184,2,Lepidoptera,Pyralidae,,Yes,Yes,,6420,1,3313.2,2,0.000311526,1.032149533,0.005160748,0.010321495
+264,Lamprospilus collucia,GUSS,BOLD:AAE6101,lep268,1,Lepidoptera,Lycaenidae,,Yes,Yes,,3766.865079,1,2652.539683,1,0.000265473,0.704176982,0.003520885,0.00704177
+264,Lamprospilus collucia,TABG,BOLD:AAE6101,lep483,1,Lepidoptera,Lycaenidae,,Yes,Yes,,6420,1,3313.2,1,0.000155763,0.516074766,0.002580374,0.005160748
+265,Lechriops parotica,CEIP,BOLD:ABU9974,colcur96,17,Coleoptera,Curculionidae,Lechriops,Yes,Yes,,15083.5,1,1431.5,17,0.001127059,1.613385487,0.008066927,0.016133855
+265,Lechriops parotica,PSE1,BOLD:ABU9974,colcur36,49,Coleoptera,Curculionidae,Lechriops,Yes,Yes,,10911,1,1926,49,0.004490881,8.649436349,0.043247182,0.086494363
+266,Lechriops sp. cur40SG,VIR2,BOLD:ABV0297,colcur40,12,Coleoptera,Curculionidae,Lechriops,Yes,Yes,,1061,1,1657,12,0.011310085,18.74081056,0.093704053,0.187408106
+267,Lechriops sp. cur97SG,PROT,NA,colcur97,2,Coleoptera,Curculionidae,Lechriops,Yes,Yes,,3614.571429,1,2026.142857,2,0.000553316,1.121097146,0.005605486,0.011210971
+268,Lepturges sp. 1SG,STEA,BOLD:ABV0431,colcer14,2,Coleoptera,Cerambycidae,Lepturges,Yes,Yes,,566.3125,1,37,2,0.003531619,0.130669904,0.00065335,0.001306699
+269,Loncophorus sp. cur16SG,BUNC,BOLD:ABV3554,colcur16,14,Coleoptera,Curculionidae,Loncophorus,No,No,Does not occur in 50ha plot,NA,1,NA,14,NA,NA,NA,
+270,Maemactes sp. cur75SG,HEIA,BOLD:ABV0302,colcur75,1,Coleoptera,Curculionidae,Maemactes,Yes,Yes,,429,1,152,1,0.002331002,0.354312354,0.001771562,0.003543124
+271,Megacerus lunulatus,MARP,BOLD:ABV3601,colbru1,149,Coleoptera,Chrysomelidae,Megacerus,Yes,Yes,,1910.381731,1,2554.302244,149,0.077994883,199.2225052,0.996112526,1.992225052
+271,Megacerus lunulatus,PROT,BOLD:ABV3601,colbru56,14,Coleoptera,Chrysomelidae,Megacerus,Yes,Yes,,3614.571429,1,2026.142857,14,0.003873212,7.847680025,0.0392384,0.0784768
+272,Merobruchus sp. bru3SG,NA,NA,colbru3,5,Coleoptera,Chrysomelidae,Merobruchus,No,No,Does not occur in 50ha plot,NA,1,NA,5,NA,NA,NA,
+273,Metamasius sp. cur134SG,ASTS,BOLD:ACA8671,colcur134,5,Coleoptera,Dryophthoridae,Metamasius,Yes,Yes,,283,1,281,5,0.017667845,4.964664311,0.024823322,0.049646643
+274,Mimosestes enterolobii,ENTC,BOLD:ABV3595,colbru12; colbru14,20,Coleoptera,Chrysomelidae,Mimosestes,Yes,Yes,,19,1,825,20,1.052631579,868.4210526,4.342105263,8.684210526
+274,Mimosestes enterolobii,ENTS,BOLD:ABV3595,colbru32,3,Coleoptera,Chrysomelidae,Mimosestes,Yes,Yes,,180,1,825,3,0.016666667,13.75,0.06875,0.1375
+275,Myrmex sp. 128SG,CHRA,NA,Sp103SGChrarg (larva),4,Coleoptera,Curculionidae,Myrmex,Yes,Yes,,794,1,113,4,0.005037783,0.569269521,0.002846348,0.005692695
+276,Myrmex sp. cur48SG nr. panamensis,CHRA,BOLD:ACG0025,colcur127,2,Coleoptera,Curculionidae,Myrmex,Yes,Yes,,794,1,113,2,0.002518892,0.284634761,0.001423174,0.002846348
+276,Myrmex sp. cur48SG nr. panamensis,GUA1,BOLD:ACG0025,colcur56,2,Coleoptera,Curculionidae,Myrmex,Yes,Yes,,2096.55,1,1282.05,2,0.000953948,1.223009229,0.006115046,0.012230092
+276,Myrmex sp. cur48SG nr. panamensis,HURC,BOLD:ACG0025,colcur120,1,Coleoptera,Curculionidae,Myrmex,Yes,Yes,,212,1,820,1,0.004716981,3.867924528,0.019339623,0.038679245
+276,Myrmex sp. cur48SG nr. panamensis,QUA1,BOLD:ACG0025,colcur48,1,Coleoptera,Curculionidae,Myrmex,Yes,Yes,,3722.388571,1,13295.56,1,0.000268645,3.571781867,0.017858909,0.035717819
+277,Myrmex sp. cur94SG,POUU,BOLD:ACG1997,colcur94,2,Coleoptera,Curculionidae,Myrmex,Yes,Yes,,941,1,784,2,0.002125399,1.666312434,0.008331562,0.016663124
+278,Nealcidion sp. 1SG,TABA,BOLD:ACJ3565,colcer8,3,Coleoptera,Cerambycidae,Nealcidion,Yes,Yes,,2685.125,1,3997.25,3,0.001117266,4.465993203,0.022329966,0.044659932
+279,Near Gymnandrosoma sp. lep356SG,PLAE,BOLD:ABV2351,lep356,1,Lepidoptera,Tortricidae,,Yes,Yes,,1209,1,1050,1,0.00082713,0.868486352,0.004342432,0.008684864
+280,Neopotamia streblopa,BEIP,BOLD:ABV2183,lep36,1,Lepidoptera,Tortricidae,,Yes,Yes,,1986,1,2507,1,0.000503525,1.262336354,0.006311682,0.012623364
+281,Oeco lep13SG Oeco sp. lep13SG,CNER,BOLD:AAA0941,lep251,5,Lepidoptera,Oecophoridae,Oeco lep13SG,Yes,Yes,,1121,1,41,5,0.004460303,0.182872435,0.000914362,0.001828724
+281,Oeco lep13SG Oeco sp. lep13SG,CONP,BOLD:AAA0941,lep13,6,Lepidoptera,Oecophoridae,Oeco lep13SG,Yes,Yes,,559,1,6,6,0.010733453,0.064400716,0.000322004,0.000644007
+281,Oeco lep13SG Oeco sp. lep13SG,CONT,BOLD:AAA0941,lep87,4,Lepidoptera,Oecophoridae,Oeco lep13SG,Yes,Yes,,434,1.333,53,3.000750188,0.006914171,0.36645106,0.001832255,0.003664511
+281,Oeco lep13SG Oeco sp. lep13SG,CUPL,BOLD:AAA0941,lep230,1,Lepidoptera,Oecophoridae,Oeco lep13SG,Yes,Yes,,1011,1,36.2,1,0.00098912,0.035806133,0.000179031,0.000358061
+281,Oeco lep13SG Oeco sp. lep13SG,CUPS,BOLD:AAA0941,lep335,1,Lepidoptera,Oecophoridae,Oeco lep13SG,Yes,Yes,,1103.6,1,104.44,1,0.000906125,0.094635738,0.000473179,0.000946357
+281,Oeco lep13SG Oeco sp. lep13SG,PAU5,BOLD:AAA0941,lep373; lep379,5,Lepidoptera,Oecophoridae,Oeco lep13SG,Yes,Yes,,1024.72,1,3,5,0.004879382,0.014638145,7.31907E-05,0.000146381
+282,Oeco lep192SG Oeco sp. lep192SG,DAVN,BOLD:ACJ4736,lep192,2,Lepidoptera,Oecophoridae,Oeco lep192SG,Yes,Yes,,983,1,744,2,0.002034588,1.513733469,0.007568667,0.015137335
+283,Oeco lep250SG Oeco sp. lep250SG,UNOP,NA,lep250,1,Lepidoptera,Oecophoridae,Oeco lep250SG,Yes,Yes,,280,1,1092,1,0.003571429,3.9,0.0195,0.039
+284,Oeco lep289SG Oeco sp. lep289SG,INM1,NA,lep289,1,Lepidoptera,Oecophoridae,Oeco lep289SG,Yes,Yes,,213.37,1,44.92,1,0.004686694,0.210526316,0.001052632,0.002105263
+285,Oeco lep293SG Oeco sp. lep293SG,INM1,BOLD:AAA1020,lep293,1,Lepidoptera,Oecophoridae,Oeco lep293SG,Yes,Yes,,213.37,1,44.92,1,0.004686694,0.210526316,0.001052632,0.002105263
+286,Oeco lep311SG Oeco sp. lep311SG,CAVP,BOLD:ACJ4735,lep311,4,Lepidoptera,Oecophoridae,Oeco lep311SG,Yes,Yes,,294,1,80,4,0.013605442,1.088435374,0.005442177,0.010884354
+287,Oeco lep419SG Oeco sp. lep419SG,LINL,NA,lep419,1,Lepidoptera,Oecophoridae,Oeco lep419SG,Yes,Yes,,2083.311111,1,416.8888889,1,0.000480005,0.200108801,0.001000544,0.002001088
+288,Oeco lep441SG Oeco sp. lep441SG,TRI6,BOLD:AAH5205,lep441,1,Lepidoptera,Oecophoridae,Oeco lep441SG,Yes,Yes,,2590.88,1,500.2666667,1,0.000385969,0.193087548,0.000965438,0.001930875
+289,Oeco lep464SG Oeco sp. lep464SG,PAU5,NA,lep464,2,Lepidoptera,Oecophoridae,Oeco lep464SG,Yes,Yes,,1024.72,1,3,2,0.001951753,0.005855258,2.92763E-05,5.85526E-05
+290,Oeco lep466SG Oeco sp. lep466SG,PAUR,NA,lep466,1,Lepidoptera,Oecophoridae,Oeco lep466SG,Yes,Yes,,435,1,284,1,0.002298851,0.652873563,0.003264368,0.006528736
+291,Oeco lep4SG Oeco sp. lep4SG,BEIP,BOLD:ABV2156,lep189,2,Lepidoptera,Oecophoridae,Oeco lep4SG,Yes,Yes,,1986,1,2507,2,0.001007049,2.524672709,0.012623364,0.025246727
+291,Oeco lep4SG Oeco sp. lep4SG,MARP,BOLD:ABV2156,lep6,3,Lepidoptera,Oecophoridae,Oeco lep4SG,Yes,Yes,,1910.381731,1,2554.302244,3,0.001570367,4.01119138,0.020055957,0.040111914
+291,Oeco lep4SG Oeco sp. lep4SG,OCOS,BOLD:ABV2156,lep4,2,Lepidoptera,Oecophoridae,Oeco lep4SG,Yes,Yes,,60,1,287,2,0.033333333,9.566666667,0.047833333,0.095666667
+292,Oxytenopterus sp. cur204SG,BUCT,BOLD:ACJ3891,colcur204,152,Coleoptera,Curculionidae,Oxytenopterus,No,No,Does not occur in 50ha plot,NA,1,NA,152,NA,NA,NA,
+293,Oxytenopterus sp. cur55SG,UNOP,BOLD:ABV0291,colcur55,21,Coleoptera,Curculionidae,Oxytenopterus,Yes,Yes,,280,1,1092,21,0.075,81.9,0.4095,0.819
+294,Pachymerus bactris,ASTS,BOLD:ABV3600,colbru24; Sp13SGAststa (larva),42,Coleoptera,Chrysomelidae,Pachymerus,Yes,Yes,,283,1,281,42,0.148409894,41.70318021,0.208515901,0.417031802
+294,Pachymerus bactris,BACM,BOLD:ABV3600,Sp106SGBacmaj (larva),2,Coleoptera,Chrysomelidae,Pachymerus,Yes,Yes,,183,1,3,2,0.010928962,0.032786885,0.000163934,0.000327869
+295,Pachymerus sp. bru67SG,ASTS,BOLD:ACL6561,Sp13SGAststa (larva),2,Coleoptera,Chrysomelidae,Pachymerus,Yes,Yes,,283,1,281,2,0.007067138,1.985865724,0.009929329,0.019858657
+296,Pagiocerus frontalis,BEIP,BOLD:ABV0305,colcur106,2072,Coleoptera,Curculionidae,Pagiocerus,Yes,Yes,,1986,7.74,2507,267.7002584,0.134793685,337.9277683,1.689638841,3.379277683
+296,Pagiocerus frontalis,CEIP,BOLD:ABV0305,colcur110,1,Coleoptera,Curculionidae,,Yes,No,unknown number of individuals per seed,15083.5,NA,1431.5,NA,NA,NA,NA,
+296,Pagiocerus frontalis,NECL,BOLD:ABV0305,colcur122,15,Coleoptera,Curculionidae,Pagiocerus,Yes,No,unknown number of individuals per seed,413,NA,289,NA,NA,NA,NA,
+296,Pagiocerus frontalis,OCOO,BOLD:ABV0305,colcur117,366,Coleoptera,Curculionidae,Pagiocerus,Yes,Yes,,116,4.79,295,76.4091858,0.658699878,194.3164639,0.971582319,1.943164639
+296,Pagiocerus frontalis,OCOP,BOLD:ABV0305,colcur111,71,Coleoptera,Curculionidae,Pagiocerus,Yes,Yes,,958,5.54,235,12.81588448,0.01337775,3.143771244,0.015718856,0.031437712
+296,Pagiocerus frontalis,SOUS,BOLD:ABV0305,colcur114,1,Coleoptera,Curculionidae,Pagiocerus,Yes,Yes,,1479.4,1,8275.2,1,0.00067595,5.593619035,0.027968095,0.05593619
+296,Pagiocerus frontalis,TABR,BOLD:ABV0305,colcur234,2,Coleoptera,Curculionidae,Pagiocerus,Yes,No,unknown number of individuals per seed,4202.6,NA,3332.7,NA,NA,NA,NA,
+297,Phymatophosus sp. cur107SG,TETM,BOLD:ACG1442,colcur107,14,Coleoptera,Curculionidae,Phymatophosus,Yes,Yes,,551.8,1,562.44,14,0.025371511,14.26995288,0.071349764,0.142699529
+298,Phymatophosus sp. cur197SG,TETM,NA,colcur197,5,Coleoptera,Curculionidae,Phymatophosus,Yes,Yes,,551.8,1,562.44,5,0.009061254,5.096411743,0.025482059,0.050964117
+299,Phymatophosus sp. cur37SG,TETD,BOLD:ABU9761,colcur37,44,Coleoptera,Curculionidae,Phymatophosus,Yes,Yes,,599,1,2275,44,0.07345576,167.1118531,0.835559265,1.671118531
+300,Platynota sp. lep195SG,HEIC,NA,lep128,1,Lepidoptera,Tortricidae,,Yes,Yes,,879,1,1279,1,0.001137656,1.455062571,0.007275313,0.014550626
+300,Platynota sp. lep195SG,PSE1,BOLD:ABV2162,lep195,1,Lepidoptera,Tortricidae,,Yes,Yes,,10911,1,1926,1,9.16506E-05,0.176519109,0.000882596,0.001765191
+301,Platynota sp. lep99SG,ZUEG,BOLD:AAA0948,lep99,1,Lepidoptera,Tortricidae,,Yes,Yes,,6094.571429,1,383.1428571,1,0.00016408,0.062866251,0.000314331,0.000628663
+302,Plocetes beluosus,COUH,BOLD:ACS6350,colcur221,52,Coleoptera,Curculionidae,,No,No,Does not occur in 50ha plot,,1,,52,NA,NA,NA,
+303,Pseudobaris sp. cur145SG,ASTS,NA,colcur71,16,Coleoptera,Curculionidae,Pseudobaris,Yes,Yes,,283,1,281,16,0.056537102,15.8869258,0.079434629,0.158869258
+303,Pseudobaris sp. cur145SG,BACM,BOLD:ACG0001,colcur145; Sp106SGBacmaj (larva),13,Coleoptera,Curculionidae,Pseudobaris,Yes,Yes,,183,1,3,13,0.071038251,0.213114754,0.001065574,0.002131148
+304,Pseudobaris sp. cur188SG,ARR1,BOLD:ACJ3578,colcur188,3,Coleoptera,Curculionidae,Pseudobaris,Yes,Yes,,1617.625,1,532.875,3,0.001854571,0.988254385,0.004941272,0.009882544
+305,Pseudobaris sp. cur19SG,DOL1,NA,colcur19,1,Coleoptera,Curculionidae,Pseudobaris,Yes,Yes,,1759.490909,1,3814.745455,1,0.000568346,2.168096144,0.010840481,0.021680961
+306,Pseudobaris sp. cur202SG,PLAP,BOLD:ACJ3579,colcur202,1,Coleoptera,Curculionidae,Pseudobaris,Yes,Yes,,855,1,705,1,0.001169591,0.824561404,0.004122807,0.008245614
+307,Pseudomopsis sp. cur168SG,TETD,BOLD:ACJ5601,colcur168,2,Coleoptera,Curculionidae,Pseudomopsis,Yes,Yes,,599,1,2275,2,0.003338898,7.595993322,0.037979967,0.075959933
+308,Pseudomopsis sp. cur254SG,GUAD,BOLD:ACJ5756,Sp42SGGuadum (larva),2,Coleoptera,Curculionidae,Pseudomopsis,Yes,Yes,,778,1,2611,2,0.002570694,6.712082262,0.033560411,0.067120823
+309,Pseudomopsis sp. cur34SG,GUAD,BOLD:ABV0299,colcur34; Sp42SGGuadum (larva),10,Coleoptera,Curculionidae,Pseudomopsis,Yes,Yes,,778,1,2611,10,0.01285347,33.56041131,0.167802057,0.335604113
+310,Pycnotheantis sp. cur47SG,LACP,BOLD:ABV3492,colcur88,1,Coleoptera,Curculionidae,Pycnotheantis,Yes,Yes,,1378,1,348,1,0.000725689,0.252539913,0.0012627,0.002525399
+310,Pycnotheantis sp. cur47SG,OENM,BOLD:ABV3492,colcur47; Sp3SGOenmap (larva),98,Coleoptera,Curculionidae,Pycnotheantis,Yes,Yes,,2362,1,5721,98,0.041490262,237.3657917,1.186828959,2.373657917
+311,Pyra lep117SG Pyra sp. lep117SG,DOL2,BOLD:AAA3587,lep117,1,Lepidoptera,Pyralidae,Pyra lep117SG,Yes,Yes,,1053.6,1,928,1,0.000949127,0.880789674,0.004403948,0.008807897
+312,Pyra lep147SG Pyra sp. lep147SG,FIC1,BOLD:ACJ4602,lep147,1,Lepidoptera,Pyralidae,Pyra lep147SG,Yes,No,Small-seeded host,90810.72,NA,678.28,NA,NA,NA,NA,
+312,Pyra lep147SG Pyra sp. lep147SG,FICI,BOLD:ACJ4602,lep456,2,Lepidoptera,Pyralidae,Pyra lep147SG,Yes,No,Small-seeded host,497962.08,NA,1361.56,NA,NA,NA,NA,
+313,Pyra lep231SG Pyra sp. lep231SG,TRI3,BOLD:ACF3503,lep231,2,Lepidoptera,Pyralidae,Pyra lep231SG,Yes,Yes,,9188.6,1,21799,2,0.000217661,4.74479246,0.023723962,0.047447925
+314,Pyra lep248SG Pyra sp. lep248SG,BEIP,NA,lep248,2,Lepidoptera,Pyralidae,Pyra lep248SG,Yes,Yes,,1986,1,2507,2,0.001007049,2.524672709,0.012623364,0.025246727
+315,Pyra lep291SG Pyra sp. lep291SG,CAPF,BOLD:ACG2223,lep291,4,Lepidoptera,Pyralidae,Pyra lep291SG,Yes,Yes,,2076.019048,1,1095.67672,4,0.001926765,2.111111111,0.010555556,0.021111111
+316,Pyra lep296SG Pyra sp. lep296SG,HYMC,BOLD:AAH5480,lep296,230,Lepidoptera,Pyralidae,Pyra lep296SG,No,No,Does not occur in 50ha plot,NA,1,NA,230,NA,NA,NA,
+317,Pyra lep305SG Pyra sp. lep305SG,NECL,NA,lep305,2,Lepidoptera,Pyralidae,Pyra lep305SG,Yes,Yes,,413,1,289,2,0.004842615,1.399515738,0.006997579,0.013995157
+318,Pyra lep307SG Pyra sp. lep307SG,CAPF,NA,lep307,1,Lepidoptera,Pyralidae,Pyra lep307SG,Yes,Yes,,2076.019048,1,1095.67672,1,0.000481691,0.527777778,0.002638889,0.005277778
+319,Pyra lep310SG Pyra sp. lep310SG,CUPS,BOLD:AAG0530,lep310,2,Lepidoptera,Pyralidae,Pyra lep310SG,Yes,Yes,,1103.6,1,104.44,2,0.001812251,0.189271475,0.000946357,0.001892715
+320,Pyra lep312SG Pyra sp. lep312SG,CAVP,NA,lep312,1,Lepidoptera,Pyralidae,Pyra lep312SG,Yes,Yes,,294,1,80,1,0.003401361,0.272108844,0.001360544,0.002721088
+321,Pyra lep327SG Pyra lep327SG,ACAG,BOLD:ACG0975,lep327,1,Lepidoptera,Pyralidae,Pyra lep327SG,No,No,Does not occur in 50ha plot,NA,1,NA,1,NA,NA,NA,
+322,Pyra lep346SG Pyra sp. lep346SG,BEIP,BOLD:AAA1807,lep346,3,Lepidoptera,Pyralidae,Pyra lep346SG,Yes,Yes,,1986,1,2507,3,0.001510574,3.787009063,0.018935045,0.037870091
+323,Pyra lep449SG Pyra sp. lep449SG,LONL,BOLD:AAA5505,lep471,1,Lepidoptera,Pyralidae,Pyra lep449SG,Yes,Yes,,763.4,1,297.2,1,0.001309929,0.389310977,0.001946555,0.00389311
+323,Pyra lep449SG Pyra sp. lep449SG,MAC2,BOLD:AAA5505,lep495,1,Lepidoptera,Pyralidae,Pyra lep449SG,Yes,Yes,,443,1,14,1,0.002257336,0.031602709,0.000158014,0.000316027
+323,Pyra lep449SG Pyra sp. lep449SG,PLAE,BOLD:AAA5505,lep449,3,Lepidoptera,Pyralidae,Pyra lep449SG,Yes,Yes,,1209,1,1050,3,0.00248139,2.605459057,0.013027295,0.026054591
+324,Pyra lep478SG Pyra sp. lep478SG,ANTP,BOLD:ABW7510,lep478,1,Lepidoptera,Pyralidae,Pyra lep478SG,Yes,Yes,,1463.4,1,744.7333333,1,0.00068334,0.5089062,0.002544531,0.005089062
+325,Pyra lep81SG Pyra sp. lep81SG,PITC,NA,lep81,3,Lepidoptera,Pyralidae,,Yes,Yes,,2390,1,7714,3,0.00125523,9.682845188,0.048414226,0.096828452
+326,Pyra lep9SG Pyra sp. lep9SG,INFA,BOLD:ABV2171,lep394,4,Lepidoptera,Pyralidae,Pyra lep9SG,Yes,Yes,,5110.6,1,19,4,0.000782687,0.014871052,7.43553E-05,0.000148711
+326,Pyra lep9SG Pyra sp. lep9SG,PRIC,BOLD:ABV2171,lep9,45,Lepidoptera,Pyralidae,Pyra lep9SG,Yes,Yes,,352,2,1305,22.5,0.063920455,83.41619318,0.417080966,0.834161932
+327,Pyralidae unknown genus sp. 496SG,SERD,BOLD:ACL6679,Sp141SGSerdec (larva),4,Lepidoptera,Pyralidae,Pyralidae unknown genus,Yes,Yes,,541,1,386,4,0.007393715,2.853974122,0.014269871,0.028539741
+328,Rhinochenus stigna,HYMC,BOLD:ACG0000,colcur143,152,Coleoptera,Curculionidae,Rhinochenus,No,No,Does not occur in 50ha plot,NA,1,NA,152,NA,NA,NA,
+329,Rhyssomatus sp. cur174SG,INFA,BOLD:ACJ4033,colcur174; Sp125SGInglau (larva),41,Coleoptera,Curculionidae,Rhyssomatus,Yes,Yes,,5110.6,1,19,41,0.008022541,0.152428286,0.000762141,0.001524283
+330,Rhyssomatus sp. cur72SG,COMF,NA,colcur72,2,Coleoptera,Curculionidae,Rhyssomatus,Yes,Yes,,719,1,7,2,0.002781641,0.019471488,9.73574E-05,0.000194715
+331,Ricula lacistema,LACA,BOLD:AAY4670,lep129,19,Lepidoptera,Tortricidae,,Yes,Yes,,1206.68,1,84.32,19,0.015745682,1.327675937,0.00663838,0.013276759
+332,Ricula sp. 545SG nr. deflexa,LACA,BOLD:ACU7912,lep545,1,Lepidoptera,Tortricidae,,Yes,Yes,,1206.68,1,84.32,1,0.00082872,0.069877681,0.000349388,0.000698777
+333,Ricula sp. lep218SG,TRI3,BOLD:ACG2639,lep218,1,Lepidoptera,Tortricidae,,Yes,Yes,,9188.6,1,21799,1,0.000108831,2.37239623,0.011861981,0.023723962
+334,Riculorampha ancyloides,NECC,BOLD:ABV2167,lep113,16,Lepidoptera,Tortricidae,,Yes,Yes,,291,1,77,16,0.054982818,4.233676976,0.021168385,0.04233677
+334,Riculorampha ancyloides,NECL,BOLD:ABV2167,lep292,6,Lepidoptera,Tortricidae,,Yes,Yes,,413,1,289,6,0.014527845,4.198547215,0.020992736,0.041985472
+334,Riculorampha ancyloides,OCOO,BOLD:ABV2167,lep252,7,Lepidoptera,Tortricidae,,Yes,Yes,,958,1,295,7,0.007306889,2.155532359,0.010777662,0.021555324
+334,Riculorampha ancyloides,OCOS,BOLD:ABV2167,lep35,2,Lepidoptera,Tortricidae,,Yes,Yes,,60,1,287,2,0.033333333,9.566666667,0.047833333,0.095666667
+334,Riculorampha ancyloides,PHOM,BOLD:ABV2167,lep360,4,Lepidoptera,Tortricidae,,Yes,Yes,,651,1,107,4,0.006144393,0.657450077,0.00328725,0.006574501
+335,Schacontia AAP1991,CAPF,BOLD:AAP1991,lep80,11,Lepidoptera,Pyralidae,,Yes,Yes,,2076.019048,1,1095.67672,11,0.005298603,5.805555556,0.029027778,0.058055556
+336,Semnorrhynchus fulvopictus,CYDA,BOLD:ABV0293,colcur252,1,Coleoptera,Curculionidae,,Yes,Yes,,761.75,1,802.3333333,1,0.001312767,1.053276447,0.005266382,0.010532764
+336,Semnorrhynchus fulvopictus,GUA1,BOLD:ABV0293,colcur49,5,Coleoptera,Curculionidae,Semnorrhynchus,Yes,Yes,,2096.55,1,1282.05,5,0.00238487,3.057523074,0.015287615,0.030575231
+337,Semnorrhynchus sp. cur44SG,CYDA,BOLD:ABV0295,colcur44,2,Coleoptera,Curculionidae,,Yes,Yes,,761.75,1,802.3333333,2,0.002625533,2.106552894,0.010532764,0.021065529
+338,Sennius lawrencei,SENR,BOLD:ACG0207,colbru29,192,Coleoptera,Chrysomelidae,Sennius,No,No,Does not occur in 50ha plot,NA,1,NA,192,NA,NA,NA,
+339,Sennius sp. bru58SG,TACV,BOLD:ABV3603,colbru58,2,Coleoptera,Chrysomelidae,Sennius,Yes,Yes,,221,1,82,2,0.009049774,0.742081448,0.003710407,0.007420814
+340,Sennius sp. bru8SG,TACV,BOLD:ABV3604,colbru8,2,Coleoptera,Chrysomelidae,Sennius,Yes,Yes,,221,1,82,2,0.009049774,0.742081448,0.003710407,0.007420814
+341,Sesi lep101 Sesi sp. lep101,GUA1,BOLD:ABV2173,lep101,2,Lepidoptera,Sesiidae,Sesi lep101,Yes,Yes,,2096.55,1,1282.05,2,0.000953948,1.223009229,0.006115046,0.012230092
+342,Sibinia sp. cur154SG,MIMP,BOLD:ACJ5979,colcur154,29,Coleoptera,Curculionidae,,No,No,Does not occur in 50ha plot,,1,NA,29,NA,NA,NA,
+343,Speciomerus giganteus,ATTB,BOLD:ABV3599,colbru20; Sp14SGAttbut (larva),32,Coleoptera,Chrysomelidae,Speciomerus,Yes,Yes,,437.84,1,35.4,32,0.073086059,2.587246483,0.012936232,0.025872465
+344,Spilomelinae genus unknown sp. 80YB,MARP,BOLD:AAP1702,lep183,5,Lepidoptera,Crambidae,,Yes,Yes,,729,1,2554.302244,5,0.006858711,17.51921978,0.087596099,0.175192198
+345,Stator aegrotus,ACAH,BOLD:AAJ5083,colbru16,40,Coleoptera,Chrysomelidae,Amblycerus,Yes,,,1690,1,3370,40,0.023668639,79.76331361,0.398816568,0.797633136
+346,Stator monachus,ACAG,NA,colbru63,2,Coleoptera,Chrysomelidae,Stator,No,No,Does not occur in 50ha plot,NA,1,NA,2,NA,NA,NA,
+346,Stator monachus,ACAH,NA,colbru62,2,Coleoptera,Chrysomelidae,Stator,Yes,,,1690,1,3370,2,0.001183432,3.98816568,0.019940828,0.039881657
+347,Stator trisignatus,ACAG,BOLD:AAH9942,colbru35,12,Coleoptera,Chrysomelidae,Stator,No,No,Does not occur in 50ha plot,NA,1,NA,12,NA,NA,NA,
+347,Stator trisignatus,ACAH,BOLD:AAH9942,colbru36,2,Coleoptera,Chrysomelidae,Stator,Yes,,,1690,1,3370,2,0.001183432,3.98816568,0.019940828,0.039881657
+348,Sternechus sp. cur65SG,GUAS,BOLD:ABV0288,colcur65; Sp6SGGuasta (larva),190,Coleoptera,Curculionidae,Sternechus,Yes,,,1785,1,1388,190,0.106442577,147.7422969,0.738711485,1.477422969
+349,Strephonota ambrax,PAUT,BOLD:ABV4118,lep269,1,Lepidoptera,Lycaenidae,Strephonota,Yes,,,379.5119048,1,447.2916667,1,0.002634963,1.178597196,0.005892986,0.011785972
+350,Strephonota tephraeus,CUPS,BOLD:ABW7063,lep487,1,Lepidoptera,Lycaenidae,Strephonota,Yes,,,1103.6,1,104.44,1,0.000906125,0.094635738,0.000473179,0.000946357
+351,Strymon ziba,HEL1,BOLD:AAJ4460,lep382,2,Lepidoptera,Lycaenidae,Strymon,No,No,Does not occur in 50ha plot,NA,1,NA,2,NA,NA,NA,
+352,Sycophila sp. 1SG,POUA,NA,hym177,12,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,516,NA,1019,NA,NA,NA,NA,
+352,Sycophila sp. 1SG,PYLI,NA,hym139,1,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,3150,NA,12.8,NA,NA,NA,NA,
+353,Sycophila sp. 2SG,POUA,NA,hym181,13,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,516,NA,1019,NA,NA,NA,NA,
+353,Sycophila sp. 2SG,PYC1,NA,hym266,13,Hymenoptera,Eurytomidae,Sycophila,No,No,Hymenoptera,#VALUE!,NA,NA,NA,NA,NA,NA,
+355,Sycophila sp. 3SG,DOL2,NA,hym111,1,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,1053.6,NA,928,NA,NA,NA,NA,
+355,Sycophila sp. 3SG,FARO,NA,hym36,23,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,3085,NA,19448,NA,NA,NA,NA,
+356,Sycophila sp. hym171SG,PYMA,NA,hym171,3,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,1799.68,NA,157.72,NA,NA,NA,NA,
+357,Sycophila sp. hym173SG,PAU6,NA,hym173,2,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,95,NA,12,NA,NA,NA,NA,
+358,Sycophila sp. hym243SG,HYEL,NA,hym243,2,Hymenoptera,Eurytomidae,Sycophila,Yes,No,Hymenoptera,7480,NA,5152,NA,NA,NA,NA,
+359,Synanthedon  sp. lep500SG,INM2,BOLD:ACJ4196,lep500,1,Lepidoptera,Sesiidae,Synanthedon,No,No,Does not occur in 50ha plot,NA,1,NA,1,NA,NA,NA,
+360,Synanthedon sp. lep413SG,INSA,BOLD:ACJ4195,lep413,1,Lepidoptera,Sesiidae,Synanthedon,Yes,,,3965,1,312.96,1,0.000252207,0.078930643,0.000394653,0.000789306
+361,Tallula sp. lep229SG,ZAN2,BOLD:AAA3603,lep229,1,Lepidoptera,Pyralidae,Tallula,Yes,,,2362,1,326,1,0.00042337,0.138018628,0.000690093,0.001380186
+362,Talponia sp. lep273SG,MACG,BOLD:ACG2213,lep273,11,Lepidoptera,Tortricidae,,Yes,No,Small-seeded host,1741,NA,12687.6,NA,NA,NA,NA,
+363,Talponia sp. lep324SG,PICL,BOLD:ACG1391,lep324,6,Lepidoptera,Tortricidae,Talponia,Yes,,,911.3,1,88.5,6,0.006584001,0.582684078,0.00291342,0.005826841
+364,Talponia sp. lep32SG,HEIA,BOLD:ABV2186,lep266,16,Lepidoptera,Tortricidae,Talponia,Yes,,,429,2.75,152,5.818181818,0.013562195,2.061453698,0.010307268,0.020614537
+364,Talponia sp. lep32SG,HEIC,BOLD:ABV2186,lep32,81,Lepidoptera,Tortricidae,Talponia,Yes,,,879,1.31,1279,61.83206107,0.070343642,89.96951776,0.449847589,0.899695178
+365,Talponia sp. lep40SG,DESP,BOLD:ABV2175,lep40,41,Lepidoptera,Tortricidae,Talponia,Yes,,,791.5,1,1371.583333,41,0.051800379,71.04853653,0.355242683,0.710485365
+366,Tenuipetiolus? sp. hym98SG,HIRT,NA,hym98,2,Hymenoptera,Eurytomidae,Tenuipetiolus?,Yes,No,Hymenoptera,181,NA,2744,NA,NA,NA,NA,
+367,Tmolus echionDHJ01,CUPS,BOLD:AAK2129,lep323,1,Lepidoptera,Lycaenidae,Tmolus,Yes,,,1103.6,1,104.44,1,0.000906125,0.094635738,0.000473179,0.000946357
+368,Tort lep181SG Tort sp. lep181SG,DOLO,,lep181,5,Lepidoptera,Tortricidae,,Yes,,,1412.96,1,1312.84,5,0.003538671,4.6457083,0.023228542,0.046457083
+369,Trichapion sp. cur101SG,ANDI,BOLD:ACG1965,colcur101,31,Coleoptera,Brentidae,Trichapion,Yes,,,847.55,5,8.05,6.2,0.007315203,0.058887381,0.000294437,0.000588874
+370,Tyrannion sp. cur33SG,COUC,BOLD:ABV0980,colcur33; Sp25SGCoucur (larva),141,Coleoptera,Curculionidae,Tyrannion,Yes,,,2273,1,1201,141,0.062032556,74.50109987,0.372505499,0.745010999
+371,Ziegleria hesperitisDHJ01,GUSS,BOLD:AAD4593,lep267,2,Lepidoptera,Lycaenidae,,Yes,,,3766.865079,1,2652.539683,2,0.000530945,1.408353964,0.00704177,0.01408354
+372,Zyzzyva sp. cur42SG,OENM,BOLD:ABV3555,colcur42; Sp3SGOenmap (larva),219,Coleoptera,Curculionidae,Zyzzyva,Yes,,,2362,1,5721,219,0.092718036,530.4398815,2.652199407,5.304398815

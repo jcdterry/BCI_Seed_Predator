@@ -1,0 +1,153 @@
+---
+title: "Phylogenetic Signal Analyses"
+author: "J C D Terry & S Gripenberg"
+date: "17/01/2019"
+output: html_document
+---
+
+# Packages and Data
+
+```{r, message=FALSE, warning=FALSE}
+rm(list=ls())
+
+require(tidyverse)
+require(bipartite)
+require(corrplot)
+require(knitr)
+require(broom)
+require(phytools)
+require(treeio)   
+require(ape)
+require(phytools)
+require(caper)
+require(picante)
+
+select<- dplyr::select # to ensure dplyr version of select is default
+```
+
+```{r}
+FW<-read_csv('../Data/FW.csv')
+Trait<- read_csv('../Data/TidyTrait.csv')
+PhyloExtraSpec<-read.tree('../Data/PhyloExtraSpec.tree')
+
+```
+
+# Data Manipulation
+
+Takes species that are in phylogeny, joins trait data to create a data frame, selects only a few of the columns, replaces any spaces in the plant names with underscores, creates new columns that include logical tests of whether the plants ins 'well sampled' or 'predated'. 
+
+
+```{r message=FALSE, warning=FALSE}
+
+data.frame(Phylo_sp=PhyloExtraSpec$tip.label)%>%
+  left_join(Trait, by= c('Phylo_sp' = 'Plant_species19')) %>%
+  select(taxa=Phylo_sp,Family,TotUnits_collected, SeedPred_pres,
+         Hymeno_pres, Lepid_pres , Coleo_pres)-> PhyloDF
+```
+
+## Do Seed Predators of Different Orders Partition or Aggregate on Particular Plants
+
+Chi-Squared Tests to test if co-attack is greater than expected
+
+```{r message=FALSE, warning=FALSE}
+PhyloDF%>%
+  filter(TotUnits_collected>200) %>%
+  select(Hymeno_pres ,Lepid_pres, Coleo_pres)%>%
+  mutate(HandC = Hymeno_pres&Coleo_pres,
+         HandL = Hymeno_pres&Lepid_pres,
+         CandL = Coleo_pres&Lepid_pres,
+         HandCandL =  Hymeno_pres&Coleo_pres&Lepid_pres)-> ChiSqDat
+
+ChiSqDat%>%
+  summarise_all(sum)
+
+chisq.test(x=ChiSqDat$Hymeno_pres, y=ChiSqDat$Lepid_pres)
+chisq.test(x=ChiSqDat$Hymeno_pres, y=ChiSqDat$Coleo_pres)
+chisq.test(x=ChiSqDat$Coleo_pres, y=ChiSqDat$Lepid_pres)
+
+```
+
+
+# Phylogenetic Signal
+## Getting Data into Format
+```{r}
+## Using comparative.data() funbction to match seed data with phylogeny
+PhyloDF$Hymeno_pres<- as.character(PhyloDF$Hymeno_pres)
+PhyloDF$Lepid_pres <- as.character(PhyloDF$Lepid_pres)
+PhyloDF$Coleo_pres <- as.character(PhyloDF$Coleo_pres )
+
+ PhyloDF %>% 
+   select(taxa,Coleo_pres:SeedPred_pres ) -> DF2 
+ 
+SimplePlotPhylo<- PhyloExtraSpec
+#SimplePlotPhylo$tip.label <- levels( SimplePlotPhylo$tip.label) # remove the factoring
+WellSampledTree <- drop.tip(SimplePlotPhylo, tip = PhyloDF$taxa[PhyloDF$TotUnits_collected <200])
+WellSampledTree$node.label <- 1:length(WellSampledTree$node.label)
+WellSampledTree$edge.length  <-WellSampledTree$edge.length +0.001
+
+WellSampledTreeCaper <- comparative.data(phy = WellSampledTree, data = DF2, names.col = taxa )
+```
+
+## Signal In Presence of Different Orders
+
+```{r fig.height=3, fig.width=3}
+
+PHYLD<-phylo.d(data = WellSampledTreeCaper, binvar=SeedPred_pres)
+PHYLD
+plot(PHYLD)
+
+PHYLDWasp<-phylo.d(data = WellSampledTreeCaper, binvar=Hymeno_pres)
+PHYLDMoth<-phylo.d(data = WellSampledTreeCaper, binvar=Lepid_pres)
+PHYLDBeetle<-phylo.d(data = WellSampledTreeCaper, binvar=Coleo_pres)
+
+PHYLDWasp
+plot(PHYLDWasp)
+PHYLDMoth
+plot(PHYLDMoth)
+PHYLDBeetle
+plot(PHYLDBeetle)
+```
+
+## Signal in Continuous responses (Seed Predator Load and Rate)
+
+```{r}
+  BkTestPhylo <- PhyloExtraSpec
+
+Trait%>%
+  select(Plant_species19,SeedPred_n, SeedPredationRate,TotUnits_collected) %>%
+  filter(TotUnits_collected>200,
+         Plant_species19 %in% BkTestPhylo$tip.label)%>%
+  mutate(SeedPred_n = ifelse(is.na(SeedPred_n),0,SeedPred_n),
+         SeedPredationRate = ifelse(is.na(SeedPredationRate), 0, SeedPredationRate))%>%
+  as.data.frame()->BkTestTraits
+
+# Drop from phylogeny those not well sampled in trait database
+TO_DROP <- BkTestPhylo$tip.label[!(BkTestPhylo$tip.label %in% BkTestTraits$Plant_species19)]
+WSTree<- drop.tip(BkTestPhylo,   tip =TO_DROP)
+
+# remove polytomies
+WSTree <- multi2di(WSTree, random = TRUE)
+
+# Make sure edge length isn't zero
+WSTree$edge.length <- WSTree$edge.length+0.001 
+
+# Put them in the right order:
+BkTestTraits <- BkTestTraits[   match(WSTree$tip.label, BkTestTraits$Plant_species19),   ] 
+
+```
+
+### Phylogenetic Signal of Predator Diversity
+```{r}
+set.seed(1)
+phylosignal(BkTestTraits$SeedPred_n,WSTree)
+phytools::phylosig(WSTree,BkTestTraits$SeedPred_n, test=TRUE, nsim = 50000) # Check using other package
+
+```
+
+### Phylogenetic Signal of Predation Rate
+
+```{r}
+set.seed(1)
+phylosignal(BkTestTraits$SeedPredationRate,WSTree)
+phytools::phylosig(WSTree,BkTestTraits$SeedPredationRate, test=TRUE, nsim = 50000) # Check using other package
+```

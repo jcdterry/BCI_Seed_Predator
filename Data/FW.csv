@@ -1,0 +1,323 @@
+"","InsectSpCode","FullSpeciesNameValid","Codigo","Order","Family","InsectGenus","TOTAL","KilledPerM2"
+"1",1,"Aeatus costulatus","AMPP","Coleoptera","Curculionidae","Aeatus",188,8.92459770114943
+"2",1,"Aeatus costulatus","PITC","Coleoptera","Curculionidae","Aeatus",84,2.71119665271967
+"3",1,"Aeatus costulatus","TABR","Coleoptera","Curculionidae","Aeatus",21,0.166531908818351
+"4",2,"Aeatus sp. cur108SG","CYDA","Coleoptera","Curculionidae","Aeatus",1,0.0105327644677825
+"5",3,"Aeatus sp. cur144SG","TABG","Coleoptera","Curculionidae","Aeatus",34,0.175465420560748
+"6",4,"Aeatus sp. cur242SG","PITC","Coleoptera","Curculionidae","Aeatus",3,0.142413793103448
+"7",5,"Aeatus sp. cur262SG","CAL1","Coleoptera","Curculionidae","Aeatus",7,0.016666293016478
+"8",6,"Aeatus sp. cur263SG","AMPP","Coleoptera","Curculionidae","Aeatus",2,0.0949425287356322
+"9",7,"Aeatus vestitus","CORB","Coleoptera","Curculionidae","Aeatus",94,1.95479809976247
+"10",11,"Amblycerus bru59SG sp. bru59SG","CORB","Coleoptera","Chrysomelidae","Amblycerus bru59SG",4,0.0831828978622328
+"11",12,"Amblycerus championi","CORB","Coleoptera","Chrysomelidae","Amblycerus",1,0.0207957244655582
+"12",14,"Amblycerus perfectus","COMF","Coleoptera","Chrysomelidae","Amblycerus",26,0.00253129346314326
+"13",15,"Amblycerus pterocarpae","PTER","Coleoptera","Chrysomelidae","Amblycerus",2,0.00711846505896849
+"14",18,"Amblycerus sp. bru17SG","COMF","Coleoptera","Chrysomelidae","Amblycerus",3,0.000292072322670375
+"15",18,"Amblycerus sp. bru17SG","COML","Coleoptera","Chrysomelidae","Amblycerus",3,0.038448275862069
+"16",19,"Amblycerus sp. bru21SG","PLAE","Coleoptera","Chrysomelidae","Amblycerus",10,0.086848635235732
+"17",20,"Amblycerus sp. bru22SG","CORB","Coleoptera","Chrysomelidae","Amblycerus",92,1.91320665083135
+"18",21,"Amblycerus sp. bru27SG near piurae","MENG","Coleoptera","Chrysomelidae","Amblycerus",4,0.316206896551724
+"19",22,"Amblycerus sp. bru28SG","DRYS","Coleoptera","Chrysomelidae","Amblycerus",10,0.285467128027682
+"20",24,"Amblycerus tachigaliae","TACV","Coleoptera","Chrysomelidae","Amblycerus",16,0.0593665158371041
+"21",25,"Amblycerus vegai","CORA","Coleoptera","Chrysomelidae","Amblycerus",27,0.215384030418251
+"22",27,"Anacampsis phytomiella","ANAE","Lepidoptera","Gelechiidae",NA,13,0.651641414141414
+"23",28,"Anchonus sp. cur32SG","CAL2","Coleoptera","Curculionidae","Anchonus",1,0.0026004016064257
+"24",29,"Anchonus sp. cur53SG","POUA","Coleoptera","Curculionidae","Anchonus",1,0.0197480620155039
+"25",30,"Anchonus sp. cur62SG","COMF","Coleoptera","Curculionidae","Anchonus",1,9.73574408901252e-05
+"26",31,"Anthonominae unknown genus sp. 247SG","HIR1","Coleoptera","Curculionidae","Anthonominae unknown genus",6,0.56482374768089
+"27",32,"Anthonominae unknown genus sp. 248SG","HETL","Coleoptera","Curculionidae","Anthonominae unknown genus",51,0.156033994334278
+"28",33,"Anthonomus sp. cur133SG","HIR1","Coleoptera","Curculionidae","Anthonomus",2,0.188274582560297
+"29",33,"Anthonomus sp. cur133SG","MASH","Coleoptera","Curculionidae","Anthonomus",2,0.073400365630713
+"30",34,"Anthonomus sp. cur136SG","TETD","Coleoptera","Curculionidae","Anthonomus",14,0.531719532554257
+"31",35,"Anthonomus sp. cur14SG","VIR1","Coleoptera","Curculionidae","Anthonomus",1,0.0233578792341679
+"32",36,"Anthonomus sp. cur150SG","GUAD","Coleoptera","Curculionidae","Anthonomus",1,0.033560411311054
+"33",37,"Anthonomus sp. cur158SG","MYRG","Coleoptera","Curculionidae","Anthonomus",4,0.000509193776520509
+"34",39,"Anthonomus sp. cur245SG","MYRG","Coleoptera","Curculionidae","Anthonomus",3,0.000381895332390382
+"35",40,"Anthonomus sp. cur45SG","CASG","Coleoptera","Curculionidae","Anthonomus",2,0.00135922330097087
+"36",40,"Anthonomus sp. cur45SG","LAEP","Coleoptera","Curculionidae","Anthonomus",1,0.239487179487179
+"37",40,"Anthonomus sp. cur45SG","ZUEG","Coleoptera","Curculionidae","Anthonomus",47,0.0295471379682153
+"38",41,"Apion sp. cur180SG","MACS","Coleoptera","Brentidae","Apion",2,0.000390879478827362
+"39",42,"Apion sp. cur183SG","MACA","Coleoptera","Brentidae","Apion",69,0.128602150537634
+"40",44,"Apogeshna stenialis","PROT","Lepidoptera",NA,NA,4,0.0224219429294127
+"41",45,"Apogeshna stenialisDHJ02","MASH","Lepidoptera",NA,NA,1,0.0367001828153565
+"42",46,"Atractomerus caligatus","EUGO","Coleoptera","Curculionidae","Atractomerus",24,0.983128156380436
+"43",47,"Atryparius sp. 1SG","INPU","Coleoptera","Cerambycidae","Atryparius",2,4.2606516290727e-05
+"44",47,"Atryparius sp. 1SG","PLAE","Coleoptera","Cerambycidae","Atryparius",14,0.121588089330025
+"45",47,"Atryparius sp. 1SG","POUU","Coleoptera","Cerambycidae","Atryparius",1,0.00833156216790648
+"46",47,"Atryparius sp. 1SG","TRAA","Coleoptera","Cerambycidae","Atryparius",1,0.00469924812030075
+"47",48,"Baris sp. cur100SG","DESI","Coleoptera","Curculionidae","Baris",6,0.000233463035019455
+"48",49,"Baris sp. cur121SG","TET1","Coleoptera","Curculionidae","Baris",12,0.00997690531177829
+"49",50,"Baris sp. cur46SG","DAVN","Coleoptera","Curculionidae","Baris",2,0.0151373346897253
+"50",51,"Baris sp. cur7SG","DOL1","Coleoptera","Curculionidae","Baris",31,0.672109804488902
+"51",51,"Baris sp. cur7SG","DOL2","Coleoptera","Curculionidae","Baris",197,1.73515565679575
+"52",51,"Baris sp. cur7SG","DOLO","Coleoptera","Curculionidae","Baris",44,0.408822330426905
+"53",52,"Borisauletes sp. cur1SG","DOL2","Coleoptera","Curculionidae","Borisauletes",11,0.0968868640850418
+"54",52,"Borisauletes sp. cur1SG","DOLO","Coleoptera","Curculionidae","Borisauletes",3,0.0278742498018344
+"55",53,"Bothryopteron darlingtoni","HIR1","Coleoptera","Brentidae","Bothryopteron",78,7.34270871985158
+"56",53,"Bothryopteron darlingtoni","MASN","Coleoptera","Brentidae","Bothryopteron",1,0.133067307692308
+"57",54,"Bothryopteron sp. 23SG","HIRQ","Coleoptera","Brentidae","Bothryopteron",6,0.0521052631578947
+"58",55,"Bothryopteron sp. cur85SG","HIR1","Coleoptera","Brentidae","Bothryopteron",5,0.470686456400742
+"59",55,"Bothryopteron sp. cur85SG","MASH","Coleoptera","Brentidae","Bothryopteron",333,12.2211608775137
+"60",61,"Bruc bru44SG Bruc sp. bru44SG","CORB","Coleoptera","Chrysomelidae","Bruc bru44SG",4,0.0831828978622328
+"61",62,"Bruc bru45SG Bruc sp. bru45SG","CORB","Coleoptera","Chrysomelidae","Bruc bru45SG",2,0.0415914489311164
+"62",65,"Bruc bru54SG Bruc sp. bru54SG","ATTB","Coleoptera",NA,NA,2,0.00161702905170839
+"63",67,"Bruc bru66SG sp. bru66SG","ATTB","Coleoptera","Chrysomelidae","Bruc bru66SG",2,0.00161702905170839
+"64",68,"Busckiella lecythidis","GUSS","Coleoptera","Curculionidae","Busckiella",8,0.0563341585462207
+"65",69,"Carmenta foraseminis","GUSS","Lepidoptera","Sesiidae","Carmenta",83,0.58446689491704
+"66",70,"Carmenta sp. lep111SG","PRIC","Lepidoptera","Sesiidae","Carmenta",33,1.2234375
+"67",71,"Carmenta sp. lep131","STRP","Lepidoptera","Sesiidae",NA,2,0.0116814365671642
+"68",72,"Carmenta sp. lep1SG","COUC","Lepidoptera","Sesiidae","Carmenta",45,0.23776946766388
+"69",72,"Carmenta sp. lep1SG","FARO","Lepidoptera","Sesiidae","Carmenta",159,10.0234424635332
+"70",73,"Carmenta sp. lep539SG","FARO","Lepidoptera","Sesiidae","Carmenta",1,0.0630405186385737
+"71",74,"Caryedes brasiliensis","DIOW","Coleoptera","Chrysomelidae","Caryedes",679,0.186003622866287
+"72",75,"Cerambycidae genus unknown sp. colcer1SG","STEA","Coleoptera","Cerambycidae","Cerambycidae genus unknown",16,0.0039152031156287
+"73",76,"Cerambycidae genus unknown sp. colcer3SG","CEIP","Coleoptera",NA,NA,1,0.000949050286737163
+"74",76,"Cerambycidae genus unknown sp. colcer3SG","PSE1","Coleoptera","Cerambycidae","Cerambycidae genus unknown",2,0.00353038218311795
+"75",76,"Cerambycidae genus unknown sp. colcer3SG","STEA","Coleoptera","Cerambycidae","Cerambycidae genus unknown",2,0.00130669903984108
+"76",78,"Cerambycidae genus unknown sp. colcer7SG","ANDI","Coleoptera","Cerambycidae","Cerambycidae genus unknown",3,0.000189959294436906
+"77",84,"Ceratopus sp. cur2SG","SPOR","Coleoptera","Curculionidae","Ceratopus",1,0.00545454545454545
+"78",88,"Cerconota anonella","ANNH","Lepidoptera","Oecophoridae","Cerconota",23,0.000720523162470141
+"79",88,"Cerconota anonella","ANNS","Lepidoptera","Oecophoridae","Cerconota",23,0.0940525726184491
+"80",89,"Chelotonyx sp. 1SG","QUA1","Coleoptera","Curculionidae","Chelotonyx",93,3.32175713597107
+"81",90,"Clydonopteron pomponius","CAL1","Lepidoptera","Crambidae","Clydonopteron",29,0.0690460710682659
+"82",90,"Clydonopteron pomponius","CYDA","Lepidoptera","Crambidae","Clydonopteron",1,0.0105327644677825
+"83",90,"Clydonopteron pomponius","PITC","Lepidoptera","Crambidae","Clydonopteron",6,0.19365690376569
+"84",91,"Cochylis sp. lep97SG","GUAS","Lepidoptera","Tortricidae",NA,7,0.0544313725490196
+"85",93,"Colobothea sp. 1SG","PSE1","Coleoptera","Cerambycidae","Colobothea",1,0.00176519109155898
+"86",94,"Conotrachelus posticatus","LICP","Coleoptera","Curculionidae","Conotrachelus",1,0.00129186602870813
+"87",95,"Conotrachelus pumilio","COCM","Coleoptera","Curculionidae","Conotrachelus",33,0.00226960110041265
+"88",96,"Conotrachelus sp. cur104SG","INFA","Coleoptera","Curculionidae","Conotrachelus",5,0.000185888154032795
+"89",97,"Conotrachelus sp. cur10SG","TRI3","Coleoptera","Curculionidae","Conotrachelus",78,1.85046905948676
+"90",99,"Conotrachelus sp. cur124SG nr. punctiventris","CAL2","Coleoptera","Curculionidae","Conotrachelus",46,0.0897362894940603
+"91",100,"Conotrachelus sp. cur132SG","CASG","Coleoptera","Curculionidae","Conotrachelus",29,0.0197087378640777
+"92",102,"Conotrachelus sp. cur138SG","GUA1","Coleoptera","Curculionidae","Conotrachelus",14,0.0856106460613866
+"93",102,"Conotrachelus sp. cur138SG","GUA2","Coleoptera","Curculionidae","Conotrachelus",20,0.321938731973718
+"94",104,"Conotrachelus sp. cur141SG","COMF","Coleoptera","Curculionidae","Conotrachelus",1,9.73574408901252e-05
+"95",104,"Conotrachelus sp. cur141SG","QUA1","Coleoptera",NA,NA,24,0.857227647992533
+"96",105,"Conotrachelus sp. cur152SG","LONL","Coleoptera","Curculionidae","Conotrachelus",57,0.221907257008122
+"97",105,"Conotrachelus sp. cur152SG","PICL","Coleoptera","Curculionidae","Conotrachelus",167,0.162180401624054
+"98",106,"Conotrachelus sp. cur163SG","POUU","Coleoptera","Curculionidae","Conotrachelus",59,0.491562167906482
+"99",107,"Conotrachelus sp. cur164SG","CAL2","Coleoptera","Curculionidae","Conotrachelus",1,0.0026004016064257
+"100",108,"Conotrachelus sp. cur175SG","TRI3","Coleoptera","Curculionidae","Conotrachelus",21,0.498203208323357
+"101",109,"Conotrachelus sp. cur176SG","LICP","Coleoptera","Curculionidae","Conotrachelus",38,0.0490909090909091
+"102",110,"Conotrachelus sp. cur17SG","POU2","Coleoptera","Curculionidae","Conotrachelus",3,0.00242656925600119
+"103",111,"Conotrachelus sp. cur181SG","CHRA","Coleoptera","Curculionidae","Conotrachelus",3,0.00426952141057934
+"104",112,"Conotrachelus sp. cur182SG","GUA1","Coleoptera","Curculionidae","Conotrachelus",1,0.0061150461472419
+"105",113,"Conotrachelus sp. cur18SG","POU2","Coleoptera","Curculionidae","Conotrachelus",56,0.0452959594453556
+"106",115,"Conotrachelus sp. cur22SG nr. punctiventris","CAL2","Coleoptera",NA,NA,1,0.0026004016064257
+"107",116,"Conotrachelus sp. cur249SG","ANAE","Coleoptera","Curculionidae","Conotrachelus",1,0.0501262626262626
+"108",118,"Conotrachelus sp. cur29SG","SLOT","Coleoptera","Curculionidae","Conotrachelus",1,0.0213122171945701
+"109",119,"Conotrachelus sp. cur30SG","CAL2","Coleoptera","Curculionidae","Conotrachelus",29,0.0452379403637345
+"110",120,"Conotrachelus sp. cur58SG","TRIC","Coleoptera","Curculionidae","Conotrachelus",33,0.357234416154522
+"111",121,"Conotrachelus sp. cur68SG","ANAE","Coleoptera","Curculionidae","Conotrachelus",15,0.751893939393939
+"112",122,"Conotrachelus sp. cur8SG","SPOR","Coleoptera","Curculionidae","Conotrachelus",326,1.77818181818182
+"113",122,"Conotrachelus sp. cur8SG","TET2","Coleoptera","Curculionidae","Conotrachelus",1,0.023087365503061
+"114",123,"Conotrachelus sp. cur92SG","COCM","Coleoptera","Curculionidae","Conotrachelus",105,0.00722145804676754
+"115",123,"Conotrachelus sp. cur92SG","COCP","Coleoptera","Curculionidae","Conotrachelus",8,0.13043219076006
+"116",124,"Conotrachelus turbatus","POUU","Coleoptera","Curculionidae","Conotrachelus",1,0.00833156216790648
+"117",125,"Conotrachelus verticalis","GUA1","Coleoptera","Curculionidae","Conotrachelus",1,0.0061150461472419
+"118",126,"Cosm lep271SG Cosm sp. lep271SG","ASTG","Lepidoptera","Cosmopterigidae",NA,11,0.0176379310344828
+"119",127,"Cosm lep274SG Cosm sp. lep274SG","INM1","Lepidoptera","Cosmopterigidae",NA,7,0.0147499765456422
+"120",127,"Cosm lep274SG Cosm sp. lep274SG","INPU","Lepidoptera","Cosmopterigidae",NA,1,5.32581453634087e-05
+"121",129,"Cosm lep313SG Cosm sp. lep313SG","CORA","Lepidoptera","Cosmopterigidae",NA,1,0.00797718631178707
+"122",130,"Cosm lep34SG Cosm sp. lep34SG","RHEA","Lepidoptera","Cosmopterigidae",NA,3,0.0143132530120482
+"123",130,"Cosm lep34SG Cosm sp. lep34SG","RHEE","Lepidoptera","Cosmopterigidae","Cosm lep34SG",254,0.495635041371378
+"124",132,"Cosm lep406SG Cosm sp. lep406SG","PAUF","Lepidoptera","Cosmopterigidae",NA,1,0.128252631578947
+"125",133,"Cosm lep425SG Cosm sp. lep425SG","GUA2","Lepidoptera","Cosmopterigidae",NA,2,0.0321938731973718
+"126",135,"Cosm lep499SG Cosm sp. lep499SG","HIRT","Lepidoptera","Cosmopterigidae",NA,2,0.303204419889503
+"127",137,"Cosm lep542SG Cosm sp. lep542SG","HIRT","Lepidoptera","Cosmopterigidae",NA,1,0.151602209944751
+"128",139,"Cryptaspasma perseana","PRIC","Lepidoptera","Tortricidae",NA,5,0.185369318181818
+"129",140,"Cryptorhynchus sp. cur26SG","CEIP","Coleoptera","Curculionidae","Cryptorhynchus",512,0.485913746809428
+"130",140,"Cryptorhynchus sp. cur26SG","PSE1","Coleoptera","Curculionidae","Cryptorhynchus",5,0.00882595545779489
+"131",142,"Cryptorhynchus sp. cur54SG","CAL1","Coleoptera","Curculionidae","Cryptorhynchus",1,0.002380899002354
+"132",144,"Curc cur103SG Curc sp. cur103SG","POUU","Coleoptera","Curculionidae","Curc cur103SG",1,0.00833156216790648
+"133",145,"Curc cur129SG Curc sp. cur129SG","COMF","Coleoptera","Curculionidae","Curc cur129SG",1,9.73574408901252e-05
+"134",146,"Curc cur131SG Curc sp. cur131SG","TERA","Coleoptera","Curculionidae","Curc cur131SG",2,0.111625124626122
+"135",147,"Curc cur172SG Curc sp. cur172SG","OENM","Coleoptera","Curculionidae","Curc cur172SG",6,0.14532599491956
+"136",148,"Curc cur173SG Curc sp. cur173SG","CUPS","Coleoptera","Curculionidae","Curc cur173SG",52,0.0492105835447626
+"137",149,"Curc cur174SG Curc sp. cur174SG","PROT","Coleoptera","Curculionidae","Curc cur174SG",2,0.0112109714647063
+"138",150,"Curc cur175SG Curc sp. cur175SG","NECL","Coleoptera","Curculionidae","Curc cur175SG",2,0.0139951573849879
+"139",151,"Curc cur176SG Curc sp. cur176SG","OCOP","Coleoptera","Curculionidae","Curc cur176SG",6,0.0147181628392484
+"140",152,"Curc cur177SG Curc sp. cur177SG","CYDA","Coleoptera","Curculionidae","Curc cur177SG",22,0.231720818291216
+"141",153,"Curc cur178SG Curc sp. cur178SG","EUGO","Coleoptera","Curculionidae","Curc cur178SG",2,0.115517558374701
+"142",154,"Curc cur179SG Curc sp. cur179SG","NECC","Coleoptera","Curculionidae","Curc cur179SG",4,0.0105841924398625
+"143",154,"Curc cur179SG Curc sp. cur179SG","NECL","Coleoptera","Curculionidae","Curc cur179SG",4,0.0279903147699758
+"144",155,"Curc cur180SG Curc sp. cur180SG","AMPP","Coleoptera","Curculionidae","Curc cur180SG",2,0.0949425287356322
+"145",156,"Curc cur181SG Curc sp. cur181SG","ARRF","Coleoptera","Curculionidae","Curc cur181SG",2,1.29826292420741e-05
+"146",157,"Curc cur182SG Curc sp. cur182SG","ARRF","Coleoptera","Curculionidae","Curc cur182SG",2,1.29826292420741e-05
+"147",158,"Curc cur183SG Curc sp. cur183SG","CAL2","Coleoptera","Curculionidae","Curc cur183SG",5,0.0130020080321285
+"148",159,"Curc cur184SG Curc sp. cur184SG","CAL1","Coleoptera","Curculionidae","Curc cur184SG",1,0.002380899002354
+"149",160,"Curc cur185SG Curc sp. cur185SG","JACC","Coleoptera","Curculionidae","Curc cur185SG",30,1.48889860183525
+"150",161,"Curc cur186SG Curc sp. cur186SG","LACA","Coleoptera","Curculionidae","Curc cur186SG",66,0.0461192694003381
+"151",162,"Curc cur187SG Curc sp. cur187SG","COMF","Coleoptera","Curculionidae","Curc cur187SG",8,0.000778859527121001
+"152",163,"Curc cur188SG Curc sp. cur188SG","CYDA","Coleoptera","Curculionidae","Curc cur188SG",3,0.0315982934033476
+"153",164,"Curc cur189SG Curc sp. cur189SG","SPOM","Coleoptera","Curculionidae","Curc cur189SG",2,0.0117985611510791
+"154",165,"Curc cur190SG Curc sp. cur190SG","POUU","Coleoptera","Curculionidae","Curc cur190SG",6,0.0499893730074389
+"155",167,"Curc cur192SG Curc sp. cur192SG","OENM","Coleoptera","Curculionidae","Curc cur192SG",2,0.0484419983065199
+"156",168,"Curc cur193SG Curc sp. cur193SG","COCM","Coleoptera","Curculionidae","Curc cur193SG",2,0.000137551581843191
+"157",169,"Curc cur194SG Curc sp. cur194SG","HETL","Coleoptera","Curculionidae","Curc cur194SG",2,0.00611898016997167
+"158",170,"Curc cur196SG Curc sp. cur196SG","VIR2","Coleoptera","Curculionidae","Curc cur196SG",2,0.0312346842601319
+"159",171,"Curc cur198SG Curc sp. cur198SG","COCM","Coleoptera","Curculionidae","Curc cur198SG",3,0.000206327372764787
+"160",172,"Curc cur199SG Curc sp. cur199SG","TETM","Coleoptera","Curculionidae","Curc cur199SG",2,0.0203856469735411
+"161",173,"Curc cur201SG Curc sp. cur201SG","COCP","Coleoptera","Curculionidae","Curc cur201SG",2,0.0326080476900149
+"162",174,"Curc cur202SG Curc sp. cur202SG","GUEF","Coleoptera","Curculionidae","Curc cur202SG",2,0.000777666999002991
+"163",175,"Curc cur203SG Curc sp. cur203SG","COCP","Coleoptera","Curculionidae","Curc cur203SG",44,0.717377049180328
+"164",176,"Curc cur204SG Curc sp. cur204SG","NECC","Coleoptera","Curculionidae","Curc cur204SG",7,0.0185223367697595
+"165",177,"Curc cur205SG Curc sp. cur205SG","SOCE","Coleoptera","Curculionidae","Curc cur205SG",4,0.0211248107289639
+"166",178,"Curc cur206SG Curc sp. cur206SG","POUU","Coleoptera","Curculionidae","Curc cur206SG",2,0.016663124335813
+"167",179,"Curc cur208SG Curc sp. cur208SG","CELI","Coleoptera","Curculionidae","Curc cur208SG",14,0.419010600706714
+"168",180,"Curc cur209SG Curc sp. cur209SG","TERO","Coleoptera","Curculionidae","Curc cur209SG",2,0.0278042959427208
+"169",181,"Curc cur20SG Curc sp. cur20SG","STRP","Coleoptera","Curculionidae","Curc cur20SG",1,0.00584071828358209
+"170",182,"Curc cur210SG Curc sp. cur210SG","EUGO","Coleoptera","Curculionidae","Curc cur210SG",2,0.115517558374701
+"171",183,"Curc cur211SG Curc sp. cur211SG","PETA","Coleoptera","Curculionidae","Curc cur211SG",2,0.0228571428571429
+"172",184,"Curc cur213SG Curc sp. cur213SG","CAPF","Coleoptera","Curculionidae","Curc cur213SG",2,0.0105555555555556
+"173",184,"Curc cur213SG Curc sp. cur213SG","COCP","Coleoptera","Curculionidae","Curc cur213SG",8,0.13043219076006
+"174",186,"Cydia rhodaspisDHJ02","INUM","Lepidoptera","Tortricidae",NA,1,0.000512820512820513
+"175",187,"Cyrionyx sp. cur69SG","DESP","Coleoptera","Curculionidae",NA,1,0.0173289113497578
+"176",188,"Cyrionyx sp. cur91SG","DESP","Coleoptera","Curculionidae","Cyrionyx",93,1.61158875552748
+"177",188,"Cyrionyx sp. cur91SG","HYBP","Coleoptera","Curculionidae","Cyrionyx",11,0.574145907113225
+"178",189,"Depr lep186SG Elac sp. lep186SG","CONP","Lepidoptera","Depressariidae",NA,5,0.000536672629695885
+"179",189,"Depr lep186SG Elac sp. lep186SG","CONT","Lepidoptera","Depressariidae",NA,1,0.00122119815668203
+"180",190,"Depr lep8SG Elac sp. lep8SG","PROT","Lepidoptera","Depressariidae",NA,2,0.0112109714647063
+"181",193,"Eriosocia guttifera","RHEE","Lepidoptera","Tortricidae",NA,3,0.00585395718155171
+"182",193,"Eriosocia guttifera","SYMG","Lepidoptera","Tortricidae",NA,97,0.39416961130742
+"183",194,"Eubulus fulvosquamis","PRIC","Coleoptera","Curculionidae","Eubulus",632,6.77578999947421
+"184",195,"Eubulus sp. cur151SG","POUB","Coleoptera","Curculionidae","Eubulus",4,0.00315086782376502
+"185",196,"Eubulus sp. cur24SG","VIR1","Coleoptera","Curculionidae","Eubulus",4,0.0934315169366716
+"186",196,"Eubulus sp. cur24SG","VIR2","Coleoptera","Curculionidae","Eubulus",5,0.0780867106503299
+"187",197,"Eubulus sp. cur90SG cf. dumicolus","POUU","Coleoptera","Curculionidae","Eubulus",5,0.0416578108395324
+"188",198,"Eulechriops sp. cur53SG","HEIC","Coleoptera","Curculionidae","Eulechriops",3,0.0436518771331058
+"189",198,"Eulechriops sp. cur53SG","OURL","Coleoptera","Curculionidae","Eulechriops",66,0.425333333333333
+"190",227,"Eutoxus  sp. cur21SG","SOCE","Coleoptera","Curculionidae","Eutoxus",35,0.369684187756868
+"191",230,"Gele sp. lep106SG","CAL2","Lepidoptera","Gelechiidae",NA,8,0.0208032128514056
+"192",230,"Gele sp. lep106SG","FARO","Lepidoptera","Gelechiidae",NA,1,0.0630405186385737
+"193",232,"Gele sp. lep19SG","QUA1","Lepidoptera","Gelechiidae",NA,7,0.250024730664489
+"194",233,"Gele sp. lep264SG","CHRA","Lepidoptera","Gelechiidae",NA,4,0.00569269521410579
+"195",234,"Gele sp. lep275SG","HEIA","Lepidoptera","Gelechiidae",NA,1,0.00354312354312354
+"196",235,"Gele sp. lep281SG","INTH","Lepidoptera","Gelechiidae",NA,1,0.0120512820512821
+"197",236,"Gele sp. lep295SG","INCO","Lepidoptera","Gelechiidae",NA,1,0.00452380952380952
+"198",236,"Gele sp. lep295SG","INSA","Lepidoptera","Gelechiidae",NA,1,0.000789306431273644
+"199",237,"Gele sp. lep302SG","ANAE","Lepidoptera","Gelechiidae",NA,1,0.0501262626262626
+"200",238,"Gele sp. lep308SG","CASG","Lepidoptera","Gelechiidae",NA,1,0.000679611650485437
+"201",239,"Gele sp. lep326SG","MASH","Lepidoptera","Gelechiidae",NA,2,0.073400365630713
+"202",240,"Gele sp. lep39SG","MOUM","Lepidoptera","Gelechiidae",NA,4,0.147760097919217
+"203",241,"Gele sp. lep3SG","TET2","Lepidoptera","Gelechiidae",NA,51,1.17745564065611
+"204",242,"Gele sp. lep41SG","EUGN","Lepidoptera","Gelechiidae",NA,2,0.00725611510791367
+"205",242,"Gele sp. lep41SG","EUGO","Lepidoptera","Gelechiidae",NA,1,0.0577587791873506
+"206",243,"Gele sp. lep427SG","SOUS","Lepidoptera","Gelechiidae",NA,1,0.0559361903474382
+"207",249,"Geobyrza nodifera","CAL2","Coleoptera","Curculionidae",NA,1,0.0026004016064257
+"208",250,"Geraeus sp. cur51SG","OENM","Coleoptera","Curculionidae","Geraeus",112,2.71275190516511
+"209",251,"Geraeus sp. cur64SG","SIMA","Coleoptera","Curculionidae","Geraeus",1,0.011140544518028
+"210",252,"Grapholita sp. lep55SG","HASF","Lepidoptera","Tortricidae",NA,1,0.0425444651181401
+"211",253,"Grapholita yurubina","RHEE","Lepidoptera","Tortricidae","Grapholita",5,0.00975659530258618
+"212",254,"Heilipus draco","NECC","Coleoptera","Curculionidae","Heilipus",4,0.0105841924398625
+"213",254,"Heilipus draco","PHOM","Coleoptera","Curculionidae",NA,2,0.00328725038402458
+"214",255,"Heilipus sp. cur15SG nr. lauri","OCOS","Coleoptera","Curculionidae","Heilipus",1,0.0478333333333333
+"215",256,"Heilipus sp. cur243SG","BEIP","Coleoptera","Curculionidae","Heilipus",2,0.0252467270896274
+"216",257,"Heilipus sp. cur50SG","BEIP","Coleoptera","Curculionidae","Heilipus",8,0.10098690835851
+"217",258,"Heli lep102SG Heli sp. lep102SG","GUAS","Lepidoptera","Heliodinidae",NA,3,0.023327731092437
+"218",259,"Heli lep253SG Heli sp. lep253SG","OURL","Lepidoptera","Heliodinidae",NA,30,0.193333333333333
+"219",260,"Heli lep438SG Heli sp. lep438SG","NEEA","Lepidoptera","Heliodinidae",NA,2,0.00511415525114155
+"220",261,"Heli lep52SG Heli sp. lep52SG","GUAS","Lepidoptera","Heliodinidae","Heli lep52SG",50,0.388795518207283
+"221",262,"Histura panamana","BEIP","Lepidoptera","Tortricidae",NA,23,0.290337361530715
+"222",263,"Hypocosmia bimaculalis","TABG","Lepidoptera","Pyralidae",NA,2,0.0103214953271028
+"223",264,"Lamprospilus collucia","GUSS","Lepidoptera","Lycaenidae",NA,1,0.00704176981827759
+"224",264,"Lamprospilus collucia","TABG","Lepidoptera","Lycaenidae",NA,1,0.0051607476635514
+"225",265,"Lechriops parotica","CEIP","Coleoptera","Curculionidae","Lechriops",17,0.0161338548745318
+"226",265,"Lechriops parotica","PSE1","Coleoptera","Curculionidae","Lechriops",49,0.0864943634863899
+"227",266,"Lechriops sp. cur40SG","VIR2","Coleoptera","Curculionidae","Lechriops",12,0.187408105560792
+"228",267,"Lechriops sp. cur97SG","PROT","Coleoptera","Curculionidae","Lechriops",2,0.0112109714647063
+"229",268,"Lepturges sp. 1SG","STEA","Coleoptera","Cerambycidae","Lepturges",2,0.00130669903984108
+"230",270,"Maemactes sp. cur75SG","HEIA","Coleoptera","Curculionidae","Maemactes",1,0.00354312354312354
+"231",271,"Megacerus lunulatus","MARP","Coleoptera","Chrysomelidae","Megacerus",149,1.99222505201421
+"232",271,"Megacerus lunulatus","PROT","Coleoptera","Chrysomelidae","Megacerus",14,0.0784768002529444
+"233",273,"Metamasius sp. cur134SG","ASTS","Coleoptera","Dryophthoridae","Metamasius",5,0.0496466431095406
+"234",274,"Mimosestes enterolobii","ENTC","Coleoptera","Chrysomelidae","Mimosestes",20,8.68421052631579
+"235",274,"Mimosestes enterolobii","ENTS","Coleoptera","Chrysomelidae","Mimosestes",3,0.1375
+"236",275,"Myrmex sp. 128SG","CHRA","Coleoptera","Curculionidae","Myrmex",4,0.00569269521410579
+"237",276,"Myrmex sp. cur48SG nr. panamensis","CHRA","Coleoptera","Curculionidae","Myrmex",2,0.0028463476070529
+"238",276,"Myrmex sp. cur48SG nr. panamensis","GUA1","Coleoptera","Curculionidae","Myrmex",2,0.0122300922944838
+"239",276,"Myrmex sp. cur48SG nr. panamensis","HURC","Coleoptera","Curculionidae","Myrmex",1,0.0386792452830189
+"240",276,"Myrmex sp. cur48SG nr. panamensis","QUA1","Coleoptera","Curculionidae","Myrmex",1,0.0357178186663556
+"241",277,"Myrmex sp. cur94SG","POUU","Coleoptera","Curculionidae","Myrmex",2,0.016663124335813
+"242",278,"Nealcidion sp. 1SG","TABA","Coleoptera","Cerambycidae","Nealcidion",3,0.0446599320329594
+"243",279,"Near Gymnandrosoma sp. lep356SG","PLAE","Lepidoptera","Tortricidae",NA,1,0.0086848635235732
+"244",280,"Neopotamia streblopa","BEIP","Lepidoptera","Tortricidae",NA,1,0.0126233635448137
+"245",281,"Oeco lep13SG Oeco sp. lep13SG","CNER","Lepidoptera","Oecophoridae","Oeco lep13SG",5,0.00182872435325602
+"246",281,"Oeco lep13SG Oeco sp. lep13SG","CONP","Lepidoptera","Oecophoridae","Oeco lep13SG",6,0.000644007155635062
+"247",281,"Oeco lep13SG Oeco sp. lep13SG","CONT","Lepidoptera","Oecophoridae","Oeco lep13SG",4,0.00366451059769551
+"248",281,"Oeco lep13SG Oeco sp. lep13SG","CUPL","Lepidoptera","Oecophoridae","Oeco lep13SG",1,0.000358061325420376
+"249",281,"Oeco lep13SG Oeco sp. lep13SG","CUPS","Lepidoptera","Oecophoridae","Oeco lep13SG",1,0.000946357375860819
+"250",281,"Oeco lep13SG Oeco sp. lep13SG","PAU5","Lepidoptera","Oecophoridae","Oeco lep13SG",5,0.000146381450542587
+"251",282,"Oeco lep192SG Oeco sp. lep192SG","DAVN","Lepidoptera","Oecophoridae","Oeco lep192SG",2,0.0151373346897253
+"252",283,"Oeco lep250SG Oeco sp. lep250SG","UNOP","Lepidoptera","Oecophoridae","Oeco lep250SG",1,0.039
+"253",284,"Oeco lep289SG Oeco sp. lep289SG","INM1","Lepidoptera","Oecophoridae","Oeco lep289SG",1,0.00210526315789474
+"254",285,"Oeco lep293SG Oeco sp. lep293SG","INM1","Lepidoptera","Oecophoridae","Oeco lep293SG",1,0.00210526315789474
+"255",286,"Oeco lep311SG Oeco sp. lep311SG","CAVP","Lepidoptera","Oecophoridae","Oeco lep311SG",4,0.0108843537414966
+"256",287,"Oeco lep419SG Oeco sp. lep419SG","LINL","Lepidoptera","Oecophoridae","Oeco lep419SG",1,0.00200108801160546
+"257",288,"Oeco lep441SG Oeco sp. lep441SG","TRI6","Lepidoptera","Oecophoridae","Oeco lep441SG",1,0.00193087548117499
+"258",289,"Oeco lep464SG Oeco sp. lep464SG","PAU5","Lepidoptera","Oecophoridae","Oeco lep464SG",2,5.85525802170349e-05
+"259",290,"Oeco lep466SG Oeco sp. lep466SG","PAUR","Lepidoptera","Oecophoridae","Oeco lep466SG",1,0.00652873563218391
+"260",291,"Oeco lep4SG Oeco sp. lep4SG","BEIP","Lepidoptera","Oecophoridae","Oeco lep4SG",2,0.0252467270896274
+"261",291,"Oeco lep4SG Oeco sp. lep4SG","MARP","Lepidoptera","Oecophoridae","Oeco lep4SG",3,0.0401119137989437
+"262",291,"Oeco lep4SG Oeco sp. lep4SG","OCOS","Lepidoptera","Oecophoridae","Oeco lep4SG",2,0.0956666666666667
+"263",293,"Oxytenopterus sp. cur55SG","UNOP","Coleoptera","Curculionidae","Oxytenopterus",21,0.819
+"264",294,"Pachymerus bactris","ASTS","Coleoptera","Chrysomelidae","Pachymerus",42,0.417031802120141
+"265",294,"Pachymerus bactris","BACM","Coleoptera","Chrysomelidae","Pachymerus",2,0.000327868852459016
+"266",295,"Pachymerus sp. bru67SG","ASTS","Coleoptera","Chrysomelidae","Pachymerus",2,0.0198586572438163
+"267",296,"Pagiocerus frontalis","BEIP","Coleoptera","Curculionidae","Pagiocerus",2072,3.37927768279767
+"268",296,"Pagiocerus frontalis","OCOO","Coleoptera","Curculionidae","Pagiocerus",366,1.94316463897488
+"269",296,"Pagiocerus frontalis","OCOP","Coleoptera","Curculionidae","Pagiocerus",71,0.031437712442438
+"270",296,"Pagiocerus frontalis","SOUS","Coleoptera","Curculionidae","Pagiocerus",1,0.0559361903474382
+"271",297,"Phymatophosus sp. cur107SG","TETM","Coleoptera","Curculionidae","Phymatophosus",14,0.142699528814788
+"272",298,"Phymatophosus sp. cur197SG","TETM","Coleoptera","Curculionidae","Phymatophosus",5,0.0509641174338529
+"273",299,"Phymatophosus sp. cur37SG","TETD","Coleoptera","Curculionidae","Phymatophosus",44,1.67111853088481
+"274",300,"Platynota sp. lep195SG","HEIC","Lepidoptera","Tortricidae",NA,1,0.0145506257110353
+"275",300,"Platynota sp. lep195SG","PSE1","Lepidoptera","Tortricidae",NA,1,0.00176519109155898
+"276",301,"Platynota sp. lep99SG","ZUEG","Lepidoptera","Tortricidae",NA,1,0.000628662509962027
+"277",303,"Pseudobaris sp. cur145SG","ASTS","Coleoptera","Curculionidae","Pseudobaris",16,0.15886925795053
+"278",303,"Pseudobaris sp. cur145SG","BACM","Coleoptera","Curculionidae","Pseudobaris",13,0.00213114754098361
+"279",304,"Pseudobaris sp. cur188SG","ARR1","Coleoptera","Curculionidae","Pseudobaris",3,0.00988254385287072
+"280",305,"Pseudobaris sp. cur19SG","DOL1","Coleoptera","Curculionidae","Pseudobaris",1,0.0216809614351259
+"281",306,"Pseudobaris sp. cur202SG","PLAP","Coleoptera","Curculionidae","Pseudobaris",1,0.00824561403508772
+"282",307,"Pseudomopsis sp. cur168SG","TETD","Coleoptera","Curculionidae","Pseudomopsis",2,0.0759599332220367
+"283",308,"Pseudomopsis sp. cur254SG","GUAD","Coleoptera","Curculionidae","Pseudomopsis",2,0.067120822622108
+"284",309,"Pseudomopsis sp. cur34SG","GUAD","Coleoptera","Curculionidae","Pseudomopsis",10,0.33560411311054
+"285",310,"Pycnotheantis sp. cur47SG","LACP","Coleoptera","Curculionidae","Pycnotheantis",1,0.00252539912917271
+"286",310,"Pycnotheantis sp. cur47SG","OENM","Coleoptera","Curculionidae","Pycnotheantis",98,2.37365791701948
+"287",311,"Pyra lep117SG Pyra sp. lep117SG","DOL2","Lepidoptera","Pyralidae","Pyra lep117SG",1,0.0088078967350038
+"288",313,"Pyra lep231SG Pyra sp. lep231SG","TRI3","Lepidoptera","Pyralidae","Pyra lep231SG",2,0.0474479246022245
+"289",314,"Pyra lep248SG Pyra sp. lep248SG","BEIP","Lepidoptera","Pyralidae","Pyra lep248SG",2,0.0252467270896274
+"290",315,"Pyra lep291SG Pyra sp. lep291SG","CAPF","Lepidoptera","Pyralidae","Pyra lep291SG",4,0.0211111111111111
+"291",317,"Pyra lep305SG Pyra sp. lep305SG","NECL","Lepidoptera","Pyralidae","Pyra lep305SG",2,0.0139951573849879
+"292",318,"Pyra lep307SG Pyra sp. lep307SG","CAPF","Lepidoptera","Pyralidae","Pyra lep307SG",1,0.00527777777777778
+"293",319,"Pyra lep310SG Pyra sp. lep310SG","CUPS","Lepidoptera","Pyralidae","Pyra lep310SG",2,0.00189271475172164
+"294",320,"Pyra lep312SG Pyra sp. lep312SG","CAVP","Lepidoptera","Pyralidae","Pyra lep312SG",1,0.00272108843537415
+"295",322,"Pyra lep346SG Pyra sp. lep346SG","BEIP","Lepidoptera","Pyralidae","Pyra lep346SG",3,0.0378700906344411
+"296",323,"Pyra lep449SG Pyra sp. lep449SG","LONL","Lepidoptera","Pyralidae","Pyra lep449SG",1,0.00389310977207231
+"297",323,"Pyra lep449SG Pyra sp. lep449SG","MAC2","Lepidoptera","Pyralidae","Pyra lep449SG",1,0.000316027088036117
+"298",323,"Pyra lep449SG Pyra sp. lep449SG","PLAE","Lepidoptera","Pyralidae","Pyra lep449SG",3,0.0260545905707196
+"299",324,"Pyra lep478SG Pyra sp. lep478SG","ANTP","Lepidoptera","Pyralidae","Pyra lep478SG",1,0.00508906200173113
+"300",325,"Pyra lep81SG Pyra sp. lep81SG","PITC","Lepidoptera","Pyralidae",NA,3,0.0968284518828452
+"301",326,"Pyra lep9SG Pyra sp. lep9SG","INFA","Lepidoptera","Pyralidae","Pyra lep9SG",4,0.000148710523226236
+"302",326,"Pyra lep9SG Pyra sp. lep9SG","PRIC","Lepidoptera","Pyralidae","Pyra lep9SG",45,0.834161931818182
+"303",327,"Pyralidae unknown genus sp. 496SG","SERD","Lepidoptera","Pyralidae","Pyralidae unknown genus",4,0.028539741219963
+"304",329,"Rhyssomatus sp. cur174SG","INFA","Coleoptera","Curculionidae","Rhyssomatus",41,0.00152428286306892
+"305",330,"Rhyssomatus sp. cur72SG","COMF","Coleoptera","Curculionidae","Rhyssomatus",2,0.00019471488178025
+"306",331,"Ricula lacistema","LACA","Lepidoptera","Tortricidae",NA,19,0.0132767593728246
+"307",332,"Ricula sp. 545SG nr. deflexa","LACA","Lepidoptera","Tortricidae",NA,1,0.000698776809096032
+"308",333,"Ricula sp. lep218SG","TRI3","Lepidoptera","Tortricidae",NA,1,0.0237239623011122
+"309",334,"Riculorampha ancyloides","NECC","Lepidoptera","Tortricidae",NA,16,0.0423367697594502
+"310",334,"Riculorampha ancyloides","NECL","Lepidoptera","Tortricidae",NA,6,0.0419854721549637
+"311",334,"Riculorampha ancyloides","OCOO","Lepidoptera","Tortricidae",NA,7,0.0215553235908142
+"312",334,"Riculorampha ancyloides","OCOS","Lepidoptera","Tortricidae",NA,2,0.0956666666666667
+"313",334,"Riculorampha ancyloides","PHOM","Lepidoptera","Tortricidae",NA,4,0.00657450076804916
+"314",335,"Schacontia AAP1991","CAPF","Lepidoptera","Pyralidae",NA,11,0.0580555555555556
+"315",336,"Semnorrhynchus fulvopictus","CYDA","Coleoptera","Curculionidae",NA,1,0.0105327644677825
+"316",336,"Semnorrhynchus fulvopictus","GUA1","Coleoptera","Curculionidae","Semnorrhynchus",5,0.0305752307362095
+"317",337,"Semnorrhynchus sp. cur44SG","CYDA","Coleoptera","Curculionidae",NA,2,0.021065528935565
+"318",339,"Sennius sp. bru58SG","TACV","Coleoptera","Chrysomelidae","Sennius",2,0.00742081447963801
+"319",340,"Sennius sp. bru8SG","TACV","Coleoptera","Chrysomelidae","Sennius",2,0.00742081447963801
+"320",341,"Sesi lep101 Sesi sp. lep101","GUA1","Lepidoptera","Sesiidae","Sesi lep101",2,0.0122300922944838
+"321",343,"Speciomerus giganteus","ATTB","Coleoptera","Chrysomelidae","Speciomerus",32,0.0258724648273342
+"322",344,"Spilomelinae genus unknown sp. 80YB","MARP","Lepidoptera","Crambidae",NA,5,0.175192197777074
