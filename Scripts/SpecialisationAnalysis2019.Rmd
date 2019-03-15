@@ -55,6 +55,8 @@ InsectData%>%
 ```{r}
 vegan::estimateR(InsectData$TOTAL)
 
+rarecurve(t(InsectData$TOTAL), ylab = 'Interaction Count')
+
 Fs<-table(InsectData$TOTAL)
 
 ## Manually calculating Chao1 Index:

@@ -99,11 +99,16 @@ PlantPos<-rownames(web)[row.seq]
 ForPlot%>%
   select(NicePlantName,FullSpeciesNameValid,  KilledPerM2 )%>%
   bipartite_D3(filename = 'LargeSeedPredatorNetwork',
-               PrimaryLab = 'Seed',SortPrimary = PlantPos, SortSecondary = PredPos,
-               SecondaryLab = 'Seed Predator',MainFigSize = c(1000, 6100),
+               PrimaryLab = 'Seed',
+               SortPrimary = PlantPos,
+               SortSecondary = PredPos,
+               SecondaryLab = 'Seed Predator',
+               PercentageDecimals = 3,
+               MainFigSize = c(1000, 6100),
                IndivFigSize = c(150, 6000))-> intweb
 
-r2d3::save_d3_html(intweb, file = '../Figures/SeedPredatorWeb.html')
+r2d3::save_d3_html(intweb,
+                   file = '../Figures/SeedPredatorWeb.html', selfcontained = TRUE )
 #r2d3::save_d3_png(intweb, file = '../Figures/FullSeedPredatorWeb.png', delay = 4)
 
 ```
