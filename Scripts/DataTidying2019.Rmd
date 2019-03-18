@@ -147,7 +147,7 @@ Trait%>%
   mutate(Tree_or_Liana = ifelse(Lifeform =='Tree', 'Tree', NA))%>%
     mutate(Tree_or_Liana = ifelse(Lifeform =='Liana', 'Liana', Tree_or_Liana))%>%
   select(-seed_fresh, -N_seedfull, -Seeds_collected, -Fruits_collected, - allstems, -min10stems, - seedvctlen1, - seedvctmean1, -densitycm3,
-         -min20stems, -hemicellulose, -cellulose, -lignin , - VeinFT,-peakforce, 
+         -min20stems, -hemicellulose, -cellulose, -lignin , - VeinFT,
          -toughness, -specifictoughness, - Genus,-Species, - BCIspInFamily,-LamWS,
          -LamFT, -LamT, -LamD, -LMADISC_AVD, -RGR_50, -RGR_100)%>%
   separate(Plant_species19 , into = c('Genus19', 'Specific19', 'Var19'),
@@ -192,7 +192,6 @@ Variables reflecting resource availability at various spatial scales:
 Variables reflecting seed size and investment in seed defences:
 - seed_dry
 - EndocarpInvestment
-- specificpeakforce #might prove redundant?
 - POLY_concentration
 
 Variables reflecting temporal patterns and variation:
@@ -522,7 +521,7 @@ ReorderedTrait <- select_(Trait,
 "TotUnits_collected"  ,"Lifeform"           ,
 "Freestanding"        ,"Woody_or_nonwoody"  ,
 "seed_dry"            ,"fruitrecord"        ,
-"cvseed"              ,"specificpeakforce"  ,
+"cvseed"              ,
 "RGR_10"             ,"SpInGenusOnBCI"     ,
 "SpInFamilyOnBCI"     ,"HEIGHT_AVG"         ,
 "BCIReproductive"     ,"Endocarp_investment",
