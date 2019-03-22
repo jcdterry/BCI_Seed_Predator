@@ -139,7 +139,7 @@ WellSampledWoody$SeedPred_pres %>% mean
 ```{r}
 Trait %>%
     select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
-         seed_dry, Endocarp_investment, specificpeakforce, POLY_concentration, 
+         seed_dry, Endocarp_investment, POLY_concentration, 
          cvseed,CoFruit, RGR_10, TotUnits_collected)%>%
   cor(method='spearman', use='pair')%>%
   corrplot(type = 'lower', method = 'ellipse')
@@ -150,7 +150,7 @@ Trait %>%
 ```{r}
 Trait %>%
   select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
-         seed_dry, Endocarp_investment, specificpeakforce, POLY_concentration, 
+         seed_dry, Endocarp_investment, POLY_concentration, 
          cvseed,CoFruit, RGR_10, TotUnits_collected)%>%
   purrr::map_dbl(~ mean(is.na(.))) %>%
   round(2) %>%
@@ -159,7 +159,7 @@ Trait %>%
 
 WellSampledWoody  %>% 
   select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
-         seed_dry, Endocarp_investment, specificpeakforce, POLY_concentration, 
+         seed_dry, Endocarp_investment, POLY_concentration, 
          cvseed,CoFruit, RGR_10, TotUnits_collected)%>%
   purrr::map_dbl(~ mean(is.na(.))) %>%
   round(2) %>%
@@ -424,9 +424,9 @@ load('../PPOutputs/PPD2')
 load('../PPOutputs/PPD3')
 
 ### Log some 
-plottedA1<-ggplot(PartialPlotA1, aes(HEIGHT_AVG,-yhat))+geom_step() + xlab('Max. height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
-plottedA2<-ggplot(PartialPlotA2, aes(seed_dry,-yhat))+geom_step()+scale_x_log10() + xlab('Seed mass')+ ylab('')
-plottedA3<-ggplot(PartialPlotA3, aes(CoFruit,-yhat))+geom_step() + xlab('Overlap in fruit production')+ ylab('')
+plottedA1<-ggplot(PartialPlotA1, aes(HEIGHT_AVG,yhat))+geom_step() + xlab('Max. height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+plottedA2<-ggplot(PartialPlotA2, aes(seed_dry,yhat))+geom_step()+scale_x_log10() + xlab('Seed mass')+ ylab('')
+plottedA3<-ggplot(PartialPlotA3, aes(CoFruit,yhat))+geom_step() + xlab('Overlap in fruit production')+ ylab('')
 
 plottedB1<-ggplot(PartialPlotB1, aes(seed_dry,yhat))+geom_step()+scale_x_log10() +
   xlab('Seed mass')+ ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
@@ -670,7 +670,6 @@ save(PartialPlotD3_all,file = '../PPOutputs/PPD3all')
 
 ```
 
-scale_x_log10() +
 ```{r message=FALSE, warning=FALSE}
 load('../PPOutputs/PPA1all')
 load('../PPOutputs/PPA2all')
@@ -682,7 +681,7 @@ load('../PPOutputs/PPD1all')
 load('../PPOutputs/PPD2all')
 load('../PPOutputs/PPD3all')
 
-### Log some 
+### Log some (Note -yhat for incidence as did not set factor level correctly)
 plotted_A1all<-ggplot(PartialPlotA1_all, aes(TotUnits_collected,-yhat))+geom_step()  +
   xlab('Units Collected') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
 plotted_A2all<-ggplot(PartialPlotA2_all, aes(CoFruit,-yhat))+geom_step()+
