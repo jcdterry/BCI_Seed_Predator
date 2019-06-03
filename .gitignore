@@ -21,3 +21,8 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+*.pdf
+*.png
+*.css
+*.js
+Scripts/.Rhistory
