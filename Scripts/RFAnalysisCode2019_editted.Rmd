@@ -137,12 +137,31 @@ WellSampledWoody$SeedPred_pres %>% mean
 
 ### Correlation between traits
 ```{r}
+
+png('../Figures/TraitCorrelation.png', 6, 6, 'in', res = 300)
 Trait %>%
-    select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
+  select(fruitrecord, HEIGHT_AVG , SpInFamilyOnBCI, SpInGenusOnBCI, BCIReproductive, 
          seed_dry, Endocarp_investment, POLY_concentration, 
          cvseed,CoFruit, RGR_10, TotUnits_collected)%>%
-  cor(method='spearman', use='pair')%>%
-  corrplot(type = 'lower', method = 'ellipse')
+  rename(`Units Collected`=TotUnits_collected,
+         `Tree Height`=HEIGHT_AVG,
+         `Seed mass`=seed_dry,
+         `Local seed\ncrop size`=fruitrecord,
+         `Interannual\ncrop size variation`=cvseed,
+         `Overlap in\nfruit production`=CoFruit,
+         `Local tree\nabundance`=BCIReproductive,
+         `Polyphenol\nconcentration`=POLY_concentration,
+         `Relative Growth Rate`=RGR_10,
+         `BCI family-level\ndiversity`=SpInFamilyOnBCI,
+         `BCI genus-level\ndiversity`=SpInGenusOnBCI,
+         `Endocarp investment`=Endocarp_investment)%>%
+  cor(method='spearman', use='pair') -> CORR
+  
+    corrplot(CORR, type = 'lower', method='color',tl.col = 1,tl.cex = 0.8,
+           diag = FALSE,addCoef.col = "black", addCoefasPercent = TRUE, order = 'original')
+dev.off()
+
+
 
 ```
 
@@ -173,6 +192,7 @@ WellSampledWoody$FruitSeason<- factor(WellSampledWoody$FruitSeason)
 WellSampledWoody$SeedPred_pres <- factor(WellSampledWoody$SeedPred_pres, levels = c(1,0), labels = c('Predated','Not-Predated'))
 WellSampledWoody <- as.data.frame(WellSampledWoody)
 WellSampledWoody$Tree_or_Liana<- factor(WellSampledWoody$Tree_or_Liana)
+WellSampledWoody$Lifeform<- factor(WellSampledWoody$Lifeform)
 
 D <- WellSampledWoody
 ```
@@ -244,19 +264,30 @@ dev.off()
 
 # Fitting Random Forests to well sampled Species
 
+```{r}
+CTRL <- party::cforest_control(myty=5,
+                               ntree=5000, 
+                               mincriterion = 0)
+```
+
 ## Seed Predator Presence
 
 ```{r}
 
 set.seed(1)
-CTRL <- party::cforest_control(ntree=5000)
 
-party::cforest(SeedPred_pres ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
-                 BCIReproductive + Tree_or_Liana +
-                 seed_dry + Endocarp_investment + POLY_concentration + 
-                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+
+# party::cforest(SeedPred_pres ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
+#                  BCIReproductive + Tree_or_Liana +
+#                  seed_dry + Endocarp_investment + POLY_concentration + 
+#                  cvseed+ FruitSeason  +CoFruit+RGR_10, 
+#                data=as.data.frame(WellSampledWoody), controls = CTRL) -> RF_Wood_WS_CF
+
+party::cforest(SeedPred_pres ~ fruitrecord + SpInFamilyOnBCI + SpInGenusOnBCI+
+                 BCIReproductive + Lifeform + HEIGHT_AVG+
+                 seed_dry + Endocarp_investment + POLY_concentration +
+                 cvseed+ FruitSeason  +CoFruit+RGR_10,
                data=as.data.frame(WellSampledWoody), controls = CTRL) -> RF_Wood_WS_CF
-
 
 oobPredicted=predict(RF_Wood_WS_CF,OOB=TRUE)
 accuracy<-table( as.data.frame(WellSampledWoody)$SeedPred_pres,oobPredicted)
@@ -266,6 +297,8 @@ accuracy
 (accuracy / sum(accuracy))*100
 
 caret::cforestStats(RF_Wood_WS_CF)
+
+caret::confusionMatrix( as.data.frame(WellSampledWoody)$SeedPred_pres,oobPredicted)
 
 X1<-party::varimp(RF_Wood_WS_CF)
 
@@ -285,12 +318,20 @@ Seed predator species load
 
 ```{r}
 set.seed(1)
-
+# 
 party::cforest(SeedPred_n ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
                  BCIReproductive + Tree_or_Liana +
-                 seed_dry + Endocarp_investment + POLY_concentration + 
-                 cvseed+ FruitSeason  +CoFruit+RGR_10, 
+                 seed_dry + Endocarp_investment + POLY_concentration +
+                 cvseed+ FruitSeason  +CoFruit+RGR_10,
                data=as.data.frame(WellSampledWoody), controls = CTRL) -> RF_Wood_WS_CF_2
+
+
+# party::cforest(SeedPred_n ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI + SpInGenusOnBCI+
+#                  BCIReproductive + Lifeform +
+#                  seed_dry + Endocarp_investment + POLY_concentration + 
+#                  cvseed+ FruitSeason  +CoFruit+RGR_10, 
+#                data=as.data.frame(WellSampledWoody), controls = CTRL) -> RF_Wood_WS_CF_2
+# 
 
 RF_Wood_WS_CF_2
 
@@ -316,9 +357,15 @@ WellSampledWoody%>%
   filter(!is.na(SeedPredationRate)) %>%
   as.data.frame -> For_4 # two NAs for some reason??
 
+# 
+# party::cforest(SeedPredationRate ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI +
+#                  SpInGenusOnBCI+ BCIReproductive + Tree_or_Liana +
+#                  seed_dry + Endocarp_investment + POLY_concentration + 
+#                  cvseed+ FruitSeason  +CoFruit+RGR_10, 
+#                data=For_4, controls = CTRL) -> RF_Wood_WS_CF_4
 
 party::cforest(SeedPredationRate ~ fruitrecord+ HEIGHT_AVG + SpInFamilyOnBCI +
-                 SpInGenusOnBCI+ BCIReproductive + Tree_or_Liana +
+                 SpInGenusOnBCI+ BCIReproductive + Lifeform +
                  seed_dry + Endocarp_investment + POLY_concentration + 
                  cvseed+ FruitSeason  +CoFruit+RGR_10, 
                data=For_4, controls = CTRL) -> RF_Wood_WS_CF_4
@@ -395,8 +442,7 @@ bind_rows(a,b,d)%>%
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         axis.line = element_line(colour = "black"),
-        strip.background =element_rect(fill="white"),
-        axis.text.x=element_blank())
+        strip.background =element_rect(fill="white"))
 
 ggsave('../Figures/Figure3.png', width=12, height=10, dpi=500)
 ggsave('../Figures/Figure3.pdf', width=12, height=10)
