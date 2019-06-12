@@ -31,7 +31,7 @@ require(treeio)
 select<- dplyr::select # to ensure dplyr version of select is default
 
 ## Function to order bipartite network to minimise overlap
-source('OneSidedCCA.R')
+# source('OneSidedCCA.R')
 ```
 
 ```{r}
@@ -66,7 +66,7 @@ f2=Fs[2]
 n=sum(Fs)
 
 ## Sample coverage:
- 1 - (f1/n) * (  ((n-1)*f1)/((n-1)*f1 + 2*f2))
+1 - (f1/n) * (  ((n-1)*f1)/((n-1)*f1 + 2*f2))
 
 nrow(InsectData)
 
@@ -77,19 +77,19 @@ InsectData%>%
   kable
 
 InsectData%>%
-group_by(Order) %>%  summarise( 'Number of species'= n_distinct(InsectSpCode ),
-            'Count' = sum(TOTAL))%>%
+  group_by(Order) %>%  summarise( 'Number of species'= n_distinct(InsectSpCode ),
+                                  'Count' = sum(TOTAL))%>%
   kable
 
 InsectData%>%
-filter(IncludeInFoodWeb=='Yes')%>%
+  filter(IncludeInFoodWeb=='Yes')%>%
   summarise( 'Insect species'= n_distinct(InsectSpCode ),
              'Plant species'=n_distinct(Codigo ),
              'Total Insect Count'=sum(TOTAL))%>%
   kable
 
 InsectData%>%
-filter(IncludeInFoodWeb=='Yes')%>%
+  filter(IncludeInFoodWeb=='Yes')%>%
   nrow
 
 Trait%>%
@@ -98,7 +98,7 @@ Trait%>%
   kable
 
 ```
- 
+
 ```{r}
 Trait %>%
   filter(TotUnits_collected >200)%>%
@@ -348,18 +348,18 @@ InsectData %>%
 InsectData %>%
   group_by(InsectSpCode)%>%
   summarise(InsectSampleSize = sum(TOTAL),
-    Generality=n_distinct(Codigo),
+            Generality=n_distinct(Codigo),
             Name = max(FullSpeciesNameValid),
             Family  = max(Family ))%>%
   filter(InsectSampleSize>9)%>%
   count(Generality)%>% kable
 
 
-  
-  InsectData %>%filter(InsectSpCode == 296)%>%
-    select(FullSpeciesNameValid, Codigo, TOTAL)%>%
-    kable
-  
+
+InsectData %>%filter(InsectSpCode == 296)%>%
+  select(FullSpeciesNameValid, Codigo, TOTAL)%>%
+  kable
+
 ```
 
 
@@ -367,7 +367,7 @@ InsectData %>%
 InsectData %>%
   group_by(InsectSpCode)%>%
   summarise(InsectSampleSize = sum(TOTAL),
-    Generality=n_distinct(Codigo),
+            Generality=n_distinct(Codigo),
             Name = max(FullSpeciesNameValid),
             Order  = max(Order ))%>%
   filter(InsectSampleSize>9)%>%
@@ -429,7 +429,7 @@ data.frame('Web' = c('All', 'No Singletons', 'At least 10 Samples', '10 Samples 
            'H2'=c(H2fun(IntMatrix_all, H2_integer = FALSE)[1] ,
                   H2fun(IntMatrix_NoS, H2_integer = FALSE)[1] ,
                   H2fun(IntMatrix_ten, H2_integer = FALSE)[1] ,
-                   H2fun(IntMatrix_tenNoS, H2_integer = FALSE)[1] ,
+                  H2fun(IntMatrix_tenNoS, H2_integer = FALSE)[1] ,
                   H2fun(IntMatrix_Coleo, H2_integer = FALSE)[1] ,
                   H2fun(IntMatrix_Lepid, H2_integer = FALSE)[1] ))%>%
   kable
@@ -585,11 +585,11 @@ FW%>%
   as.data.frame-> PAC_data
 
 PAC_data%>%
-    filter(!Plant_species19%in% PhyloExtraSpec$tip.label)
+  filter(!Plant_species19%in% PhyloExtraSpec$tip.label)
 # At the moment only seem to lose onw species 'Trichospermum_galeottii'
 
 PAC_data%>%
-    filter(Plant_species19%in% PhyloExtraSpec$tip.label) -> PAC_data
+  filter(Plant_species19%in% PhyloExtraSpec$tip.label) -> PAC_data
 ```
 
 ### PAC and Phylogenetic distance matrix
@@ -668,7 +668,7 @@ PhyloPAC %>%
   geom_point(aes(PhyloDist, PAC, col=TaxonomicDistance))+
   scale_color_grey(name='Taxonomic\nDistance')+
   geom_smooth(aes(PhyloDist, PAC), se=FALSE, col='red', method='lm')+
- # geom_smooth(aes(PhyloDist, PAC), se=FALSE, col='red', method='glm',method.args = list(family='binomial'))+
+  # geom_smooth(aes(PhyloDist, PAC), se=FALSE, col='red', method='glm',method.args = list(family='binomial'))+
   xlab('Phylogenetic Distance')+
   ggtitle('')
 
@@ -773,399 +773,146 @@ PhylogenySpecies$TaxoOrder<- 1:nrow(PhylogenySpecies)
 FW%>%
   left_join(PlantTraitsToAdd, by = 'Codigo')%>%
   left_join(PhylogenySpecies, by = 'Plant_species19')-> FW
-  
+
 ```
 
 
 ### Dealing with missing species
 ```{r}
-FW%>%
-  filter(is.na(TaxoOrder))
+FW%>%filter(is.na(TaxoOrder))
 
 'Trichospermum'     %in% PlantFamGen$Plant_Genus
+'Malvaceae' %in% PlantFamGen$Plant_Family
 
- 'Malvaceae' %in% PlantFamGen$Plant_Family
- 
 # Find a slot for TRI6 
 TRI6_order <- max(filter(FW, Plant_Family == 'Malvaceae')$TaxoOrder, na.rm = TRUE ) + 0.5
-   
- FW%>%
-   mutate( TaxoOrder = ifelse(Codigo =='TRI6',
-                              TRI6_order,
-                              TaxoOrder  )) -> FW
+
+FW%>%
+  mutate( TaxoOrder = ifelse(Codigo =='TRI6',
+                             TRI6_order,
+                             TaxoOrder  )) -> FW
 ```
 
 Tidying up plant names (insect names just remove genus and unknown)
 
 ```{r}
+
+
+
+## Making Names nicer:
+
+InsectNameCleaner<-   function(str){
+  
+  ## Tidying up Insect names 
+  str<- str_replace(str,pattern = 'genus ', replacement = '' )
+  str<- str_replace(str,pattern = 'unknown ', replacement = '' )
+  
+  # Removing duplication
+  Parts<- str_split(str, ' ') 
+  
+  New<-paste(rev(unique(rev(Parts[[1]]))),
+             collapse = ' ')
+  
+  # Removing 'nr./near/cf. xxxx' 
+  Parts<- str_split(New, ' ')[[1]]
+  
+  if('nr.' %in%   Parts |'near' %in%   Parts | 'cf.' %in% Parts){
+    Parts<- Parts[1:3]
+  }
+  return(paste(Parts, collapse = ' '))
+}
+
+
+
 FW %>%
   arrange(TaxoOrder)%>%
   separate(Plant_species19,
            into = c('PlantGenus', 'PlantSpecies'),
            remove = FALSE, fill = 'right', extra = 'drop')   %>%
   mutate(NicePlantName = paste(PlantGenus, PlantSpecies),
-         Site='BCI')-> FW
-
-# By Default frame2webs sorts species alphabetically
-## this finds the correct ordering 
-FW%>% 
-  arrange(Plant_species19) %>%
-  distinct(Plant_species19, .keep_all = TRUE) %>%
-  as.data.frame()%>%
-  select(TaxoOrder) %>% 
-  as.vector %>% 
-  order(decreasing = TRUE) -> TaxoOrdering
-
- FW%>%
-   distinct(Plant_species19, .keep_all = TRUE) %>%
-arrange(desc(TaxoOrder))%>%
-   select(Plant_species19,Plant_Family) -> SpFam
-
-FW$PlantFamily %>%table %>%length -> NUMFAMILIES
-FAMS<-factor(SpFam$Plant_Family,levels =  unique(SpFam$Plant_Family))
-
-
-
-#SpFam$FAMCOLS<- rep(c('darkolivegreen', 'forestgreen'),ceiling(NUMFAMILIES/2)) [FAMS]  # Can use a nicer palette in future
-
-
-SpFam$FAMCOLS<- rep(c('black', 'black'),ceiling(NUMFAMILIES/2)) [FAMS]  # Can use a nicer palette in future
-
-
-## Making Names nicer:
-FW%>%
+         Site='BCI')%>%
+  rowwise()%>%
   mutate(Site= 'BCI',
-    Insect = FullSpeciesNameValid ,
-         Insect  = str_replace(Insect,
-                               pattern = 'genus ',
-                               replacement = '' ),
-         Insect  = str_replace(Insect,
-                               pattern = 'unknown ',
-                               replacement = '' )) %>%
+         Insect  = InsectNameCleaner(FullSpeciesNameValid)) %>%
   as.data.frame-> ForPlot
 
-IntMatrix<- frame2webs(ForPlot,
-                       varnames=c('NicePlantName','Insect', 'Site', 'KilledPerM2'))
-
-TaxoOrderWeb<-IntMatrix$BCI[TaxoOrdering,]
-
-Insects<-colnames(TaxoOrderWeb)
-
-colnames(TaxoOrderWeb)<- purrr::map_chr(as.list(Insects),
-                                        function(str){
-                                          Parts<- str_split(str, ' ')
-                                          New<-paste(rev(unique(rev(Parts[[1]]))),
-                                                     collapse = ' ')
-                                          
-                                          return(New)
-                                        })
-
+IntMatrix<- frame2webs(ForPlot, varnames=c('NicePlantName','Insect', 'Site', 'KilledPerM2'))
 
 ```
 
-## Combined Plot
+## Network Ordered by compartment size (effectively specialisation)
 
 ```{r}
 
-pdf('../Figures/Figure4.pdf', width = 15, height = 10)
-par(mai=c(8,0,2,0), oma=c(3,0,3,0))
-OneSideCCA(web = TaxoOrderWeb,
-           text.rot = 90, labsize = 0.7 , 
-           FAMILYNAMES =FAMS, FAMLABELPOS = 0.15)
-dev.off()
+Ordering<-  bipartiteD3::OrderByCrossover(IntMatrix$BCI)
+
+TaxoOrderWebSort <- IntMatrix$BCI[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)]
 
 png('../Figures/Figure4.png', units = 'in',width = 15, height = 10, res = 1000)
-par(mai=c(8,0,2,0), oma=c(3,0,3,0))
-OneSideCCA(web = TaxoOrderWeb,
-           text.rot = 90, labsize = 0.7 , 
-           FAMILYNAMES =FAMS, FAMLABELPOS = 0.15)
-dev.off()
-
-
-
-```
-
-## Network Ordered by specialisation
-
-```{r}
-
-Ordering<-  bipartiteD3::OrderByCrossover(TaxoOrderWeb)
-
-TaxoOrderWebSort <- TaxoOrderWeb[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)]
 par(mai=c(8,0,2,0), oma=c(3,0,3,0), xpd=TRUE)
+plotweb(TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
+dev.off()
 
-
-png('../Figures/FoodwebLabelled.png', units = 'in',width = 15, height = 10, res = 1000)
+pdf('../Figures/Figure4.pdf', width = 15, height = 10 )
 par(mai=c(8,0,2,0), oma=c(3,0,3,0), xpd=TRUE)
-plotweb(TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2)
+plotweb(TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
 dev.off()
-
-pdf('../Figures/FoodwebLabelled.pdf',units = 'in', width = 15, height = 10)
-par(mai=c(8,0,2,0), oma=c(3,0,3,0), xpd=TRUE)
-plotweb(TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2)
-dev.off()
-
-
-png('../Figures/Foodweb.png', units = 'in',width = 15, height = 10, res = 1000)
-par(mai=c(8,0,2,0), oma=c(3,0,3,0), xpd=TRUE)
-plotweb(TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2, text.high.col = 'white', text.low.col = 'white')
-dev.off()
-
-
-```
-
-
-
-##Split Plot by Insect Group
-
-```{r}
-pdf('../Figures/FigureS4.pdf', width = 10, height = 18)
-
-par(mfrow=c(2,1))
-par(mai=c(8,2,6,2))
-
-ForPlot %>%
-  mutate(SubWeb = ifelse(Order=='Lepidoptera',
-                         'Lepidoptera',
-                         'Coleoptera'))-> ForPlot
-
-for(i in 1:2){
-  
-  SUBWEB<-c('Coleoptera','Lepidoptera')[i]
-  
-  ForPlot %>%
-    filter(SubWeb==SUBWEB)%>%
-    as.data.frame %>%
-    frame2webs(varnames=c('NicePlantName','Insect',
-                          'Site', 'KilledPerM2')) -> SpIntMatrix
-  
-  ForPlot%>% 
-    filter(SubWeb==SUBWEB)%>%
-    arrange(Plant_species19) %>%
-    distinct(Plant_species19, .keep_all = TRUE) %>%
-    select(TaxoOrder) %>% 
-    as.vector %>% 
-    order(decreasing = TRUE) -> SpTaxoOrdering
-  
-  OneSideCCA(SpIntMatrix$BCI[SpTaxoOrdering,],
-             col.low = 1,
-             bor.col.low = 1, 
-             text.rot = 90,
-             text.low.col = 1,
-             labsize = 0.7, FAMILYNAMES = NULL)
-  
-  title(main = SUBWEB)
-  
-}
-dev.off()
-
-
-png('../Figures/FigureS4.png', width = 10, height = 18, units='in', res=1000)
-
-par(mfrow=c(2,1))
-par(mai=c(8,2,6,2))
-
-ForPlot %>%
-  mutate(SubWeb = ifelse(SubWeb=='Lepidoptera',
-                         'Lepidoptera',
-                         'Coleoptera'))-> ForPlot
-
-for(i in 1:2){
-  
-  SUBWEB<-c('Coleoptera','Lepidoptera')[i]
-  
-  ForPlot %>%
-    filter(SubWeb==SUBWEB)%>%
-    as.data.frame %>%
-    frame2webs(varnames=c('NicePlantName','Insect',
-                          'Site', 'KilledPerM2')) -> SpIntMatrix
-  
-  ForPlot%>% 
-    filter(SubWeb==SUBWEB)%>%
-    arrange(Plant_species19) %>%
-    distinct(Plant_species19, .keep_all = TRUE) %>%
-    select(TaxoOrder) %>% 
-    as.vector %>% 
-    order(decreasing = TRUE) -> SpTaxoOrdering
-  
-  OneSideCCA(SpIntMatrix$BCI[SpTaxoOrdering,],
-             col.low = 1,
-             bor.col.low = 1, 
-             text.rot = 90,
-             text.low.col = 1,
-             labsize = 0.7, FAMILYNAMES = NULL)
-  
-  title(main = SUBWEB)
-  
-}
-dev.off()
-
-
-```
-
-
-# Plotting Again Without Singletons
-
-
-## Sorting Out data
-
-
-```{r}
-FW%>%filter(TOTAL >1) -> NoSingFW
-
-NoSingFW%>% 
-  arrange(Plant_species19) %>%
-  distinct(Plant_species19, .keep_all = TRUE) %>%
-  as.data.frame()%>%
-  select(TaxoOrder) %>% 
-  as.vector %>% 
-  order(decreasing = TRUE) -> TaxoOrdering
-
- NoSingFW%>%
-   distinct(Plant_species19, .keep_all = TRUE) %>%
-arrange(desc(TaxoOrder))%>%
-   select(Plant_species19,Plant_Family) -> SpFam
-
-NoSingFW$PlantFamily %>%table %>%length -> NUMFAMILIES
-FAMS<-factor(SpFam$Plant_Family,levels =  unique(SpFam$Plant_Family))
-
-
-
-#SpFam$FAMCOLS<- rep(c('darkolivegreen', 'forestgreen'),ceiling(NUMFAMILIES/2)) [FAMS]  # Can use a nicer palette in future
-
-
-SpFam$FAMCOLS<- rep(c('black', 'black'),ceiling(NUMFAMILIES/2)) [FAMS]  # Can use a nicer palette in future
-
-
-## Making Names nicer:
-NoSingFW%>%
-  mutate(Site= 'BCI',
-    Insect = FullSpeciesNameValid ,
-         Insect  = str_replace(Insect,
-                               pattern = 'genus ',
-                               replacement = '' ),
-         Insect  = str_replace(Insect,
-                               pattern = 'unknown ',
-                               replacement = '' )) %>%
-  as.data.frame-> ForPlot
-
-IntMatrix<- frame2webs(ForPlot,
-                       varnames=c('NicePlantName','Insect', 'Site', 'KilledPerM2'))
-
-TaxoOrderWeb<-IntMatrix$BCI[TaxoOrdering,]
-```
-
-## Combined Plot
-
-```{r}
-
-pdf('../Figures/FigureS5.pdf', width = 12, height = 12)
-par(mai=c(8,0,2,0), oma=c(3,0,3,0))
-OneSideCCA(web = TaxoOrderWeb,
-           text.rot = 90, labsize = 0.7 , 
-           FAMILYNAMES =FAMS, FAMLABELPOS = 0.15)
-dev.off()
-
-png('../Figures/FigureS5.png', units = 'in',width = 12, height = 12, res = 1000)
-par(mai=c(8,0,2,0), oma=c(3,0,3,0))
-OneSideCCA(web = TaxoOrderWeb,
-           text.rot = 90, labsize = 0.7 , 
-           FAMILYNAMES =FAMS, FAMLABELPOS = 0.15)
-dev.off()
-
-
 
 ```
 
 ##Split Plot by Insect Group
 
 ```{r}
-pdf('../Figures/FigureS5b.pdf', width = 10, height = 12)
+SplitMatrices<- frame2webs(ForPlot, varnames=c('NicePlantName','Insect', 'Order', 'KilledPerM2'))
 
-par(mfrow=c(2,1))
-par(mai=c(8,2,6,2))
-
-ForPlot %>%
-  mutate(SubWeb = ifelse(Order=='Lepidoptera',
-                         'Lepidoptera',
-                         'Coleoptera'))-> ForPlot
-
-for(i in 1:2){
-  
-  SUBWEB<-c('Coleoptera','Lepidoptera')[i]
-  
-  ForPlot %>%
-    filter(SubWeb==SUBWEB)%>%
-    as.data.frame %>%
-    frame2webs(varnames=c('NicePlantName','Insect',
-                          'Site', 'KilledPerM2')) -> SpIntMatrix
-  
-  ForPlot%>% 
-    filter(SubWeb==SUBWEB)%>%
-    arrange(Plant_species19) %>%
-    distinct(Plant_species19, .keep_all = TRUE) %>%
-    select(TaxoOrder) %>% 
-    as.vector %>% 
-    order(decreasing = TRUE) -> SpTaxoOrdering
-  
-  OneSideCCA(SpIntMatrix$BCI[SpTaxoOrdering,],
-             col.low = 1,
-             bor.col.low = 1, 
-             text.rot = 90,
-             text.low.col = 1,
-             labsize = 0.7, FAMILYNAMES = NULL)
-  
-  title(main = SUBWEB)
-  
+pdf('../Figures/FigureS4.pdf', width = 10, height = 10)
+par(mfrow=c(2,1), mai=c(8,2,6,2), mar = c(2, 2,2, 2) + 0.1, xpd=TRUE)
+for( SUBWEB_NAME in c('Coleoptera','Lepidoptera')){
+  SUBWEB <- SplitMatrices[[SUBWEB_NAME]]
+  Ordering<-  bipartiteD3::OrderByCrossover(SUBWEB)
+  plotweb(SUBWEB[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)],
+          method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
+  title(main = SUBWEB_NAME)
 }
 dev.off()
 
 
-png('../Figures/FigureS5b.png', width = 10, height = 12, units='in', res=600)
-
-par(mfrow=c(2,1))
-par(mai=c(8,2,6,2))
-
-ForPlot %>%
-  mutate(SubWeb = ifelse(SubWeb=='Lepidoptera',
-                         'Lepidoptera',
-                         'Coleoptera'))-> ForPlot
-
-for(i in 1:2){
-  
-  SUBWEB<-c('Coleoptera','Lepidoptera')[i]
-  
-  ForPlot %>%
-    filter(SubWeb==SUBWEB)%>%
-    as.data.frame %>%
-    frame2webs(varnames=c('NicePlantName','Insect',
-                          'Site', 'KilledPerM2')) -> SpIntMatrix
-  
-  ForPlot%>% 
-    filter(SubWeb==SUBWEB)%>%
-    arrange(Plant_species19) %>%
-    distinct(Plant_species19, .keep_all = TRUE) %>%
-    select(TaxoOrder) %>% 
-    as.vector %>% 
-    order(decreasing = TRUE) -> SpTaxoOrdering
-  
-  OneSideCCA(SpIntMatrix$BCI[SpTaxoOrdering,],
-             col.low = 1,
-             bor.col.low = 1, 
-             text.rot = 90,
-             text.low.col = 1,
-             labsize = 0.7, FAMILYNAMES = NULL)
-  
-  title(main = SUBWEB)
-  
+png('../Figures/FigureS4.png', width = 10, height = 6, units='in', res=1000)
+par(mfrow=c(2,1), mai=c(8,2,6,2), mar = c(2, 2,2, 2) + 0.1, xpd=TRUE)
+for( SUBWEB_NAME in c('Coleoptera','Lepidoptera')){
+  SUBWEB <- SplitMatrices[[SUBWEB_NAME]]
+  Ordering<-  bipartiteD3::OrderByCrossover(SUBWEB)
+  plotweb(SUBWEB[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)],
+          method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
+  title(main = SUBWEB_NAME)
 }
 dev.off()
-
 
 ```
 
+## Food web without singleton observations
 
+```{r}
+ForPlot%>%
+  filter(TOTAL >1) %>%
+  frame2webs(varnames=c('NicePlantName','Insect',
+                        'Site', 'KilledPerM2'))->NoSing_IntMatrix
 
+Ordering<-  bipartiteD3::OrderByCrossover(NoSing_IntMatrix$BCI)
+
+NoSing_TaxoOrderWebSort <- NoSing_IntMatrix$BCI[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)]
+
+png('../Figures/FigureS5.png', units = 'in',width = 15, height = 10, res = 1000)
+par(mai=c(8,0,2,0), oma=c(3,0,3,0), xpd=TRUE)
+plotweb(NoSing_TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
+dev.off()
+
+pdf('../Figures/FigureS5.pdf',width = 15, height = 10 )
+par(mai=c(8,0,2,0), oma=c(3,0,3,0), xpd=TRUE)
+plotweb(NoSing_TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
+dev.off()
+
+```
 
 # Plotting Phylogeny
 
