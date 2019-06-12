@@ -440,7 +440,7 @@ bind_rows(a,b,d)%>%
                                'Fruiting season',
                                'Overlap in\nfruit production', 
                                'Seed mass',
-                               'Max. height'))+
+                               'Tree height'))+
   facet_grid(.~Response, scales = 'free', labeller = "label_parsed") +
   coord_flip()+
   ylab('Relative Importance of Variable')+
@@ -485,17 +485,17 @@ load('../PPOutputs/PPD2')
 
 ### Log some 
 plottedA1<-ggplot(PartialPlotA1, aes(HEIGHT_AVG,yhat))+geom_step() +
-  xlab('Max. height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+  xlab('Tree height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
 plottedA2<-ggplot(PartialPlotA2, aes(seed_dry,yhat))+
   geom_step()+scale_x_log10() + xlab('Seed mass')+ ylab('')
 
 plottedB1<-ggplot(PartialPlotB1,aes(HEIGHT_AVG,yhat))+geom_step() +
-  xlab('Max. height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+  xlab('Tree height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
 plottedB2<-ggplot(PartialPlotB2, aes(seed_dry,yhat))+
   geom_step()+scale_x_log10() + xlab('Seed mass')+ ylab('')
 
 plottedD1<-ggplot(PartialPlotD1, aes(HEIGHT_AVG,yhat))+geom_step() +
-  xlab('Max. height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
+  xlab('Tree height') + ylab(expression(paste("        Partial\nDependence (", hat(y),')')))
 plottedD2<-ggplot(PartialPlotD2,aes(seed_dry,yhat))+
   geom_step()+scale_x_log10() + xlab('Seed mass')+ ylab('')
 
@@ -648,7 +648,7 @@ bind_rows(a_all,b_all,d_all)%>%
                                'Fruiting season',
                                'Overlap in\nfruit production', 
                                'Seed mass',
-                               'Max. height',
+                               'Tree height',
                      'Total Units Collected'))+
   facet_grid(.~Response, scales = 'free', labeller = "label_parsed") +
   coord_flip()+
