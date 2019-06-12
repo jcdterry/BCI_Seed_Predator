@@ -1,0 +1,125 @@
+---
+title: "Interactive Bipartite Network"
+author: "Chris Terry"
+date: "18/01/2019"
+output: html_document
+---
+
+
+
+```{r, message=FALSE, warning=FALSE}
+rm(list=ls())
+
+require(tidyverse)
+require(bipartite)
+require(knitr)
+require(phytools)
+require(treeio)   
+require(readxl)
+require(bipartiteD3) # NB needs version 0.2.0+
+
+
+select<- dplyr::select # to ensure dplyr version of select is default
+```
+
+```{r}
+## Quantitatitve Food Web data set Using BCI frequency data
+FW<-read_csv('../Data/FW.csv')
+Trait<- read_csv('../Data/TidyTrait.csv')
+PhyloExtraSpec<-read.tree('../Data/PhyloExtraSpec.tree')
+
+Trait%>%
+  select(Codigo, TotUnits_collected,Codigo, Plant_species19,
+         Plant_Family =Family)-> PlantTraitsToAdd
+
+FW%>%
+  left_join(PlantTraitsToAdd, by = 'Codigo')%>%
+  separate(Plant_species19,
+           into = c('PlantGenus', 'PlantSpecies'),
+           remove = FALSE, fill = 'right', extra = 'drop')   %>%
+  mutate(NicePlantName = paste(PlantGenus, PlantSpecies),
+         Site= 'BCI',
+         Insect = FullSpeciesNameValid ,
+         Insect  = str_replace(Insect,
+                               pattern = 'genus ',
+                               replacement = '' ),
+         Insect  = str_replace(Insect,
+                               pattern = 'unknown ',
+                               replacement = '' )) %>%
+  as.data.frame-> ForPlot
+
+```
+
+# Plotting With bipartiteD3
+
+```{r}
+
+## Finding best order
+
+ForPlot%>%
+  select(NicePlantName,FullSpeciesNameValid,  KilledPerM2 , Site)%>%
+  frame2webs(varnames = c('NicePlantName','FullSpeciesNameValid', 'Site',  'KilledPerM2' ))-> web
+
+web<-web[[1]]
+co <- compart(web)
+
+row.seq <- NULL
+col.seq <- NULL
+
+# Put all the specialists first, 
+
+CompartSize = c()
+for(i in 1:co$n.compart){
+  CompartSize<-c(CompartSize,sum(abs(co$cweb) == i))
+}
+CompartmentRank<- rank(CompartSize, ties.method = 'first')
+
+
+for (m in   order(CompartmentRank)) {
+  comp.member <- which(abs(co$cweb) == m, arr.ind = TRUE)
+  rs <- unique(comp.member[, 1])
+  cs <- unique(comp.member[, 2])
+  if (length(rs) < 3 | length(cs) < 3) {
+    row.seq <- c(row.seq, rs)
+    col.seq <- c(col.seq, cs)
+  }
+  else {
+    ca <- cca(web[rs, cs])
+    row.seq <- c(row.seq, rs[order(summary(ca)$sites[, 
+                                                     1], decreasing = TRUE)])
+    col.seq <- c(col.seq, cs[order(summary(ca)$species[, 
+                                                       1], decreasing = TRUE)])
+  }
+}
+
+PredPos<-colnames(web)[col.seq]
+PlantPos<-rownames(web)[row.seq]
+
+
+ForPlot%>%
+  select(NicePlantName,FullSpeciesNameValid,  KilledPerM2 )%>%
+  bipartite_D3(filename = 'LargeSeedPredatorNetwork',
+               PrimaryLab = 'Seed',
+               SortPrimary = PlantPos,
+               SortSecondary = PredPos,
+               SecondaryLab = 'Seed Predator',
+               PercentageDecimals = 3,
+               MainFigSize = c(1000, 6100),
+               IndivFigSize = c(150, 6000))-> intweb
+
+r2d3::save_d3_html(intweb,
+                   file = '../Figures/SeedPredatorWeb.html', selfcontained = TRUE )
+#r2d3::save_d3_png(intweb, file = '../Figures/FullSeedPredatorWeb.png', delay = 4)
+
+```
+
+```{r fig.height=20, fig.width=8}
+intweb
+
+```
+
+
+```{r}
+sessionInfo()
+
+```

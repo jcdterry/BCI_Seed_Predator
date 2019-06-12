@@ -1,0 +1,540 @@
+---
+title: "Tidying Data"
+author: "Chris Terry"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: html_document
+---
+
+This is the updated version using new taxonomy and without Croat
+
+The excel files used in this are not hosted on the github as part of the supplmentary information. The outputs are in the data folder. This is uploaded purely as a reference for the original data sources and methods used.
+
+
+### Preliminaries
+
+```{r, message=FALSE, warning=FALSE}
+rm(list=ls())
+
+try(setwd("C:/Users/pemb4504/Dropbox/Seed Predators/Redo"))
+try(setwd("C:/Users/Chris/Dropbox/Seed Predators/Redo/"))
+
+require('tidyverse')
+require('ape')
+require('phytools')
+require('bipartite')
+require('corrplot')
+require('randomForestSRC')
+require('ggRandomForests')
+require('phylobase')
+require('readxl')
+require('knitr')
+require('ggplot2')
+require('dplyr')
+
+source('plotweb function.R')
+
+
+select<- dplyr::select
+
+```
+
+### Updated Data sources
+```{r, message=FALSE, warning=FALSE}
+Taxon19 <- read_excel("Data2019/Plant nomenclature_updated_20190114_final.xlsx")
+InsectData <- read_excel("Data2019/Insect data_updated_cleaned for Chris.xlsx")
+Sp_per_TaxonLevel <- read_excel('Data2019/AllBCIspecies.xlsx')
+
+Trait<- read_csv('TraitData/Copy of SeedpredatorAndTraitdata.csv')
+
+```
+
+
+```{r}
+InsectData%>%
+  filter(IncludeInFoodWeb =='Yes')%>%
+  select(InsectSpCode, FullSpeciesNameValid, Codigo, Order, Family, InsectGenus=Genus, TOTAL, KilledPerM2)-> FW
+```
+
+## Plant Susseceptibilty Data
+
+For each plant, need: 
+
+TotalunitsCollected, 
+
+*Seed Predator Richness:*
+
+SeedPreds_n
+Bruchinae_n
+Cerambycidae_n
+Curculionidae_n
+Lepidoptera_n
+Coleoptera_n
+
+*Seed Predator Presences:*
+SeedPreds_pres
+Bruchinae_pres
+Cerambycidae_pres
+Curculionidae_pres
+Coleoptera_pres
+Lepidoptera_pres 
+Hymenoptera_pres
+
+
+*Traits*
+[see below]
+
+```{r}
+
+InsectData%>%
+  select(FullSpeciesNameValid, Codigo, Order, Family, KilledPerM2)%>%
+  group_by(Codigo)%>%
+  count(Order)%>%
+  spread(Order, n, fill = 0)%>%
+  rename(Coleo_n = Coleoptera, Hymeno_n = Hymenoptera, Lepid_n = Lepidoptera)%>%
+  mutate(Coleo_pres = (Coleo_n>0)*1, Hymeno_pres = (Hymeno_n>0)*1, Lepid_pres =(Lepid_n>0)*1)%>%
+  mutate(SeedPred_n = sum(Coleo_n,Hymeno_n, Lepid_n ),
+         SeedPred_pres =  (SeedPred_n>0)*1) -> OrderLevelPresence
+
+```
+
+
+# Non-BCI interaction frequency data
+
+```{r}
+left_join(InsectData,
+          select(Trait, Codigo, TotUnits_collected),
+          by='Codigo')%>%
+  mutate( FracPredated = TOTAL/TotUnits_collected) -> InsectData
+
+```
+
+## Seed Predator Dissection Based Presence Data
+
+
+```{r}
+read_csv('Data2019/PredatedPerSpecies_dissections.csv') %>%
+  rename(SeedPredationRate= Prop_predated ) ->DissectionData
+
+Trait <- left_join(Trait, DissectionData, by='Codigo')
+
+```
+
+```{r}
+
+
+Trait%>%
+  count(Codigo)%>%
+  arrange(desc(n))
+
+Trait%>%
+  count(Plant_species)%>%
+  arrange(desc(n))
+
+Trait%>%
+  filter(!(Plant_species == 'Celtis_iguanaea' & Codigo=='CELS'))-> Trait # Remove the duplicate
+
+Taxon19%>%
+  select(Code4,Code6, Family, Plant_species19 = Plant_species) -> NamesToAddToTraits
+
+
+Trait %>%
+  select(-Family)%>%
+  rename(Old_Plant_Species = Plant_species)%>%
+  left_join(NamesToAddToTraits, by = c('Codigo' = 'Code4'))-> Trait
+
+
+Trait%>%
+  mutate(Tree_or_Liana = ifelse(Lifeform =='Tree', 'Tree', NA))%>%
+    mutate(Tree_or_Liana = ifelse(Lifeform =='Liana', 'Liana', Tree_or_Liana))%>%
+  select(-seed_fresh, -N_seedfull, -Seeds_collected, -Fruits_collected, - allstems, -min10stems, - seedvctlen1, - seedvctmean1, -densitycm3,
+         -min20stems, -hemicellulose, -cellulose, -lignin , - VeinFT,
+         -toughness, -specifictoughness, - Genus,-Species, - BCIspInFamily,-LamWS,
+         -LamFT, -LamT, -LamD, -LMADISC_AVD, -RGR_50, -RGR_100)%>%
+  separate(Plant_species19 , into = c('Genus19', 'Specific19', 'Var19'),
+           extra = 'merge', fill = 'right', remove=FALSE)-> Trait
+```
+
+# Comparision of New Insect Data with Numbers in Trait DB
+
+```{r}
+OrderLevelPresence%>%
+  arrange(desc(SeedPred_n))
+
+
+Trait%>%
+  select(Codigo,SeedPreds_n :Lepidoptera_pres )%>%
+  rowwise()%>%
+  mutate(Coleo_n = sum( Bruchinae_n,Cerambycidae_n,Curculionidae_n))%>%
+  arrange(desc(SeedPreds_n))
+  
+```
+
+
+### Replacing Trait DB with Predator numbers from NEw Insect Data
+
+```{r}
+
+Trait%>%
+  select(- (SeedPreds_n  : Lepidoptera_pres))%>%
+  left_join(OrderLevelPresence, by= 'Codigo') -> Trait
+```
+
+
+# Adding In Additional Traits
+
+Variables reflecting resource availability at various spatial scales:
+- fruitrecord (reflecting abundance of seeds in the BCI plant community)
+- HEIGHT_AVG
+- BCIspInFamily
+- number of BCI species in genus #or similar; discussed above
+- Number of reproductive individuals in the 50 ha plot 
+
+Variables reflecting seed size and investment in seed defences:
+- seed_dry
+- EndocarpInvestment
+- POLY_concentration
+
+Variables reflecting temporal patterns and variation:
+- cvseed
+- Variable reflecting season of seed production #wet vs dry season species; data attached
+- whether a species produces seeds at a time of the year when many other species produce seeds #awaiting Joe's response
+
+Other
+- Tree_or_liana
+- RGR_10
+
+```{r}
+colnames(Trait)
+```
+
+Adding Additonal Traits from the various documents:
+
+## Traits from BCI Plot Data
+
+###number of BCI species in genus 
+
+```{r}
+Sp_per_TaxonLevel%>%
+  separate(gs.Galdames, into = c('genus', 'specific'), extra='drop')%>%
+  count(genus)%>%
+  rename(SpInGenusOnBCI=n) -> SpeciesPerGenus
+
+Sp_per_TaxonLevel%>%
+  count(family)%>%
+  rename(SpInFamilyOnBCI=n)-> SpeciesPerFamily
+
+  Trait%>%
+    left_join(SpeciesPerGenus, by=c('Genus19'='genus'))%>%
+    left_join(SpeciesPerFamily, by=c('Family' = 'family'))-> Trait
+
+```
+
+Which ones are missing data?
+
+## Species where 2019 genus name does not appear in big list of species
+```{r}
+sum(!(Trait$Genus19 %in%SpeciesPerGenus$genus))
+
+Trait %>%
+  filter( !(Genus19 %in%SpeciesPerGenus$genus))%>%
+    select(Codigo, Old_Plant_Species, Plant_species19, Lifeform)%>% 
+  kable
+    
+```
+
+## Species where 2019 family does not appear in big BCI list 
+
+```{r}
+sum(!(Trait$Family %in%SpeciesPerFamily$family))
+
+Trait %>%
+  filter( !(Family%in%  SpeciesPerFamily$family))%>%
+  arrange(Family)%>%
+  select(Codigo, Old_Plant_Species, Plant_species19, Family, Lifeform)%>% 
+  kable
+```
+
+###  HEIGHT_AVG 
+
+```{r}
+read_csv("TraitData/Max_height_and_RGR.csv")%>%
+  select(SP, HEIGHT_AVG) -> height
+  
+  
+  
+  left_join(Trait,height, by=c('Code6'= 'SP'))-> Trait
+
+```
+
+
+### Number of reproductive individuals in the 50 ha plot
+
+Method to select reproductive adults:
+
+1. Calculate species-specific maximum DBH (DBHmax)
+
+2.Select all individuals with DBH > 0.5 x DBHmax (Visser et al. 2016? Func. Ecol.)
+
+3.For dioecious species, you might then divide by 2 to estimate number of seed-producing individuals (Bruinjen et al. 2016? Am. Nat.)
+
+# For number in 50h plot
+```{r}
+BCIPlotdata <- read_delim("TraitData/BCIPlotdata.csv","\t", escape_double = FALSE, trim_ws = TRUE)
+```
+
+```{r}
+
+BCIPlotdata %>%
+  group_by(Latin) %>%
+  summarise(MaxDBH = max(DBH)) %>% 
+  left_join(BCIPlotdata, by='Latin') %>% 
+  filter(DBH > 0.5*MaxDBH ) %>%
+  group_by(Latin) %>%
+  summarise(BCIReproductive = n_distinct(TreeID)) %>%
+  separate(Latin,into=c('Genus', 'Specific')) %>%
+  mutate(Plant_species = paste(Genus, Specific, sep='_')) %>%
+  select(Plant_species,BCIReproductive) -> BCIReproductive
+
+### Need to Try matching with both old name and new name
+  Trait%>%
+  left_join(BCIReproductive, by=c('Old_Plant_Species'='Plant_species'))%>%
+  left_join(BCIReproductive, by=c('Plant_species19'='Plant_species'))%>%
+  mutate(BCIReproductive = pmax(BCIReproductive.x,BCIReproductive.y,
+                                na.rm=TRUE))%>%
+  select(-BCIReproductive.x,-BCIReproductive.y)  -> Trait
+
+```
+
+
+##  EndocarpInvestment
+
+```{r}
+read_csv("TraitData/EndocarpInvestment.csv")%>%
+  select(SP4, Endocarp_investment)-> EndocarpInvestment
+
+
+
+Trait <- left_join(Trait, EndocarpInvestment,
+                    by=c('Codigo'='SP4'))
+
+```
+
+## POLY_concentration
+
+Use the total concentration of polyphenols (POLY_concentration) as an additional explanatory variable in the regression tree analyses, but ignore the other traits
+
+```{r}
+read_csv('TraitData/Polyphenoldata.csv')%>%
+  select(Code, POLY_concentration) -> polyphenol
+
+
+Trait <- left_join(Trait, polyphenol,
+                    by=c('Codigo'='Code'))
+
+```
+
+## Variable reflecting season of seed production 
+
+wet vs dry vs other season species;
+
+ 15 Jan through 30 March versus 1 June through 30 Nov)
+
+```{r}
+seed_predator_phenology <- read_csv("TraitData/seed_predator_phenology.csv")
+
+hist(seed_predator_phenology$seed.vctmean1, breaks=52)
+abline(v=c(15, 89, 152, 334), col='red')
+
+
+seed_predator_phenology %>%
+  select(sp, seed.vctmean1)%>%
+  mutate(FruitSeason = 'Other')%>%
+  mutate(FruitSeason = ifelse(seed.vctmean1>15 & seed.vctmean1 <89,
+                              'Dry' ,  FruitSeason)) %>%
+  mutate(FruitSeason = ifelse(seed.vctmean1>152 & seed.vctmean1 <334,
+                              'Wet' ,  FruitSeason))%>%
+  select(-seed.vctmean1) -> FruitSeason
+  
+
+Trait <- left_join(Trait, FruitSeason,
+                    by=c('Codigo'='sp'))
+
+```
+
+## Co fruiting
+
+
+Taking Data from the Supplementary Information of Wright et al Ecology, 97(10), 2016, pp. 2780–2790. 
+
+From raw records of species being found in particular weeks across all traps, calculate which trees were co-fruiting with others. 
+
+Method:
+1. Collapse data into weekly list of fruiting trees.
+2. Create list of speices codes to cycle through
+3. For each Species, identify number of distint species that share a fruiting week with the species
+4. Subtract 1, to report number of other species, not including the focal species
+5. Any values of '-1' must therefore never appear in the fruit traps. They are set to NA
+
+```{r}
+Plants<-Trait$Codigo
+
+read_csv('TraitData/CensusTrpSp.csv') %>%
+  group_by(census) %>%
+  distinct(sp) -> WeeklySp1
+
+## Using other file in SI to translate from 6 number code to 4 number code
+read_csv('WrightSIData2.csv') %>%
+  select(code4, code6) %>%
+  right_join(WeeklySp1,
+             by=c('code6' = 'sp' )) %>%
+  rename(Codigo = code4 )-> WeeklySp
+
+
+mean(Plants %in% WeeklySp$Codigo) # 73% of specie sin Trait list found in Trait list
+
+CoFruiters<- tibble(Codigo = Plants, 
+                        CoFruit = NA)
+
+for(i in 1:length(Plants)){
+  
+  FruitingWeeks<- filter(WeeklySp,
+                         Codigo == CoFruiters$Codigo[i] )$census 
+  filter(WeeklySp, 
+         census %in% FruitingWeeks ) %>%
+    summarise(n_distinct(Codigo) -1) %>%
+    unlist() -> NumCoFru
+  
+  CoFruiters$CoFruit[i] <- NumCoFru
+}
+
+
+CoFruiters %>%
+  mutate(CoFruit = ifelse(CoFruit==-1, NA, CoFruit)) -> CoFruiters
+  
+
+CoFruiters$CoFruit %>% hist
+
+
+Trait <- left_join(Trait, CoFruiters, by='Codigo')
+```
+
+# Cleaning Columns and Saving
+```{r}
+
+Trait%>% 
+  mutate(Coleo_n =  replace_na(Coleo_n,0),
+                   Hymeno_n =  replace_na(Hymeno_n,0),
+                   Lepid_n =  replace_na(Lepid_n,0),
+                   Coleo_pres  =  replace_na(Coleo_pres , 0),
+                   Hymeno_pres  =  replace_na(Hymeno_pres ,0),
+                   Lepid_pres =  replace_na(Lepid_pres,0), 
+                   SeedPred_n =  replace_na(SeedPred_n, 0),
+                   SeedPred_pres =  replace_na(SeedPred_pres,0))-> Trait
+
+
+write.csv(x= Trait, file = 'Data2019/TidyTrait.csv')
+write.csv(x= FW, file = 'Data2019/FW.csv')
+```
+
+
+# Phylogeny
+
+```{r}
+## See Phylgeny Checking Document for breakdown of species
+```
+
+## Species that were in the phylogeny  under their old name, but not their new:
+```{r}
+load('Data2019/SpellCorrectedPhylo')
+
+InPhylo1 <- Taxon19$Plant_species %in% Phylo1$tip.label
+sum(InPhylo1)
+
+PhyloPresent <-  Phylo1$tip.label%in% Taxon19$Plant_species
+PhylOldGood<- Phylo1$tip.label%in%Taxon19$OldSpecies
+
+ToReplace<-Phylo1$tip.label[!PhyloPresent &PhylOldGood]
+
+TipLabels<- Phylo1$tip.label
+
+for(i in 1:length(ToReplace)){
+  WhereInTaxon19 <-  which(Taxon19$OldSpecies == ToReplace[i])
+  WhereInPhylogeny<- which(TipLabels          == ToReplace[i])
+  TipLabels[WhereInPhylogeny]<- Taxon19$Plant_species[WhereInTaxon19]
+}
+
+Phylo1$tip.label <- TipLabels
+
+InPhylo1 <- Taxon19$Plant_species %in% Phylo1$tip.label
+sum(InPhylo1)
+
+```
+
+## Adding to species to phylogeny where genus is already there
+
+```{r}
+
+Phylo1Genuses <- unique(str_split_fixed(Phylo1$tip.label, pattern = '_',n =  6)[,1])
+ToAddToPhylo<-Taxon19[!InPhylo1 & (Taxon19$Genus%in% Phylo1Genuses),] # 84 to add
+kable(ToAddToPhylo$Plant_species)
+
+PhyloExtraSpec<-Phylo1
+PhyloExtraSpec$edge.length<- PhyloExtraSpec$edge.length + 0.001 # NB smallest naturally in web =  0.018142    
+
+PhyloExtraSpec <-force.ultrametric(PhyloExtraSpec)
+
+## Adding a small distance to all edge lengths that are zero to randomly resolve polytomies..,
+
+for(i in 1: nrow(ToAddToPhylo)){
+  PhyloExtraSpec <- add.species.to.genus(tree = PhyloExtraSpec,
+                                       species =ToAddToPhylo$Plant_species[i],
+                                       genus = ToAddToPhylo$Genus[i],
+                                       where = 'root')
+  }
+
+InPhyloExtraSpec <- Taxon19$Plant_species %in% PhyloExtraSpec$tip.label
+sum(InPhyloExtraSpec)
+
+
+write.tree(PhyloExtraSpec, file = 'Data2019/PhyloExtraSpec.tree')
+
+Trait$InPhylogeny <- Trait$Plant_species19 %in% PhyloExtraSpec$tip.label
+
+colnames(Trait)
+
+```
+Only 57 compltely unaccounted for...
+
+```{r}
+sum(!InPhyloExtraSpec)
+
+
+```
+### Adding phylogeny to table and reordering
+```{r}
+ReorderedTrait <- select_(Trait, 
+
+"Codigo"              ,"Code6"               ,
+"Old_Plant_Species"  ,"Family"             ,
+"Plant_species19"     ,"Genus19"            ,
+"Specific19"          ,"Var19"  ,"InPhylogeny" ,
+"TotUnits_collected"  ,"Lifeform"           ,
+"Freestanding"        ,"Woody_or_nonwoody"  ,
+"seed_dry"            ,"fruitrecord"        ,
+"cvseed"              ,
+"RGR_10"             ,"SpInGenusOnBCI"     ,
+"SpInFamilyOnBCI"     ,"HEIGHT_AVG"         ,
+"BCIReproductive"     ,"Endocarp_investment",
+"POLY_concentration"  ,"FruitSeason"        ,
+"CoFruit"              ,"Tot_dissected"      ,
+"Tot_predated"        ,"SeedPredationRate"  ,
+"Tree_or_Liana"       ,"Coleo_n"            ,
+"Hymeno_n"            ,"Lepid_n"            ,
+"Coleo_pres"          ,"Hymeno_pres"        ,
+"Lepid_pres"          ,"SeedPred_n"         ,
+"SeedPred_pres"       
+)
+write.csv(x= ReorderedTrait, file = 'Data2019/TidyTraitReOrderWithPhylo.csv')
+
+```
+
