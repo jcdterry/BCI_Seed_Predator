@@ -227,7 +227,7 @@ data.frame(WellSampledMissing,AllDataMissing)%>%
 ```{r}
 D <- WellSampledWoody
 
-png('../Figures/ExampleSpinePlots.png',height= 5, width = 8, res= 600, units='in')
+png('../Figures/Figure3.png',height= 5, width = 8, res= 600, units='in')
 par(mfrow=c(1,2), xpd=TRUE)
 
 plot(SeedPred_pres~ HEIGHT_AVG,   data=D, xlab='Tree Height (m)', ylab='', col=c('tomato3','white'))
@@ -235,7 +235,21 @@ mtext('a)',side = 3, at = -0.1, padj = -1)
 plot(SeedPred_pres~ log10(seed_dry), data=D, xlab=expression(Seed~mass~(log[10]~g)),
      ylab='', col=c('tomato3','white'))
 mtext('b)',side = 3, at = -0.1, padj = -1)
+text(x=0.0445533,y= -0.06, labels ='*' )
 dev.off()
+
+png('../Figures/Figure3.pdf',height= 5, width = 8, res= 600, units='in')
+par(mfrow=c(1,2), xpd=TRUE)
+
+plot(SeedPred_pres~ HEIGHT_AVG,   data=D, xlab='Tree Height (m)', ylab='', col=c('tomato3','white'))
+mtext('a)',side = 3, at = -0.1, padj = -1)
+plot(SeedPred_pres~ log10(seed_dry), data=D, xlab=expression(Seed~mass~(log[10]~g)),
+     ylab='', col=c('tomato3','white'))
+mtext('b)',side = 3, at = -0.1, padj = -1)
+text(x=0.0445533,y= -0.06, labels ='*' )
+dev.off()
+
+
 
 ```
 
