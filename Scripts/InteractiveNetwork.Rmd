@@ -1,7 +1,6 @@
 ---
 title: "Interactive Bipartite Network"
 author: "Chris Terry"
-date: "18/01/2019"
 output: html_document
 ---
 
@@ -22,7 +21,7 @@ require(bipartiteD3) # NB needs version 0.2.0+
 select<- dplyr::select # to ensure dplyr version of select is default
 ```
 
-```{r}
+```{r message=FALSE}
 ## Quantitatitve Food Web data set Using BCI frequency data
 FW<-read_csv('../Data/FW.csv')
 Trait<- read_csv('../Data/TidyTrait.csv')
@@ -32,20 +31,39 @@ Trait%>%
   select(Codigo, TotUnits_collected,Codigo, Plant_species19,
          Plant_Family =Family)-> PlantTraitsToAdd
 
+
+
+InsectNameCleaner<-   function(str){
+  
+  ## Tidying up Insect names 
+  str<- str_replace(str,pattern = 'genus ', replacement = '' )
+  str<- str_replace(str,pattern = 'unknown ', replacement = '' )
+  
+  # Removing duplication
+  Parts<- str_split(str, ' ') 
+  
+  New<-paste(rev(unique(rev(Parts[[1]]))),
+             collapse = ' ')
+  
+  # Removing 'nr./near/cf. xxxx' 
+  Parts<- str_split(New, ' ')[[1]]
+  
+  if('nr.' %in%   Parts |'near' %in%   Parts | 'cf.' %in% Parts){
+    Parts<- Parts[1:3]
+  }
+  return(paste(Parts, collapse = ' '))
+}
+
+
 FW%>%
   left_join(PlantTraitsToAdd, by = 'Codigo')%>%
   separate(Plant_species19,
            into = c('PlantGenus', 'PlantSpecies'),
            remove = FALSE, fill = 'right', extra = 'drop')   %>%
+    rowwise()%>%
   mutate(NicePlantName = paste(PlantGenus, PlantSpecies),
          Site= 'BCI',
-         Insect = FullSpeciesNameValid ,
-         Insect  = str_replace(Insect,
-                               pattern = 'genus ',
-                               replacement = '' ),
-         Insect  = str_replace(Insect,
-                               pattern = 'unknown ',
-                               replacement = '' )) %>%
+         Insect  = InsectNameCleaner(FullSpeciesNameValid)) %>%
   as.data.frame-> ForPlot
 
 ```
@@ -57,8 +75,8 @@ FW%>%
 ## Finding best order
 
 ForPlot%>%
-  select(NicePlantName,FullSpeciesNameValid,  KilledPerM2 , Site)%>%
-  frame2webs(varnames = c('NicePlantName','FullSpeciesNameValid', 'Site',  'KilledPerM2' ))-> web
+  select(NicePlantName,Insect,  KilledPerM2 , Site)%>%
+  frame2webs(varnames = c('NicePlantName','Insect', 'Site',  'KilledPerM2' ))-> web
 
 web<-web[[1]]
 co <- compart(web)
@@ -97,7 +115,7 @@ PlantPos<-rownames(web)[row.seq]
 
 
 ForPlot%>%
-  select(NicePlantName,FullSpeciesNameValid,  KilledPerM2 )%>%
+  select(NicePlantName,Insect,  KilledPerM2 )%>%
   bipartite_D3(filename = 'LargeSeedPredatorNetwork',
                PrimaryLab = 'Seed',
                SortPrimary = PlantPos,
@@ -108,7 +126,7 @@ ForPlot%>%
                IndivFigSize = c(150, 6000))-> intweb
 
 r2d3::save_d3_html(intweb,
-                   file = '../Figures/SeedPredatorWeb.html', selfcontained = TRUE )
+                   file = '../Markdown Documents/SeedPredatorWeb.html', selfcontained = TRUE )
 #r2d3::save_d3_png(intweb, file = '../Figures/FullSeedPredatorWeb.png', delay = 4)
 
 ```

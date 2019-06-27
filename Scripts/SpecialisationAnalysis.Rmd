@@ -1,6 +1,7 @@
 ---
 title: "Trait Specialisation Analyses"
 author: "J C D Terry & S Gripenberg"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
 output: 
   html_document: 
     toc: yes
