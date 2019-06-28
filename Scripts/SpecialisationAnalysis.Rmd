@@ -57,6 +57,10 @@ vegan::estimateR(InsectData$TOTAL)
 
 rarecurve(t(InsectData$TOTAL), ylab = 'Interaction Count')
 
+png('../Figures/Rarefaction.png', width = 4, height = 4, units = 'in', res = 300)
+rarecurve(t(InsectData$TOTAL), ylab = 'Interaction Count')
+dev.off()
+
 Fs<-table(InsectData$TOTAL)
 
 ## Manually calculating Chao1 Index:
@@ -848,7 +852,7 @@ Ordering<-  bipartiteD3::OrderByCrossover(IntMatrix$BCI)
 
 TaxoOrderWebSort <- IntMatrix$BCI[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)]
 
-png('../Figures/Figure4.png', units = 'in',width = 15, height = 10, res = 1000)
+png('../Figures/Figure4.png', units = 'in',width = 15, height = 10, res = 500)
 par(mai=c(8,0,2,0), oma=c(3,0,3,0), xpd=TRUE)
 plotweb(TaxoOrderWebSort,method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
 dev.off()
@@ -865,28 +869,16 @@ dev.off()
 ```{r}
 SplitMatrices<- frame2webs(ForPlot, varnames=c('NicePlantName','Insect', 'Order', 'KilledPerM2'))
 
-pdf('../Figures/FigureS4.pdf', width = 10, height = 10)
-par(mfrow=c(2,1), mai=c(8,2,6,2), mar = c(2, 2,2, 2) + 0.1, xpd=TRUE)
 for( SUBWEB_NAME in c('Coleoptera','Lepidoptera')){
+  
+  pdf(paste0('../Figures/FigureS4',SUBWEB_NAME,'.pdf'), width = 10, height = 5)
+  par(mai=c(8,2,6,2), mar = c(2, 2,2, 2) + 0.1, xpd=TRUE)
   SUBWEB <- SplitMatrices[[SUBWEB_NAME]]
   Ordering<-  bipartiteD3::OrderByCrossover(SUBWEB)
   plotweb(SUBWEB[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)],
           method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
-  title(main = SUBWEB_NAME)
+  dev.off()
 }
-dev.off()
-
-
-png('../Figures/FigureS4.png', width = 10, height = 6, units='in', res=1000)
-par(mfrow=c(2,1), mai=c(8,2,6,2), mar = c(2, 2,2, 2) + 0.1, xpd=TRUE)
-for( SUBWEB_NAME in c('Coleoptera','Lepidoptera')){
-  SUBWEB <- SplitMatrices[[SUBWEB_NAME]]
-  Ordering<-  bipartiteD3::OrderByCrossover(SUBWEB)
-  plotweb(SUBWEB[rev(Ordering$PrimaryOrder), rev(Ordering$SecondaryOrder)],
-          method = 'normal', text.rot = 90, labsize = 0.5, ybig = 2.5)
-  title(main = SUBWEB_NAME)
-}
-dev.off()
 
 ```
 
