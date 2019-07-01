@@ -83,6 +83,7 @@ Details on random forest analyses relating plant traits to seed predation
 Data were collated from a number of different sources, listed in Appendix S2. When assessing seed predation rate, we excluded plant species with seeds smaller than 1 mg, since our observations suggested that seeds smaller than this are likely to be too small to be attacked by endophagous seed predators. Amongst the well-sampled plant species ($\geq$200 seeds/fruits) upon which we focussed our main analyses, the trait data completeness was above 50\% for all the variables tested (Table S1.1). Missing values are dealt with by the default approach of the cforest() function, which uses surrogate splits where necessary (Hothorn \emph{et al. }2006). 
 
 \begin{table}[]
+\caption{\textbf{Table S1.1} Fraction of missing data for each trait in the plant dataset. }
 \small
 \begin{tabular}{@{}lll@{}}
 \toprule
@@ -100,8 +101,6 @@ Local Abundance                 & 34.7                    & 51.1                
 Relative Growth Rate            & 48.8                    & 67.4                \\
 Polyphenol concentration        & 49.8                    & 70.8                \\ \bottomrule
 \end{tabular}
-\caption{\textbf{Table S1.1} Fraction of missing data for each trait in the plant dataset. }
-\label{tab:my-table}
 \end{table}
 
 Correlations between traits were generally low (Figure S1.1). The principal exception was seed crop variables (crop size, crop variation and fruit production overlap) that formed a distinct cluster. 
@@ -116,6 +115,7 @@ We sought to determine if a wide suite of traits could allow the prediction of o
 
 
 \begin{table}[]
+\caption{\textbf{Table S1.2} Values of hyperparameters used for reported results. }
 \small
 \begin{tabular}{@{}lp{2in}l@{}}
 \toprule
@@ -124,7 +124,6 @@ mtry                      & The number of variables to use in each tree         
 ntree                     & The number of classification or regression trees to include in each model  & 5000                    \\
 mincriterion              & The value of the test statistic that must be exceeded to implement a split & 0 (i.e unbounded trees) \\ \bottomrule
 \end{tabular}
-\caption{\textbf{Table S1.2} Values of hyperparameters used for reported results. }
 \end{table}
 
 Comparing the role of different variables in driving the accuracy of predictions is challenging in a random forest model, especially when the variables have differing levels of missingness, are sometimes categorical and may be somewhat correlated. Variable importance measures examine the mean decrease in accuracy if a predictor variable is randomised. To gain some insight into the driving features of our model we used the \texttt{varimp()} function in the party package. Since our data had a number of missing values, we used the approach detailed in Hapfelmeier \emph{et al. }(2014).
@@ -226,8 +225,8 @@ Using the \texttt{estimateR} function in the vegan package (Oksanen \emph{et al.
 
 
 \begin{figure}[H]
-\centering\includegraphics[width=0.7\textwidth]{../Figures/Rarefaction.png} 
 \caption[]{\textbf{Figure S3.1} Rarefaction curve of sample size against accumulated interaction count. Although the accumulation curve has not plateaued, the rate of accumulation is low at large sample sizes.  }
+\centering\includegraphics[width=0.7\textwidth]{../Figures/Rarefaction.png} 
 \end{figure}
 
 \subsection*{References for Appendix 3}
@@ -238,6 +237,8 @@ Using the \texttt{estimateR} function in the vegan package (Oksanen \emph{et al.
 \item Jordano, P. (2016). Sampling networks of ecological interactions. Funct. Ecol., 30, 1883-1893.
 \item Oksanen, J., Blanchet, F.G., Friendly, M., Kindt, R., Legendre, P., McGlinn, D. \emph{et al. }(2016). vegan: Community Ecology Package. R package version 2.4-0.  \url{https://CRAN.R-project.org/package=vegan}. 
 \end{enumerate}
+
+\newpage
 
 \section{Appendix S4: Supplementary results from random forest analyses}
 
