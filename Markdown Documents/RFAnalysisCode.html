@@ -376,14 +376,15 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Random Forest Analyses</h1>
 <h4 class="author">J C D Terry &amp; S Gripenberg</h4>
-<h4 class="date">27 June, 2019</h4>
+<h4 class="date">08 July, 2019</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
 <li><a href="#packages-and-data"><span class="toc-section-number">1</span> Packages and Data</a><ul>
-<li><a href="#basic-data-wrangling"><span class="toc-section-number">1.0.1</span> Basic Data Wrangling:</a></li>
+<li><a href="#versions-used-see-also-session-info-in-html-outputs"><span class="toc-section-number">1.0.1</span> Versions used (see also session Info in html outputs):</a></li>
+<li><a href="#basic-data-wrangling"><span class="toc-section-number">1.0.2</span> Basic Data Wrangling:</a></li>
 </ul></li>
 <li><a href="#justification-for-selecting-just-those-with-over-200-sampled"><span class="toc-section-number">2</span> Justification for selecting just those with over 200 sampled:</a></li>
 <li><a href="#prediction-of-seed-predation-from-traits"><span class="toc-section-number">3</span> Prediction of Seed Predation from Traits</a><ul>
@@ -425,23 +426,26 @@ $(document).ready(function () {
 require(bipartite)
 require(corrplot)
 require(randomForest)
-require(randomForestSRC)
-require(ggRandomForests)
-
 require(knitr)
-require(broom)
-require(RColorBrewer)
 require(caret)
 require(cowplot)
 require(pdp)
-require(gridExtra)
-
 
 ### Additional Packages required
 # install.packages(&quot;party&quot;) # don&#39;t load as overwrites other packages
 # install.packages(&#39;e1071&#39;) #  needed for party package
 
 select&lt;- dplyr::select # to ensure dplyr version of select is default</code></pre>
+<div id="versions-used-see-also-session-info-in-html-outputs" class="section level3">
+<h3><span class="header-section-number">1.0.1</span> Versions used (see also session Info in html outputs):</h3>
+<p>pdp_0.7.0 cowplot_0.9.4<br />
+caret_6.0-84 knitr_1.23 randomForest_4.6-14<br />
+corrplot_0.84 bipartite_2.13<br />
+sna_2.4 network_1.15 statnet.common_4.3.0 vegan_2.5-5 lattice_0.20-38 permute_0.9-5<br />
+forcats_0.4.0 stringr_1.4.0 dplyr_0.8.1<br />
+purrr_0.3.2 readr_1.3.1 tidyr_0.8.3<br />
+tibble_2.1.3 ggplot2_3.2.0 tidyverse_1.2.1<br />
+party_1.3-3 e1071_1.7-2</p>
 <pre class="r"><code>FW&lt;-read_csv(&#39;../Data/FW.csv&#39;)</code></pre>
 <pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
 <pre><code>## Parsed with column specification:
@@ -476,8 +480,9 @@ select&lt;- dplyr::select # to ensure dplyr version of select is default</code><
 ##   FruitSeason = col_character()
 ## )</code></pre>
 <pre><code>## See spec(...) for full column specifications.</code></pre>
+</div>
 <div id="basic-data-wrangling" class="section level3">
-<h3><span class="header-section-number">1.0.1</span> Basic Data Wrangling:</h3>
+<h3><span class="header-section-number">1.0.2</span> Basic Data Wrangling:</h3>
 <pre class="r"><code>Trait %&gt;%
   filter(Woody_or_nonwoody == &#39;Woody&#39;) -&gt; WoodyTraits
 
@@ -1354,46 +1359,46 @@ ggsave(&#39;../Figures/VarImpPlotsall.pdf&#39;, width=12, height=10)</code></pre
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] gridExtra_2.3         pdp_0.7.0             cowplot_0.9.4        
-##  [4] caret_6.0-84          RColorBrewer_1.1-2    broom_0.5.2          
-##  [7] knitr_1.23            ggRandomForests_2.0.1 randomForestSRC_2.9.0
-## [10] randomForest_4.6-14   corrplot_0.84         bipartite_2.13       
-## [13] sna_2.4               network_1.15          statnet.common_4.3.0 
-## [16] vegan_2.5-5           lattice_0.20-38       permute_0.9-5        
-## [19] forcats_0.4.0         stringr_1.4.0         dplyr_0.8.1          
-## [22] purrr_0.3.2           readr_1.3.1           tidyr_0.8.3          
-## [25] tibble_2.1.3          ggplot2_3.2.0         tidyverse_1.2.1      
+##  [1] pdp_0.7.0            cowplot_0.9.4        caret_6.0-84        
+##  [4] knitr_1.23           randomForest_4.6-14  corrplot_0.84       
+##  [7] bipartite_2.13       sna_2.4              network_1.15        
+## [10] statnet.common_4.3.0 vegan_2.5-5          lattice_0.20-38     
+## [13] permute_0.9-5        forcats_0.4.0        stringr_1.4.0       
+## [16] dplyr_0.8.1          purrr_0.3.2          readr_1.3.1         
+## [19] tidyr_0.8.3          tibble_2.1.3         ggplot2_3.2.0       
+## [22] tidyverse_1.2.1     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] TH.data_1.0-10     colorspace_1.4-1   class_7.3-15      
-##  [4] modeltools_0.2-22  rstudioapi_0.10    prodlim_2018.04.18
-##  [7] mvtnorm_1.0-11     lubridate_1.7.4    coin_1.3-0        
-## [10] xml2_1.2.0         codetools_0.2-16   splines_3.6.0     
-## [13] libcoin_1.0-4      spam_2.2-2         jsonlite_1.6      
-## [16] cluster_2.1.0      compiler_3.6.0     httr_1.4.0        
-## [19] backports_1.1.4    assertthat_0.2.1   Matrix_1.2-17     
-## [22] lazyeval_0.2.2     strucchange_1.5-1  cli_1.1.0         
-## [25] htmltools_0.3.6    tools_3.6.0        igraph_1.2.4.1    
-## [28] dotCall64_1.0-0    coda_0.19-2        gtable_0.3.0      
-## [31] glue_1.3.1         reshape2_1.4.3     maps_3.3.0        
-## [34] Rcpp_1.0.1         cellranger_1.1.0   nlme_3.1-140      
-## [37] iterators_1.0.10   timeDate_3043.102  gower_0.2.1       
-## [40] xfun_0.8           rvest_0.3.4        zoo_1.8-6         
-## [43] MASS_7.3-51.4      scales_1.0.0       ipred_0.9-9       
-## [46] hms_0.4.2          sandwich_2.5-1     parallel_3.6.0    
-## [49] fields_9.8-3       yaml_2.2.0         rpart_4.1-15      
-## [52] stringi_1.4.3      highr_0.8          foreach_1.4.4     
-## [55] e1071_1.7-2        boot_1.3-22        lava_1.6.5        
-## [58] rlang_0.4.0        pkgconfig_2.0.2    matrixStats_0.54.0
-## [61] evaluate_0.14      recipes_0.1.5      labeling_0.3      
-## [64] tidyselect_0.2.5   plyr_1.8.4         magrittr_1.5      
-## [67] R6_2.4.0           generics_0.0.2     multcomp_1.4-10   
-## [70] pillar_1.4.1       haven_2.1.0        withr_2.1.2       
-## [73] mgcv_1.8-28        survival_2.44-1.1  nnet_7.3-12       
-## [76] modelr_0.1.4       crayon_1.3.4       party_1.3-3       
-## [79] rmarkdown_1.13     grid_3.6.0         readxl_1.3.1      
-## [82] data.table_1.12.2  ModelMetrics_1.2.2 digest_0.6.19     
-## [85] stats4_3.6.0       munsell_0.5.0</code></pre>
+##  [1] nlme_3.1-140       matrixStats_0.54.0 lubridate_1.7.4   
+##  [4] httr_1.4.0         tools_3.6.0        backports_1.1.4   
+##  [7] R6_2.4.0           rpart_4.1-15       lazyeval_0.2.2    
+## [10] mgcv_1.8-28        colorspace_1.4-1   nnet_7.3-12       
+## [13] withr_2.1.2        gridExtra_2.3      tidyselect_0.2.5  
+## [16] compiler_3.6.0     cli_1.1.0          rvest_0.3.4       
+## [19] xml2_1.2.0         sandwich_2.5-1     labeling_0.3      
+## [22] scales_1.0.0       mvtnorm_1.0-11     digest_0.6.19     
+## [25] rmarkdown_1.13     pkgconfig_2.0.2    htmltools_0.3.6   
+## [28] highr_0.8          maps_3.3.0         rlang_0.4.0       
+## [31] readxl_1.3.1       rstudioapi_0.10    generics_0.0.2    
+## [34] zoo_1.8-6          jsonlite_1.6       ModelMetrics_1.2.2
+## [37] magrittr_1.5       modeltools_0.2-22  dotCall64_1.0-0   
+## [40] Matrix_1.2-17      Rcpp_1.0.1         munsell_0.5.0     
+## [43] multcomp_1.4-10    stringi_1.4.3      yaml_2.2.0        
+## [46] MASS_7.3-51.4      plyr_1.8.4         recipes_0.1.5     
+## [49] grid_3.6.0         strucchange_1.5-1  parallel_3.6.0    
+## [52] crayon_1.3.4       haven_2.1.0        splines_3.6.0     
+## [55] hms_0.4.2          pillar_1.4.1       igraph_1.2.4.1    
+## [58] party_1.3-3        boot_1.3-22        reshape2_1.4.3    
+## [61] codetools_0.2-16   stats4_3.6.0       glue_1.3.1        
+## [64] evaluate_0.14      data.table_1.12.2  modelr_0.1.4      
+## [67] spam_2.2-2         foreach_1.4.4      cellranger_1.1.0  
+## [70] gtable_0.3.0       assertthat_0.2.1   xfun_0.8          
+## [73] gower_0.2.1        coin_1.3-0         prodlim_2018.04.18
+## [76] libcoin_1.0-4      broom_0.5.2        e1071_1.7-2       
+## [79] coda_0.19-2        class_7.3-15       survival_2.44-1.1 
+## [82] timeDate_3043.102  iterators_1.0.10   fields_9.8-3      
+## [85] cluster_2.1.0      lava_1.6.5         TH.data_1.0-10    
+## [88] ipred_0.9-9</code></pre>
 </div>
 
 
